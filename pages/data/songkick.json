@@ -1,7 +1,7 @@
 {
     "resultsPage": {
         "results": {
-            "events": [
+            "event": [
                 {
                     "displayName": "Cesk Freixas at Centre de Cultura i Memòria (April 14, 2023)",
                     "type": "Concert",
@@ -264,8 +264,9 @@
                 }
             ]
         },
+        "totalEntries": 5,
+        "perPage": 50,
         "page": 1,
-        "totalEntries": 2,
-        "perPage": 50
+        "status": "ok"
     }
 }
