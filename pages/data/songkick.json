@@ -1,7 +1,7 @@
 {
     "resultsPage": {
         "results": {
-            "event": [
+            "events": [
                 {
                     "displayName": "Cesk Freixas at Centre de Cultura i Memòria (April 14, 2023)",
                     "type": "Concert",
@@ -15,9 +15,13 @@
                         "metroArea": {
                             "uri": "https://www.songkick.com/venues/2920088-el-born-centre-de-cultura-i-memoria/gigography?utm_source=PARTNER_ID&utm_medium=partner",
                             "displayName": "El Born Centre",
-                            "country": { "displayName": "ES" },
+                            "country": {
+                                "displayName": "ES"
+                            },
                             "id": 26330,
-                            "state": { "displayName": "CA" }
+                            "state": {
+                                "displayName": "CA"
+                            }
                         }
                     },
                     "location": {
@@ -49,6 +53,214 @@
                         }
                     ],
                     "id": 3037536
+                },
+                {
+                    "displayName": "David Otero at Centre de Cultura i Memòria (July 28, 2023)",
+                    "type": "Concert",
+                    "uri": "https://www.songkick.com/concerts/98765432-david-otero-at-el-born-centre-de-cultura-i-memoria",
+                    "venue": {
+                        "id": 6239,
+                        "displayName": "El Born Centre de Cultura i Memòria",
+                        "uri": "https://www.songkick.com/venues/2920088-el-born-centre-de-cultura-i-memoria?utm_source=PARTNER_ID&utm_medium=partner",
+                        "lng": 41.385831771735766,
+                        "lat": 2.1836701046806293,
+                        "metroArea": {
+                            "uri": "https://www.songkick.com/venues/2920088-el-born-centre-de-cultura-i-memoria/gigography?utm_source=PARTNER_ID&utm_medium=partner",
+                            "displayName": "El Born Centre",
+                            "country": {
+                                "displayName": "ES"
+                            },
+                            "id": 26330,
+                            "state": {
+                                "displayName": "CA"
+                            }
+                        }
+                    },
+                    "location": {
+                        "lng": 41.42922048658824,
+                        "city": "El Born, Barcelona, Spain",
+                        "lat": 2.186109033267108
+                    },
+                    "start": {
+                        "time": "20:00:00",
+                        "date": "2023-07-28",
+                        "datetime": "2023-07-28T20:00:00+0000"
+                    },
+                    "performance": [
+                        {
+                            "artist": {
+                                "uri": "https://www.songkick.com/artists/98765432-david-otero",
+                                "displayName": "David Otero",
+                                "id": 987654,
+                                "identifier": [
+                                    {
+                                        "mbid": "hijklmn-9876-5432-10fe-dcbahijklmn"
+                                    }
+                                ]
+                            },
+                            "displayName": "David Otero",
+                            "billingIndex": 1,
+                            "id": 98765432,
+                            "billing": "headline"
+                        }
+                    ],
+                    "id": 98765432
+                },
+                {
+                    "displayName": "Rozalén at Centre de Cultura i Memòria (August 12, 2023)",
+                    "type": "Concert",
+                    "uri": "https://www.songkick.com/concerts/12345678-rozalen-at-el-born-centre-de-cultura-i-memoria",
+                    "venue": {
+                        "id": 6239,
+                        "displayName": "El Born Centre de Cultura i Memòria",
+                        "uri": "https://www.songkick.com/venues/2920088-el-born-centre-de-cultura-i-memoria?utm_source=PARTNER_ID&utm_medium=partner",
+                        "lng": 41.385831771735766,
+                        "lat": 2.1836701046806293,
+                        "metroArea": {
+                            "uri": "https://www.songkick.com/venues/2920088-el-born-centre-de-cultura-i-memoria/gigography?utm_source=PARTNER_ID&utm_medium=partner",
+                            "displayName": "El Born Centre",
+                            "country": {
+                                "displayName": "ES"
+                            },
+                            "id": 26330,
+                            "state": {
+                                "displayName": "CA"
+                            }
+                        }
+                    },
+                    "location": {
+                        "lng": 41.42922048658824,
+                        "city": "El Born, Barcelona, Spain",
+                        "lat": 2.186109033267108
+                    },
+                    "start": {
+                        "time": "19:00:00",
+                        "date": "2023-08-12",
+                        "datetime": "2023-08-12T19:00:00+0000"
+                    },
+                    "performance": [
+                        {
+                            "artist": {
+                                "uri": "https://www.songkick.com/artists/12345678-rozalen",
+                                "displayName": "Rozalén",
+                                "id": 123456,
+                                "identifier": [
+                                    {
+                                        "mbid": "abcdefg-1234-5678-90ab-cdefabcdefg"
+                                    }
+                                ]
+                            },
+                            "displayName": "Rozalén",
+                            "billingIndex": 1,
+                            "id": 12345678,
+                            "billing": "headline"
+                        }
+                    ],
+                    "id": 12345678
+                },
+                {
+                    "displayName": "Manuel Carrasco at Centre de Cultura i Memòria (September 5, 2023)",
+                    "type": "Concert",
+                    "uri": "https://www.songkick.com/concerts/56789012-manuel-carrasco-at-el-born-centre-de-cultura-i-memoria",
+                    "venue": {
+                        "id": 6239,
+                        "displayName": "El Born Centre de Cultura i Memòria",
+                        "uri": "https://www.songkick.com/venues/2920088-el-born-centre-de-cultura-i-memoria?utm_source=PARTNER_ID&utm_medium=partner",
+                        "lng": 41.385831771735766,
+                        "lat": 2.1836701046806293,
+                        "metroArea": {
+                            "uri": "https://www.songkick.com/venues/2920088-el-born-centre-de-cultura-i-memoria/gigography?utm_source=PARTNER_ID&utm_medium=partner",
+                            "displayName": "El Born Centre",
+                            "country": {
+                                "displayName": "ES"
+                            },
+                            "id": 26330,
+                            "state": {
+                                "displayName": "CA"
+                            }
+                        }
+                    },
+                    "location": {
+                        "lng": 41.42922048658824,
+                        "city": "El Born, Barcelona, Spain",
+                        "lat": 2.186109033267108
+                    },
+                    "start": {
+                        "time": "20:30:00",
+                        "date": "2023-09-05",
+                        "datetime": "2023-09-05T20:30:00+0000"
+                    },
+                    "performance": [
+                        {
+                            "artist": {
+                                "uri": "https://www.songkick.com/artists/56789012-manuel-carrasco",
+                                "displayName": "Manuel Carrasco",
+                                "id": 567890,
+                                "identifier": [
+                                    {
+                                        "mbid": "mnopqrstu-5678-9012-3456-vwxyzmnopqr"
+                                    }
+                                ]
+                            },
+                            "displayName": "Manuel Carrasco",
+                            "billingIndex": 1,
+                            "id": 56789012,
+                            "billing": "headline"
+                        }
+                    ],
+                    "id": 56789012
+                },
+                {
+                    "displayName": "Vanesa Martín at Centre de Cultura i Memòria (October 18, 2023)",
+                    "type": "Concert",
+                    "uri": "https://www.songkick.com/concerts/34567890-vanesa-martin-at-el-born-centre-de-cultura-i-memoria",
+                    "venue": {
+                        "id": 6239,
+                        "displayName": "El Born Centre de Cultura i Memòria",
+                        "uri": "https://www.songkick.com/venues/2920088-el-born-centre-de-cultura-i-memoria?utm_source=PARTNER_ID&utm_medium=partner",
+                        "lng": 41.385831771735766,
+                        "lat": 2.1836701046806293,
+                        "metroArea": {
+                            "uri": "https://www.songkick.com/venues/2920088-el-born-centre-de-cultura-i-memoria/gigography?utm_source=PARTNER_ID&utm_medium=partner",
+                            "displayName": "El Born Centre",
+                            "country": {
+                                "displayName": "ES"
+                            },
+                            "id": 26330,
+                            "state": {
+                                "displayName": "CA"
+                            }
+                        }
+                    },
+                    "location": {
+                        "lng": 41.42922048658824,
+                        "city": "El Born, Barcelona, Spain",
+                        "lat": 2.186109033267108
+                    },
+                    "start": {
+                        "time": "21:00:00",
+                        "date": "2023-10-18",
+                        "datetime": "2023-10-18T21:00:00+0000"
+                    },
+                    "performance": [
+                        {
+                            "artist": {
+                                "uri": "https://www.songkick.com/artists/34567890-vanesa-martin",
+                                "displayName": "Vanesa Martín",
+                                "id": 345678,
+                                "identifier": [
+                                    {
+                                        "mbid": "abcd-efgh-ijkl-mnop-qrstuvwxabcd"
+                                    }
+                                ]
+                            },
+                            "displayName": "Vanesa Martín",
+                            "billingIndex": 1,
+                            "id": 34567890,
+                            "billing": "headline"
+                        }
+                    ],
+                    "id": 34567890
                 }
             ]
         },
