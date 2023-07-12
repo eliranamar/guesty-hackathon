@@ -7,7 +7,7 @@ import Copyright from '../src/Copyright'
 
 export default function Home() {
     return (
-        <Container maxWidth="lg">
+        <Container>
             <Box
                 sx={{
                     my: 4,
