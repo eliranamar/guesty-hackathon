@@ -20,9 +20,9 @@
     },
     "manuallyCreated": true,
     "status": "confirmed",
-    "checkIn": "2023-07-14T12:00:00.000Z",
-    "checkOut": "2023-07-16T07:00:00.000Z",
-    "nightsCount": 2,
+    "checkIn": "2023-08-06T12:00:00.000Z",
+    "checkOut": "2023-08-03T07:00:00.000Z",
+    "nightsCount": 3,
     "guestsCount": 2,
     "money": {
         "settingsSnapshot": {
@@ -553,14 +553,14 @@
         "totalPaid": 0,
         "autoPaymentsPolicy": []
     },
-    "checkInDateLocalized": "2023-07-14",
-    "checkOutDateLocalized": "2023-07-16",
+    "checkInDateLocalized": "2023-08-03",
+    "checkOutDateLocalized": "2023-08-06",
     "listingId": "649d218518be6b0029ede5c6",
     "guest": {
         "_id": "649d218695c82f002be7a1c7",
-        "firstName": "Cypress",
-        "lastName": "Test",
-        "fullName": "Cypress Test"
+        "firstName": "Mitchell",
+        "lastName": "DeShane",
+        "fullName": "Mitchell DeShane"
     },
     "accountId": "596f6fe706112710005d96ff",
     "guestId": "649d218695c82f002be7a1c7",
@@ -582,11 +582,11 @@
         },
         "type": "SINGLE",
         "address": {
-            "full": "Eli Cohen St 9-11, Tel Aviv-Yafo, Israel"
+            "full": "Carrer de la Junta de Comerç, 23 , Barcelona, Catalunya 08001, Spain"
         },
-        "timezone": "Asia/Jerusalem",
-        "nickname": "auto_nickE2E - 29 Jun, 23 - 06:06:98",
-        "title": "auto_titleE2E - 29 Jun, 23 - 06:06:98"
+        "timezone": "Europe/Madrid",
+        "nickname": "t:179.5 ST JDC23 21A",
+        "title": "Centric 2bedroom in Las Ramblas  2 1A"
     },
     "log": [
         {
