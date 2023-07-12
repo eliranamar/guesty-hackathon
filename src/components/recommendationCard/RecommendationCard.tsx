@@ -5,17 +5,18 @@ import Paper from '@mui/material/Paper'
 import Grid from '@mui/material/Grid'
 import { Button, Typography } from '@mui/material'
 
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-    border: 'none',
-    boxShadow: 'none',
-}))
-
-export default function RecommendationCard() {
+// TODO: Listings
+export default function RecommendationCard({
+    image,
+    address,
+    name,
+    type,
+}: {
+    image: string
+    address: string
+    name: string
+    type: string
+}): React.ReactNode {
     return (
         <Box
             sx={{
@@ -26,46 +27,62 @@ export default function RecommendationCard() {
                 alignItems: 'center',
                 display: 'flex',
                 padding: '15px',
+                marginBottom: '30px',
             }}
         >
             <Grid container spacing={2}>
-                <Grid item xs={2} md={2} alignItems="center" display="flex">
-                    Image mock
+                <Grid
+                    item
+                    xs={2}
+                    sm={12}
+                    md={2}
+                    alignItems="center"
+                    display="flex"
+                >
+                    <Box width={64} height={64} display="flex">
+                        <img
+                            style={{ height: 'auto', maxWidth: '100%' }}
+                            src={image}
+                            alt={name}
+                        />
+                    </Box>
                 </Grid>
-                <Grid item xs={8}>
+                <Grid item xs={12} sm={8} md={8}>
                     <Box>
-                        <Box display="flex" alignItems="center">
+                        <Box display="flex" alignItems="center" flexWrap="wrap">
                             <Typography
                                 variant="h4"
                                 fontWeight={600}
                                 marginRight={1}
                             >
-                                Ramen Ibuki
+                                {name}
                             </Typography>
-                            <Typography
-                                fontSize={14}
-                                color="#B79727"
-                                fontWeight={600}
-                                marginRight={1}
-                            >
-                                Restaurant
-                            </Typography>
-                            <Typography marginRight={1}>•</Typography>
-                            <Typography fontSize={14} fontWeight={500}>
-                                Assigned to 4 listings{' '}
-                            </Typography>
+                            <Box display="flex" flexDirection="row">
+                                <Typography
+                                    fontSize={14}
+                                    color="#B79727"
+                                    fontWeight={600}
+                                    marginRight={1}
+                                >
+                                    {type}
+                                </Typography>
+                                <Typography fontSize={14} fontWeight={500}>
+                                    • Assigned to 4 listings
+                                </Typography>
+                            </Box>
                         </Box>
                         <Box>
                             <Typography color="#8c8c8c" fontSize={14}>
-                                4 Chome-58-10 Maenocho, Itabashi City, Tokyo
-                                174-0063, Japan
+                                {address}
                             </Typography>
                         </Box>
                     </Box>
                 </Grid>
                 <Grid
                     item
-                    xs={2}
+                    xs={12}
+                    sm={4}
+                    md={2}
                     alignItems="center"
                     display="flex"
                     justifyContent="end"

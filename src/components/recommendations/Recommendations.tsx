@@ -35,7 +35,11 @@ function a11yProps(index: number) {
     }
 }
 
-export default function Recommendations() {
+export default function Recommendations({
+    recommendationList,
+}: {
+    recommendationList: Array<{ [key: string]: any }>
+}): React.ReactNode {
     const [value, setValue] = React.useState(0)
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -64,10 +68,28 @@ export default function Recommendations() {
                 </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
-                <RecommendationCard />
+                {recommendationList?.length > 0 &&
+                    recommendationList?.map((recommendation) => (
+                        <RecommendationCard
+                            key={recommendation.name}
+                            image={recommendation.image}
+                            address={recommendation.location_address}
+                            name={recommendation.name}
+                            type={recommendation.type}
+                        />
+                    ))}
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
-                <RecommendationCard />
+                {recommendationList?.length > 0 &&
+                    recommendationList?.map((recommendation) => (
+                        <RecommendationCard
+                            key={recommendation.name}
+                            image={recommendation.image}
+                            address={recommendation.location_address}
+                            name={recommendation.name}
+                            type={recommendation.type}
+                        />
+                    ))}
             </CustomTabPanel>
         </Box>
     )

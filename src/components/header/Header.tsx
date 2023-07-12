@@ -21,23 +21,18 @@ function a11yProps(index: number) {
     }
 }
 
-const ROUTES = {
+const ROUTES: { [key: string]: string } = {
     analytics: '/',
     recommendations: '/recommendations',
 }
 
 export default function Header() {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
-    const [value, setValue] = React.useState(0)
 
     const router = useRouter()
 
     const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget)
-    }
-
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-        setValue(newValue)
     }
 
     const handleClose = () => {
@@ -57,9 +52,7 @@ export default function Header() {
             >
                 <Toolbar sx={{ justifyContent: 'space-between' }}>
                     <Tabs
-                        value={value}
-                        onChange={handleChange}
-                        aria-label="basic tabs example"
+                        value={router.pathname}
                         sx={{
                             minHeight: '64px',
                             '& .MuiTabs-flexContainer': {
@@ -75,11 +68,13 @@ export default function Header() {
                         <Tab
                             onClick={() => handleTabClick('analytics')}
                             label="Analytics"
+                            value="/"
                             {...a11yProps(1)}
                         />
                         <Tab
                             onClick={() => handleTabClick('recommendations')}
                             label="Recommendations"
+                            value="/recommendations"
                             {...a11yProps(2)}
                         />
                     </Tabs>
