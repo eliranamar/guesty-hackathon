@@ -19,6 +19,8 @@ import { Experience } from '../../src/components/experienceCard/types'
 import { ExperienceType, ExperienceSource } from '../../constants/types'
 import experiences from '../../data/experiences.json'
 import Fade from '@mui/material/Fade'
+import { useRouter } from 'next/router'
+import Button from '@mui/material/Button'
 
 const Background = styled('div')<{}>(({}) => ({
     position: 'relative',
@@ -52,6 +54,10 @@ const MenuProps = {
 export default function Experience() {
     const [typeFilter, setTypeFilter] = React.useState<string>('ALL')
     const [sourceFilter, setSourceFilter] = React.useState<string>('ALL')
+    const router = useRouter()
+    const isPreview = router.query.id === 'preview'
+
+    console.log(isPreview)
 
     const filteredExperiences = useMemo(() => {
         let tempExperiences: Experience[] = [...experiences] as Experience[]
@@ -100,8 +106,18 @@ export default function Experience() {
                     fontWeight={600}
                     style={{ marginBottom: 25 }}
                 >
-                    Experiences we tailored for you
+                    {isPreview
+                        ? 'Experiences preview for your guests'
+                        : 'Experiences we tailored for you'}
                 </Typography>
+                {/* go back button if this is a preview */}
+                {isPreview && (
+                    <div style={{ marginBottom: 25 }}>
+                        <Button onClick={router.back}>
+                            Back to your dashboard
+                        </Button>
+                    </div>
+                )}
                 <Paper variant="outlined" sx={{ padding: 2, marginBottom: 4 }}>
                     <Grid
                         container

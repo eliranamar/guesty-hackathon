@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import Header from '../../src/components/header/Header'
 import Recommendations from '../../src/components/recommendations/Recommendations'
-import { Container } from '@mui/material'
+import Container from '@mui/material/Container'
 
 const Background = styled.div`
     display: flex;
