@@ -9,7 +9,7 @@ import Copyright from '../src/Copyright'
 
 export default function About() {
     return (
-        <Container maxWidth="lg">
+        <Container>
             <Box
                 sx={{
                     my: 4,
