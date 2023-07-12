@@ -7,6 +7,7 @@ import Grid from '@mui/material/Grid'
 import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
+import Stack from '@mui/material/Stack'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 import ExperienceCard from '../../src/components/experienceCard/ExperienceCard'
 import styled from '@emotion/styled'
@@ -113,6 +114,8 @@ const AbstractBackground = styled('img')(() => ({
 
 export default function Experience() {
     const [typeFilter, setTypeFilter] = React.useState<string>('ALL')
+    const [recommenderFilter, setRecommenderFilter] =
+        React.useState<string>('ALL')
 
     const filteredExperiences = useMemo(() => {
         let tempExperiences = [...experiences]
@@ -121,8 +124,15 @@ export default function Experience() {
                 (experience) => experience.type === typeFilter,
             )
         }
+
+        if (recommenderFilter && recommenderFilter !== 'ALL') {
+            tempExperiences = tempExperiences.filter(
+                (experience) => experience.recommender === recommenderFilter,
+            )
+        }
+
         return tempExperiences
-    }, [experiences, typeFilter])
+    }, [experiences, typeFilter, recommenderFilter])
 
     // const hostRecommendations = useMemo(() => {
     //     return experiences.filter(
@@ -139,6 +149,9 @@ export default function Experience() {
     const handleTypeChange = (event: SelectChangeEvent) => {
         setTypeFilter(event.target.value as string)
     }
+    const handleRecommenderChange = (event: SelectChangeEvent) => {
+        setRecommenderFilter(event.target.value as string)
+    }
     return (
         <Background>
             <AbstractBackground src="/Abstract.svg" />
@@ -151,30 +164,66 @@ export default function Experience() {
                     Experiences we tailored for you
                 </Typography>
                 <Paper variant="outlined" sx={{ padding: 2 }}>
-                    <Grid container spacing={1} justifyContent="space-between">
+                    <Grid
+                        container
+                        spacing={1}
+                        justifyContent="space-between"
+                        alignItems="center"
+                    >
                         <Grid item>Filter by</Grid>
                         <Grid item>
-                            <FormControl fullWidth>
-                                <InputLabel id="demo-simple-select-label">
-                                    Type
-                                </InputLabel>
-                                <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    value={typeFilter}
-                                    label="Type"
-                                    onChange={handleTypeChange}
-                                >
-                                    <MenuItem value="ALL">All</MenuItem>
-                                    {Object.values(ExperienceType).map(
-                                        (type) => (
-                                            <MenuItem key={type} value={type}>
-                                                {toTitleCase(type)}
-                                            </MenuItem>
-                                        ),
-                                    )}
-                                </Select>
-                            </FormControl>
+                            <Grid container>
+                                <Stack direction="row" spacing={1}>
+                                    <FormControl fullWidth size="small">
+                                        <InputLabel id="demo-simple-select-label">
+                                            Type
+                                        </InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            value={typeFilter}
+                                            label="Type"
+                                            onChange={handleTypeChange}
+                                        >
+                                            <MenuItem value="ALL">All</MenuItem>
+                                            {Object.values(ExperienceType).map(
+                                                (type) => (
+                                                    <MenuItem
+                                                        key={type}
+                                                        value={type}
+                                                    >
+                                                        {toTitleCase(type)}
+                                                    </MenuItem>
+                                                ),
+                                            )}
+                                        </Select>
+                                    </FormControl>
+                                    <FormControl fullWidth size="small">
+                                        <InputLabel id="demo-simple-select-label">
+                                            Recommender
+                                        </InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            value={recommenderFilter}
+                                            label="Recommender"
+                                            onChange={handleRecommenderChange}
+                                        >
+                                            <MenuItem value="ALL">All</MenuItem>
+                                            {Object.values(Recommender).map(
+                                                (type) => (
+                                                    <MenuItem
+                                                        key={type}
+                                                        value={type}
+                                                    >
+                                                        {toTitleCase(type)}
+                                                    </MenuItem>
+                                                ),
+                                            )}
+                                        </Select>
+                                    </FormControl>
+                                </Stack>
+                            </Grid>
                         </Grid>
                     </Grid>
                 </Paper>
@@ -186,6 +235,15 @@ export default function Experience() {
                         />
                     ))}
                 </div>
+                {filteredExperiences.length === 0 && (
+                    <Typography
+                        variant="h4"
+                        fontWeight={600}
+                        style={{ marginTop: 25 }}
+                    >
+                        No experiences found
+                    </Typography>
+                )}
             </Container>
         </Background>
     )
