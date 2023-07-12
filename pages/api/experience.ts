@@ -12,7 +12,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
     try {
         if (req.method === 'GET') {
-            const experience = getexperience(req, res);
+            const experience = getExperience(req, res);
             res.status(200).json(experience)
         } else if (req.method === 'PUT') {
             updateexperience(req);
@@ -26,7 +26,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     }
 }
 
-function getexperience(req: NextApiRequest, res: NextApiResponse) {
+function getExperience(req: NextApiRequest, res: NextApiResponse) {
 
     const { id } = req.query;
     const experiences = getExperiencesData();
