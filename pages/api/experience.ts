@@ -29,7 +29,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 function getexperience(req: NextApiRequest, res: NextApiResponse) {
 
     const { id } = req.query;
-    const experiences = getexperiencesData();
+    const experiences = getExperiencesData();
     const i = experiences.findIndex((exp: any) => exp.id === id);
     if (i > -1) {
         return experiences[i];
@@ -38,21 +38,21 @@ function getexperience(req: NextApiRequest, res: NextApiResponse) {
 
 function updateexperience(req: NextApiRequest) {
     const { id } = req.body;
-    const experiences = getexperiencesData();
+    const experiences = getExperiencesData();
     const i = experiences.findIndex((exp: any) => exp.id === id);
     if (i > -1) {
         experiences[i] = req.body;
-        saveexperienceData(experiences);
+        saveExperienceData(experiences);
         console.log(`experienceId: ${id} was updated succefully`);
     }
 }
 
 // util functions
-const saveexperienceData = (data: any) => {
-    const stringifyData = JSON.stringify(data)
-    fs.writeFileSync(filePath, stringifyData)
+const saveExperienceData = (data: any) => {
+    const stringifyData = JSON.stringify(data,null,2);
+    fs.writeFileSync(filePath, stringifyData);
 }
-const getexperiencesData = () => {
+const getExperiencesData = () => {
     const jsonData = fs.readFileSync(filePath);
     return JSON.parse(jsonData.toString());   
 }
