@@ -4,27 +4,75 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import { useRouter } from 'next/router'
 import Link from '../../src/Link'
+import ExperienceCard from '../../src/components/experienceCard'
+
+const experiences = [
+    {
+        id: '1',
+        title: 'Experience 1',
+        distance: '1.5 km',
+        type: 'RESTAURANT',
+        img: 'https://www.shutterstock.com/image-illustration/fake-news-on-internet-modern-600w-1121670800.jpg',
+        description:
+            'Check out Ibuki for a great argument in favor of the style, despite their inconvenient location on Tokyo’s north side. Upwards of 14 different kinds of dried fish from around Japan are used in the preparation of the soup depending on the day, so expect a slightly different experience each time you visit.',
+    },
+    {
+        id: '2',
+        title: 'Experience 2',
+        distance: '2.5 km',
+        type: 'RESTAURANT',
+        img: 'https://www.shutterstock.com/image-illustration/fake-news-on-internet-modern-600w-1121670800.jpg',
+        description:
+            'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+    },
+    {
+        id: '3',
+        title: 'Experience 3',
+        distance: '3.5 km',
+        type: 'RESTAURANT',
+        img: 'https://www.shutterstock.com/image-illustration/fake-news-on-internet-modern-600w-1121670800.jpg',
+        description:
+            'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+    },
+]
 
 export default function Experience() {
     const router = useRouter()
     return (
-        <Container maxWidth="lg">
-            <Box
-                sx={{
-                    my: 4,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}
-            >
-                <Typography variant="h4" component="h1" gutterBottom>
-                    This is the guest experience page with id: {router.query.id}
-                </Typography>
-                <Link href="/" color="secondary">
-                    Go to the home page
-                </Link>
-            </Box>
-        </Container>
+        <div>
+            <Container maxWidth="lg">
+                <Box
+                    sx={{
+                        my: 4,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    }}
+                >
+                    <Typography variant="h3" gutterBottom>
+                        Experiences we tailored for you
+                    </Typography>
+                    <Typography variant="h4" gutterBottom>
+                        This is the guest experience page with id:{' '}
+                        {router.query.id}
+                    </Typography>
+                    <Link href="/" color="secondary">
+                        Go to the home page
+                    </Link>
+                </Box>
+
+                <Container maxWidth="md">
+                    <div>
+                        {experiences.map((experience) => (
+                            <ExperienceCard
+                                key={experience.id}
+                                experience={experience}
+                            />
+                        ))}
+                    </div>
+                </Container>
+            </Container>
+        </div>
     )
 }
