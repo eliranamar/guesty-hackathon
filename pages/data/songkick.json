@@ -1,0 +1,59 @@
+{
+    "resultsPage": {
+        "results": {
+            "event": [
+                {
+                    "displayName": "Cesk Freixas at Centre de Cultura i Memòria (April 14, 2023)",
+                    "type": "Concert",
+                    "uri": "https://www.songkick.com/concerts/40969243-cesk-freixas-at-el-born-centre-de-cultura-i-memoria",
+                    "venue": {
+                        "id": 6239,
+                        "displayName": "El Born Centre de Cultura i Memòria",
+                        "uri": "https://www.songkick.com/venues/2920088-el-born-centre-de-cultura-i-memoria?utm_source=PARTNER_ID&utm_medium=partner",
+                        "lng": 41.385831771735766,
+                        "lat": 2.1836701046806293,
+                        "metroArea": {
+                            "uri": "https://www.songkick.com/venues/2920088-el-born-centre-de-cultura-i-memoria/gigography?utm_source=PARTNER_ID&utm_medium=partner",
+                            "displayName": "El Born Centre",
+                            "country": { "displayName": "ES" },
+                            "id": 26330,
+                            "state": { "displayName": "CA" }
+                        }
+                    },
+                    "location": {
+                        "lng": 41.42922048658824,
+                        "city": "El Born, Barcelona, Spain",
+                        "lat": 2.186109033267108
+                    },
+                    "start": {
+                        "time": "19:30:00",
+                        "date": "2023-04-14",
+                        "datetime": "2023-04-14T19:30:00+0000"
+                    },
+                    "performance": [
+                        {
+                            "artist": {
+                                "uri": "https://www.songkick.com/artists/1096590-cesk-freixas",
+                                "displayName": "Cesk Freixas",
+                                "id": 288696,
+                                "identifier": [
+                                    {
+                                        "mbid": "af37c51c-0790-4a29-b995-456f98a6b8c9"
+                                    }
+                                ]
+                            },
+                            "displayName": "Cesk Freixas",
+                            "billingIndex": 1,
+                            "id": 5380281,
+                            "billing": "headline"
+                        }
+                    ],
+                    "id": 3037536
+                }
+            ]
+        },
+        "page": 1,
+        "totalEntries": 2,
+        "perPage": 50
+    }
+}
