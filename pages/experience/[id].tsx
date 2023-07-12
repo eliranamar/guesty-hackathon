@@ -21,7 +21,7 @@ const experiences = [
         id: '2',
         title: 'Experience 2',
         distance: '2.5 km',
-        type: 'RESTAURANT',
+        type: 'TRIP',
         img: 'https://www.shutterstock.com/image-illustration/fake-news-on-internet-modern-600w-1121670800.jpg',
         description:
             'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
@@ -30,7 +30,8 @@ const experiences = [
         id: '3',
         title: 'Experience 3',
         distance: '3.5 km',
-        type: 'RESTAURANT',
+        type: 'HOTEL',
+        discount: 50,
         img: 'https://www.shutterstock.com/image-illustration/fake-news-on-internet-modern-600w-1121670800.jpg',
         description:
             'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',

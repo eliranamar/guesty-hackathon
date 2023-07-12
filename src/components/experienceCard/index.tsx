@@ -36,7 +36,7 @@ const getChipColor = (type) => {
 }
 
 export default function ExperienceCard({ experience }) {
-    const { title, distance, type, description, img } = experience;
+    const { title, distance, type, discount, description, img, showDescription = true } = experience;
 
     return (
         <div style={{marginBottom: 48}}>
@@ -52,6 +52,16 @@ export default function ExperienceCard({ experience }) {
             <ImgDiv src={img}>
                 <Grid container justifyContent="flex-end">
                     <Stack direction="row" spacing={1}>
+                        {discount && (
+                            <Chip
+                                size="small"
+                                label={`${discount}% off`}
+                                sx={{
+                                    borderRadius: '4px',
+                                    backgroundColor: '#46FF59',
+                                }}
+                            />
+                        )}
                         <Chip
                             size="small"
                             label={type}
@@ -64,9 +74,11 @@ export default function ExperienceCard({ experience }) {
                 </Grid>
             </ImgDiv>
 
-            <Typography variant="body1" style={{ margin: '16px 0' }} color="text.secondary">
-                <strong>{description}</strong>
-            </Typography>
+            {showDescription && (
+                <Typography variant="body1" style={{margin: '16px 0'}} color="text.secondary">
+                    {description}
+                </Typography>
+            )}
 
             <Link href="https://google.com" target="_blank" sx={{ margin: '16px 0', textDecoration: 'none' }}>
                 <Typography variant="button" color="text.primary">
