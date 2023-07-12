@@ -172,7 +172,7 @@ const data = [
     },
 ]
 
-export default function About() {
+export default function RecommendationsPage() {
     return (
         <Box
             sx={{
