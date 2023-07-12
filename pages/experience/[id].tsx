@@ -8,6 +8,9 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Stack from '@mui/material/Stack'
+import OutlinedInput from '@mui/material/OutlinedInput'
+import ListItemText from '@mui/material/ListItemText'
+import Checkbox from '@mui/material/Checkbox'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 import ExperienceCard from '../../src/components/experienceCard/ExperienceCard'
 import styled from '@emotion/styled'
@@ -112,6 +115,17 @@ const AbstractBackground = styled('img')(() => ({
     zIndex: -1,
 }))
 
+const ITEM_HEIGHT = 48
+const ITEM_PADDING_TOP = 8
+const MenuProps = {
+    PaperProps: {
+        style: {
+            maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+            width: 250,
+        },
+    },
+}
+
 export default function Experience() {
     const [typeFilter, setTypeFilter] = React.useState<string>('ALL')
     const [recommenderFilter, setRecommenderFilter] =
@@ -174,6 +188,46 @@ export default function Experience() {
                         <Grid item>
                             <Grid container>
                                 <Stack direction="row" spacing={1}>
+                                    {/* TODO: multi select filter */}
+                                    {/*<FormControl sx={{ m: 1, width: 300 }}>
+                                        <InputLabel id="demo-multiple-checkbox-label">
+                                            Type
+                                        </InputLabel>
+                                        <Select
+                                            labelId="demo-multiple-checkbox-label"
+                                            id="demo-multiple-checkbox"
+                                            multiple
+                                            value={personName}
+                                            onChange={handleChange}
+                                            input={
+                                                <OutlinedInput label="Tag" />
+                                            }
+                                            renderValue={(selected) =>
+                                                selected.join(', ')
+                                            }
+                                            MenuProps={MenuProps}
+                                        >
+                                            {Object.values(ExperienceType).map(
+                                                (name) => (
+                                                    <MenuItem
+                                                        key={name}
+                                                        value={name}
+                                                    >
+                                                        <Checkbox
+                                                            checked={
+                                                                personName.indexOf(
+                                                                    name,
+                                                                ) > -1
+                                                            }
+                                                        />
+                                                        <ListItemText
+                                                            primary={name}
+                                                        />
+                                                    </MenuItem>
+                                                ),
+                                            )}
+                                        </Select>
+                                    </FormControl>*/}
                                     <FormControl fullWidth size="small">
                                         <InputLabel id="demo-simple-select-label">
                                             Type
