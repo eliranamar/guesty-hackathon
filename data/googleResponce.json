@@ -1,0 +1,1005 @@
+{
+    "html_attributions": [],
+    "next_page_token": "Aaw_FcKyjHvsEuFkYmMACIw6ce5espuajK7oKW-26ay9wMpHd350qRhHtX0CFNSDNCmGWrCliVeYEendfV0wyVXFqPlgyp7HtDskjEkGw5JOp3bDGr_YXAGWbs2qBKJI4P4tYGXElKgENYOwVIRAJuviA6UUioQSVioQv6zjcVP-qRFEi6aanuo_kb7n2HF58N40DTi3w98Mhq-qzwb92-OLZIsKH_hZAl8LlFDxITznNi4VQ-r5uNz_WF0Elf4yuSOvYwvg5NPl8u-s6jiV0H9_0Sw7jE1V_auQVuIovw7L52CA6PxL_jT_rIKhduQ6WHi3xN0m_PQXdewJ4_UoXW_r79a-1_4GiB-6qauNFnUiNOJKz9dw2OAVp2TkA-XZgfbo1X4H1P7KmylH9XoVh1BK1j_tfdPOamDFgwU4TOeDVeyOp98ahAlF",
+    "results": [
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.38383189999999, "lng": 2.1782333 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.3851609302915,
+                        "lng": 2.179691080291501
+                    },
+                    "southwest": {
+                        "lat": 41.3824629697085,
+                        "lng": 2.176993119708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+            "icon_background_color": "#FF9E67",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+            "name": "La Colmena",
+            "opening_hours": { "open_now": true },
+            "photos": [
+                {
+                    "height": 3264,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/101753721100758878900\">La Colmena</a>"
+                    ],
+                    "photo_reference": "Aaw_FcJhvePl_9MRr-XSOL3qtwCfkX47MwqFU1-PHtq9_HcVzuWBAmR5FmV8kiX37UKEhUiOZD1NsnPp1g1G6XNmBAqOh7_8ak5lGvBRFGERgPo3zTIbxk5Zv5lePMPbjzdN_he4GSeFfLEL35OkNcdDhfMk6VaZW15jAg69FcVukFcFKdtJ",
+                    "width": 4928
+                }
+            ],
+            "place_id": "ChIJn4lKN_mipBIR5GCoBNWdYp4",
+            "plus_code": {
+                "compound_code": "95MH+G7 Barcelona, Spain",
+                "global_code": "8FH495MH+G7"
+            },
+            "price_level": 2,
+            "rating": 4.6,
+            "reference": "ChIJn4lKN_mipBIR5GCoBNWdYp4",
+            "scope": "GOOGLE",
+            "types": [
+                "bakery",
+                "cafe",
+                "food",
+                "point_of_interest",
+                "store",
+                "establishment"
+            ],
+            "user_ratings_total": 1119,
+            "vicinity": "plaça de l'Àngel, 12, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.3857621, "lng": 2.1736964 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.3872186302915,
+                        "lng": 2.175532180291502
+                    },
+                    "southwest": {
+                        "lat": 41.3845206697085,
+                        "lng": 2.172834219708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+            "icon_background_color": "#FF9E67",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+            "name": "Els 4Gats",
+            "opening_hours": { "open_now": false },
+            "photos": [
+                {
+                    "height": 5184,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/108852709215732136935\">Els 4Gats</a>"
+                    ],
+                    "photo_reference": "Aaw_FcKmyb2-WHx9UZwaNg80o0ho5zYn-C4HWHlmJsR3oe_-SYOaaMtbM4K9FPH2g1wtrpSsM6MwSzRIw_sm59CerVhiVyyDsT2n0zPq3LVB3RuippGk-4Ybvs2R0e90NHO1P4epJ32mXut1RWR8jP-l6w12KXTY3B7piPbAYhvuPrXboAWx",
+                    "width": 3456
+                }
+            ],
+            "place_id": "ChIJ4ecss_CipBIRzAR_ag45hM8",
+            "plus_code": {
+                "compound_code": "95PF+8F Barcelona, Spain",
+                "global_code": "8FH495PF+8F"
+            },
+            "price_level": 2,
+            "rating": 4,
+            "reference": "ChIJ4ecss_CipBIRzAR_ag45hM8",
+            "scope": "GOOGLE",
+            "types": [
+                "restaurant",
+                "cafe",
+                "bar",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 6110,
+            "vicinity": "Carrer de Montsió, 3, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.38471810000001, "lng": 2.1829467 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.38608188029151,
+                        "lng": 2.184256230291502
+                    },
+                    "southwest": {
+                        "lat": 41.38338391970851,
+                        "lng": 2.181558269708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+            "icon_background_color": "#FF9E67",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+            "name": "Bar El Born",
+            "opening_hours": { "open_now": false },
+            "photos": [
+                {
+                    "height": 1800,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/117234033558495963239\">Bar El Born</a>"
+                    ],
+                    "photo_reference": "Aaw_FcI2da8slo-cXyqq1bjom-tDFSik511FV9EctaG1Dp5_xidH7COZInyMJx7BiFJ_fo8y2Xa835zt0h8adyrN0V5Ge3sdF4jh3NBOGWPiIAejj6wybfem0jSV4nrvrfLC78D_6dPFGs6m9wpglqJm9np2ee4juzDlQQsd9s81rCAv3a2Y",
+                    "width": 2880
+                }
+            ],
+            "place_id": "ChIJ53xfbP6ipBIR_eLHk4sZ6kg",
+            "plus_code": {
+                "compound_code": "95MM+V5 Barcelona, Spain",
+                "global_code": "8FH495MM+V5"
+            },
+            "price_level": 2,
+            "rating": 4.3,
+            "reference": "ChIJ53xfbP6ipBIR_eLHk4sZ6kg",
+            "scope": "GOOGLE",
+            "types": [
+                "bar",
+                "cafe",
+                "food",
+                "point_of_interest",
+                "store",
+                "establishment"
+            ],
+            "user_ratings_total": 1556,
+            "vicinity": "Passeig del Born, 26, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.3798266, "lng": 2.1757053 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.3811354802915,
+                        "lng": 2.177372580291502
+                    },
+                    "southwest": {
+                        "lat": 41.3784375197085,
+                        "lng": 2.174674619708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+            "icon_background_color": "#FF9E67",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+            "name": "Ocaña",
+            "opening_hours": { "open_now": true },
+            "photos": [
+                {
+                    "height": 6656,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/104915684295678970275\">Ocaña</a>"
+                    ],
+                    "photo_reference": "Aaw_FcIh_ayCgMrYpv0di6O8Oy-XALqhSuazC093k-Ti6ZAkn01xKuE2LAQB9ipvJeqKWKCSpw23uFRyaEKR3p8SY1malXRJ_yLK07Ci_VfUSjldqZImN7rU51jt_dwI_Oa62nc0qaJYq9tKxmeKo1CvDpOiVMaXBufcegwc_CRbAF-r1UqC",
+                    "width": 13312
+                }
+            ],
+            "place_id": "ChIJ7Uy86VeipBIRs8LOEbx5dEY",
+            "plus_code": {
+                "compound_code": "95HG+W7 Barcelona, Spain",
+                "global_code": "8FH495HG+W7"
+            },
+            "price_level": 2,
+            "rating": 4.4,
+            "reference": "ChIJ7Uy86VeipBIRs8LOEbx5dEY",
+            "scope": "GOOGLE",
+            "types": [
+                "restaurant",
+                "cafe",
+                "bar",
+                "food",
+                "point_of_interest",
+                "store",
+                "establishment"
+            ],
+            "user_ratings_total": 6603,
+            "vicinity": "Plaça Reial, 13-15, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.3824883, "lng": 2.1734325 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.3838455302915,
+                        "lng": 2.174746280291502
+                    },
+                    "southwest": {
+                        "lat": 41.3811475697085,
+                        "lng": 2.172048319708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+            "icon_background_color": "#4B96F3",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+            "name": "Granja Dulcinea",
+            "opening_hours": { "open_now": true },
+            "photos": [
+                {
+                    "height": 425,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/105303718045777059165\">La Florinata</a>"
+                    ],
+                    "photo_reference": "Aaw_FcK1PqzmMkwkiZoQVyVnVtqRzZM5bwwsqHBpJmyEwTukYD31J7TgTkCye-_glLwOVFi4_5a05OhaJ0Z1wHHAMd5NysaBzSikVcc-Nr0d2MIf2uNyXkOS5hazuSNnG_QyJBKM4m5VgfjvIWhtOXJ-ILdbVrbUZ2o-i7o06ro0C8YmiF_a",
+                    "width": 640
+                }
+            ],
+            "place_id": "ChIJ7a4EQfiipBIRVmyB6aOM_ls",
+            "plus_code": {
+                "compound_code": "95JF+X9 Barcelona, Spain",
+                "global_code": "8FH495JF+X9"
+            },
+            "rating": 4.3,
+            "reference": "ChIJ7a4EQfiipBIRVmyB6aOM_ls",
+            "scope": "GOOGLE",
+            "types": [
+                "cafe",
+                "food",
+                "point_of_interest",
+                "store",
+                "establishment"
+            ],
+            "user_ratings_total": 2609,
+            "vicinity": "Carrer de Petritxol, 2, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.3830784, "lng": 2.1744505 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.38440463029151,
+                        "lng": 2.175752930291502
+                    },
+                    "southwest": {
+                        "lat": 41.38170666970851,
+                        "lng": 2.173054969708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+            "icon_background_color": "#FF9E67",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+            "name": "Caelum",
+            "opening_hours": { "open_now": false },
+            "photos": [
+                {
+                    "height": 3456,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/116113141645542775908\">Caelum</a>"
+                    ],
+                    "photo_reference": "Aaw_FcKDZuHAaGVPTjZD2YH0reTqUimbvEk7ecSFNTDAhW37uBy_Qn7D4Wom_nFiEnq4hRPGCAI-xY4O5oKzY7ZfRm8skNzKdnWGapwRE7lfbsqgbPeUr_ytF4AS6B58ok9924MhBe5sT-9Jwq8lJvCzDAk_DAOgZBLawxt6A-R3LyvLDf94",
+                    "width": 5184
+                }
+            ],
+            "place_id": "ChIJAStogPeipBIRHnVo3egrpOs",
+            "plus_code": {
+                "compound_code": "95MF+6Q Barcelona, Spain",
+                "global_code": "8FH495MF+6Q"
+            },
+            "price_level": 2,
+            "rating": 4.3,
+            "reference": "ChIJAStogPeipBIRHnVo3egrpOs",
+            "scope": "GOOGLE",
+            "types": [
+                "bakery",
+                "cafe",
+                "bar",
+                "food",
+                "point_of_interest",
+                "store",
+                "establishment"
+            ],
+            "user_ratings_total": 2948,
+            "vicinity": "Carrer de la Palla, 8, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.37717560000001, "lng": 2.1770602 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.3785323802915,
+                        "lng": 2.178296730291502
+                    },
+                    "southwest": {
+                        "lat": 41.3758344197085,
+                        "lng": 2.175598769708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+            "icon_background_color": "#FF9E67",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+            "name": "El Bosc de Les Fades",
+            "opening_hours": { "open_now": false },
+            "photos": [
+                {
+                    "height": 1053,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/117480722374618526015\">El Bosc de les Fades</a>"
+                    ],
+                    "photo_reference": "Aaw_FcIgPy89LA2GiaxKPYvwrcXVhvbzpmTok2PFVJnVWtzqTHI53JLIa0JpwKgdEToU1tch6KHMEPd_on2w7jNcvrC0yFYlMD7FRSLfz3NIF433B0KUOG90jwQu0vYSRiru_yeun3GVg-LqvcmpKDeXhERnnfxq_9fhP_v_Jyrh0Q3mn1xR",
+                    "width": 1600
+                }
+            ],
+            "place_id": "ChIJSXLa41aipBIRSxh0VZJFv4E",
+            "plus_code": {
+                "compound_code": "95GG+VR Barcelona, Spain",
+                "global_code": "8FH495GG+VR"
+            },
+            "price_level": 2,
+            "rating": 4.4,
+            "reference": "ChIJSXLa41aipBIRSxh0VZJFv4E",
+            "scope": "GOOGLE",
+            "types": [
+                "cafe",
+                "bar",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "store",
+                "establishment"
+            ],
+            "user_ratings_total": 13659,
+            "vicinity": "Passatge de la Banca, 7, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.3819507, "lng": 2.1767127 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.38331068029149,
+                        "lng": 2.178126480291502
+                    },
+                    "southwest": {
+                        "lat": 41.38061271970849,
+                        "lng": 2.175428519708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+            "icon_background_color": "#FF9E67",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+            "name": "El Paraigua",
+            "opening_hours": { "open_now": false },
+            "photos": [
+                {
+                    "height": 1365,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/116595318222703724269\">El Paraigua</a>"
+                    ],
+                    "photo_reference": "Aaw_FcJzo3qnk_szOwVdm6KBFEkIU9TbQ4s2YkbSZOnqI7suom2ZbPQUPaEe8qkvK_N2SeoDUUW7N_e8YNA_uBbbFQpZlchoWzBXkHMx0gRJQDg8tJhS1HN6ghXZQu582IL0nzDV4h7fH0c0HcIu5k6tTAWK-TmKkBwqS7yh2C2mFaxnXjcJ",
+                    "width": 2048
+                }
+            ],
+            "place_id": "ChIJnbuTiviipBIRT_E1Vxc3CDs",
+            "plus_code": {
+                "compound_code": "95JG+QM Barcelona, Spain",
+                "global_code": "8FH495JG+QM"
+            },
+            "price_level": 2,
+            "rating": 4,
+            "reference": "ChIJnbuTiviipBIRT_E1Vxc3CDs",
+            "scope": "GOOGLE",
+            "types": [
+                "bar",
+                "night_club",
+                "cafe",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "store",
+                "establishment"
+            ],
+            "user_ratings_total": 807,
+            "vicinity": "Carrer del Pas de l'Ensenyança, 2, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.3828278, "lng": 2.175576 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.38386243029149,
+                        "lng": 2.177348430291502
+                    },
+                    "southwest": {
+                        "lat": 41.38116446970849,
+                        "lng": 2.174650469708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+            "icon_background_color": "#FF9E67",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+            "name": "Caj Chai",
+            "opening_hours": { "open_now": false },
+            "photos": [
+                {
+                    "height": 3024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/104177533991260899082\">Mary Ramírez</a>"
+                    ],
+                    "photo_reference": "Aaw_FcLoEEwtP1G3mpUGRl_uGxjoAwpCgqiBzbNGOqbBu8FstkNIi3fj6rSiAE0pfgb-NAJAqEfW38gCHHcvJ36bY3B2ict_M2rrQTM9fLgxWdtzIbq1Z6xXw-7H8qD8CQE8qKqazDSK2k5jSWquCOq0x4SDRow1-6jpQWduYvQ4mDpzS-LC",
+                    "width": 4032
+                }
+            ],
+            "place_id": "ChIJn-6VNviipBIRXS8ZcVqD3zQ",
+            "plus_code": {
+                "compound_code": "95MG+46 Barcelona, Spain",
+                "global_code": "8FH495MG+46"
+            },
+            "price_level": 2,
+            "rating": 4.6,
+            "reference": "ChIJn-6VNviipBIRXS8ZcVqD3zQ",
+            "scope": "GOOGLE",
+            "types": [
+                "cafe",
+                "food",
+                "point_of_interest",
+                "store",
+                "establishment"
+            ],
+            "user_ratings_total": 1140,
+            "vicinity": "Carrer de Salomó ben Adret, 12, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.3828471, "lng": 2.1728334 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.38420163029149,
+                        "lng": 2.174190580291502
+                    },
+                    "southwest": {
+                        "lat": 41.38150366970849,
+                        "lng": 2.171492619708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "Petritxol Xocoa",
+            "opening_hours": { "open_now": true },
+            "photos": [
+                {
+                    "height": 2448,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/109122461253058011529\">Petritxol Xocoa</a>"
+                    ],
+                    "photo_reference": "Aaw_FcKwKl_rKXKYbd3VyUIAoqEYFsUhX4TM5GbO9DSAZXq1PDHRq7qwKJn_YwHmQ2ZR2dgESGUgCd0jWzweF7Twn5yRKnmANfM0rQqsY1lm7HhW-rKWc-CQ7OwMG_WdJAvoa1qYgop5tROQMb5-mVLRh0d6oza65xWjYhYbd12DLezeo4iH",
+                    "width": 3264
+                }
+            ],
+            "place_id": "ChIJu7LWpfeipBIRCPDZop9gdxs",
+            "plus_code": {
+                "compound_code": "95MF+44 Barcelona, Spain",
+                "global_code": "8FH495MF+44"
+            },
+            "rating": 4.2,
+            "reference": "ChIJu7LWpfeipBIRCPDZop9gdxs",
+            "scope": "GOOGLE",
+            "types": [
+                "bakery",
+                "cafe",
+                "food",
+                "point_of_interest",
+                "store",
+                "establishment"
+            ],
+            "user_ratings_total": 742,
+            "vicinity": "Carrer de Petritxol, 11, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.38248660000001, "lng": 2.1804851 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.3838896802915,
+                        "lng": 2.181869780291502
+                    },
+                    "southwest": {
+                        "lat": 41.3811917197085,
+                        "lng": 2.179171819708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+            "icon_background_color": "#FF9E67",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+            "name": "Restaurant Cátedra",
+            "opening_hours": { "open_now": true },
+            "photos": [
+                {
+                    "height": 1152,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/107536134896668599682\">Restaurant Cátedra</a>"
+                    ],
+                    "photo_reference": "Aaw_FcKdQYZqafegO5r5eqUcn37PHf3ikgIPStmgofQQfKB2nNRi4qAUkIBN9dG8Z-h6SpUaC7Ipmmyyqkef-ENzrjEomg0ZhJ1oPxMn-AF-exdvNaSXj_zFgmlhLX-f9WoO02oiCGM8ATI_o6w5GvjLISP-splM02BrFUrfSYg2QIO00lyr",
+                    "width": 2048
+                }
+            ],
+            "place_id": "ChIJO-Y8I_-ipBIR203wG3Dydz4",
+            "plus_code": {
+                "compound_code": "95JJ+X5 Barcelona, Spain",
+                "global_code": "8FH495JJ+X5"
+            },
+            "price_level": 1,
+            "rating": 4.3,
+            "reference": "ChIJO-Y8I_-ipBIR203wG3Dydz4",
+            "scope": "GOOGLE",
+            "types": [
+                "cafe",
+                "lodging",
+                "bar",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 920,
+            "vicinity": "Via Laietana, 5, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.3865253, "lng": 2.1832397 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.38784998029149,
+                        "lng": 2.184610930291502
+                    },
+                    "southwest": {
+                        "lat": 41.3851520197085,
+                        "lng": 2.181912969708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+            "icon_background_color": "#FF9E67",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+            "name": "Café Kafka",
+            "opening_hours": { "open_now": false },
+            "photos": [
+                {
+                    "height": 2448,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/115549196770567992867\">Or Hiltch</a>"
+                    ],
+                    "photo_reference": "Aaw_FcL5wcHbsMd5iJBtXLB1uZa1f3TYKc0JCpHjMPkxNaiN8nRIJ24m88IThRn_6xsMEU14TjTINQqBE6-x8wTSyuVBhlr2-xK87mSSyP06ka4BdnrKHl-1cxX5O_xsC7LJEfoql5gjlRiWhNTT54sFstqynHN3dmmzlLQ7dK2lEBTvRJY4",
+                    "width": 3264
+                }
+            ],
+            "place_id": "ChIJdU2O6f2ipBIRqCKYVmZJz-E",
+            "plus_code": {
+                "compound_code": "95PM+J7 Barcelona, Spain",
+                "global_code": "8FH495PM+J7"
+            },
+            "price_level": 2,
+            "rating": 3.8,
+            "reference": "ChIJdU2O6f2ipBIRqCKYVmZJz-E",
+            "scope": "GOOGLE",
+            "types": [
+                "restaurant",
+                "cafe",
+                "bar",
+                "food",
+                "point_of_interest",
+                "store",
+                "establishment"
+            ],
+            "user_ratings_total": 558,
+            "vicinity": "Carrer de la Fusina, 7, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.38320600000001, "lng": 2.1773014 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.3845388802915,
+                        "lng": 2.178671930291501
+                    },
+                    "southwest": {
+                        "lat": 41.3818409197085,
+                        "lng": 2.175973969708497
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+            "icon_background_color": "#FF9E67",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+            "name": "Gelaaati Di Marco",
+            "opening_hours": { "open_now": false },
+            "photos": [
+                {
+                    "height": 480,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/105221496529848856770\">Gelaaati Di Marco</a>"
+                    ],
+                    "photo_reference": "Aaw_FcJcdLHZnuNECwd_R1yB-wcv3fAQbVz3zbmvEOJRMGNztnCzmNzzNhdlD9MdiH_N_Ptorke8LoHPyeXCRF-P26bUQM0bWgEd8N8jUvMUvg-tgbTh3QN-NGrapWrNDViVBKmtasRUPZRe0J2Exf816Z-CBPWKwHI03nmK-cIt-FoA-WKP",
+                    "width": 640
+                }
+            ],
+            "place_id": "ChIJmUz9_fiipBIRsN0FajL9wsg",
+            "plus_code": {
+                "compound_code": "95MG+7W Barcelona, Spain",
+                "global_code": "8FH495MG+7W"
+            },
+            "price_level": 2,
+            "rating": 4.6,
+            "reference": "ChIJmUz9_fiipBIRsN0FajL9wsg",
+            "scope": "GOOGLE",
+            "types": [
+                "cafe",
+                "food",
+                "point_of_interest",
+                "store",
+                "establishment"
+            ],
+            "user_ratings_total": 3250,
+            "vicinity": "Carrer de la Llibreteria, 7, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.377651, "lng": 2.174209 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.3790144302915,
+                        "lng": 2.175546430291502
+                    },
+                    "southwest": {
+                        "lat": 41.3763164697085,
+                        "lng": 2.172848469708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "La Concha Shisha & Cocktail Lounge Bar",
+            "opening_hours": { "open_now": false },
+            "photos": [
+                {
+                    "height": 285,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/105857794059219867516\">La Concha Shisha &amp; Cocktail Lounge Bar</a>"
+                    ],
+                    "photo_reference": "Aaw_FcIngo7halGMkJtbmW6tjq3Mj__y33jwKQd7WhzA3l0_Je8seWLTtgvP2-tVZi8BWhE9iyhXZ4p1k9iExxAC_V1AAJTPNCscIog3c9aeX666XjTXnnjjfCJCQB-rGxmaWsacVxP-5_g8dezopQH6g0unS11frDZ6iiYcQnAdl8Zh5JEd",
+                    "width": 470
+                }
+            ],
+            "place_id": "ChIJ3ehv11mipBIR9VHpgWaPzrk",
+            "plus_code": {
+                "compound_code": "95HF+3M Barcelona, Spain",
+                "global_code": "8FH495HF+3M"
+            },
+            "price_level": 1,
+            "rating": 4.3,
+            "reference": "ChIJ3ehv11mipBIR9VHpgWaPzrk",
+            "scope": "GOOGLE",
+            "types": [
+                "night_club",
+                "cafe",
+                "bar",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 847,
+            "vicinity": "Carrer de Guàrdia, 14, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.3830855, "lng": 2.1708579 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.38454318029149,
+                        "lng": 2.171954080291501
+                    },
+                    "southwest": {
+                        "lat": 41.3818452197085,
+                        "lng": 2.169256119708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "Granja M. Viader",
+            "opening_hours": { "open_now": true },
+            "photos": [
+                {
+                    "height": 3744,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/103013405335588173718\">Granja M. Viader</a>"
+                    ],
+                    "photo_reference": "Aaw_FcL_FJ4TnllEYiFFsxUqjjzw1MVfMOROuNtKuvn4fw237eg2VkKqb_ceYGQXWHYRRngauSvf9BiQxjCLQJIROlLiY7lUpMs1cf6LiUmu4a_f4CJld5WcuOJf1RlpvnyQGq-lmegonRPnKIL4Kz4TN6Joxa26nqVl8Z_k-z2fCroedV0q",
+                    "width": 5616
+                }
+            ],
+            "place_id": "ChIJgah3XvaipBIR2IU_2crEBdw",
+            "plus_code": {
+                "compound_code": "95MC+68 Barcelona, Spain",
+                "global_code": "8FH495MC+68"
+            },
+            "price_level": 2,
+            "rating": 4.3,
+            "reference": "ChIJgah3XvaipBIR2IU_2crEBdw",
+            "scope": "GOOGLE",
+            "types": [
+                "cafe",
+                "food",
+                "point_of_interest",
+                "store",
+                "establishment"
+            ],
+            "user_ratings_total": 3102,
+            "vicinity": "Carrer d'en Xuclà, 4, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.383817, "lng": 2.169634 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.3852181802915,
+                        "lng": 2.170939680291502
+                    },
+                    "southwest": {
+                        "lat": 41.3825202197085,
+                        "lng": 2.168241719708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+            "icon_background_color": "#FF9E67",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+            "name": "Buenas Migas",
+            "opening_hours": { "open_now": true },
+            "photos": [
+                {
+                    "height": 400,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/106659551870260689530\">Buenas Migas</a>"
+                    ],
+                    "photo_reference": "Aaw_FcJv4E_81z1FaKYZw-D37qyJDGV5vVKifG0yv0eHzjavCRc5RpssO5iZtpcnp2uN7jHP4N6Jhpp83VxnqK068zO7dIyHWcGo_yRJVUUgJVDBPGco01DvjZv0oSfyjjJcfx81NxlPityHLCiMxG3nFz-pZo3YY2QBwimkjMXRq4BUSrGf",
+                    "width": 533
+                }
+            ],
+            "place_id": "ChIJ03TBgvaipBIRM4LhiidJbwA",
+            "plus_code": {
+                "compound_code": "95M9+GV Barcelona, Spain",
+                "global_code": "8FH495M9+GV"
+            },
+            "price_level": 2,
+            "rating": 4.2,
+            "reference": "ChIJ03TBgvaipBIRM4LhiidJbwA",
+            "scope": "GOOGLE",
+            "types": [
+                "cafe",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "store",
+                "establishment"
+            ],
+            "user_ratings_total": 1889,
+            "vicinity": "Plaça del Bonsuccés, 6, Bajo, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.3808105, "lng": 2.1895319 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.3821465802915,
+                        "lng": 2.190827480291502
+                    },
+                    "southwest": {
+                        "lat": 41.3794486197085,
+                        "lng": 2.188129519708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+            "icon_background_color": "#FF9E67",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+            "name": "The New Orleans Coffee & Tea Company",
+            "opening_hours": { "open_now": true },
+            "photos": [
+                {
+                    "height": 2048,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/108427124636656746602\">William Sehlin</a>"
+                    ],
+                    "photo_reference": "Aaw_FcLK1GxD-DZs6GVqejPb0whwTSauFVzoQiQKLeO4LiGEnZLnHsgRziZDYWepNhLx3UCTzi_RdSA7eX27Rm91b-2KCsYb_OrTtXsgvNO051WrREsh_hqAO9u6yk2Z5z6x7n_QtnwJjWqWnO_1mk8hi_7pRnb2H3uXjPP5_3lL-jhXxKMO",
+                    "width": 1536
+                }
+            ],
+            "place_id": "ChIJVcuLUwejpBIRsziCMSzUXNc",
+            "plus_code": {
+                "compound_code": "95JQ+8R Barcelona, Spain",
+                "global_code": "8FH495JQ+8R"
+            },
+            "price_level": 1,
+            "rating": 4,
+            "reference": "ChIJVcuLUwejpBIRsziCMSzUXNc",
+            "scope": "GOOGLE",
+            "types": [
+                "cafe",
+                "food",
+                "point_of_interest",
+                "store",
+                "establishment"
+            ],
+            "user_ratings_total": 419,
+            "vicinity": "Carrer de l'Atlàntida, 23, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.3804056, "lng": 2.1789667 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.3817616802915,
+                        "lng": 2.180283630291501
+                    },
+                    "southwest": {
+                        "lat": 41.3790637197085,
+                        "lng": 2.177585669708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+            "icon_background_color": "#FF9E67",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+            "name": "Bar Sincopa",
+            "opening_hours": { "open_now": false },
+            "photos": [
+                {
+                    "height": 682,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/109221093537618692679\">torkil storli</a>"
+                    ],
+                    "photo_reference": "Aaw_FcKmMQOosJdMOzlgt_tsW-OcirksNNmhbOIAX8v7Y60iothbAmHLv8m61g4yG3lsVHRoF15R2l-P2ZCOY-fgDEPEbjGvObf6FHPLFoJOkNmk1NHPiCswRVwjAc-EWTxeUxjm0c4ibAd062AntweB24oyMxfQ8lpP2Jf8HzZ2LY2FiumP",
+                    "width": 1024
+                }
+            ],
+            "place_id": "ChIJHxF3A1aipBIR5ynJ7yPLk7o",
+            "plus_code": {
+                "compound_code": "95JH+5H Barcelona, Spain",
+                "global_code": "8FH495JH+5H"
+            },
+            "price_level": 1,
+            "rating": 4.5,
+            "reference": "ChIJHxF3A1aipBIR5ynJ7yPLk7o",
+            "scope": "GOOGLE",
+            "types": [
+                "bar",
+                "night_club",
+                "cafe",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 1349,
+            "vicinity": "Carrer d'Avinyó, 35, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.384099, "lng": 2.184245 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.3853926802915,
+                        "lng": 2.185724080291501
+                    },
+                    "southwest": {
+                        "lat": 41.3826947197085,
+                        "lng": 2.183026119708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+            "icon_background_color": "#FF9E67",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+            "name": "LULU & FLYN",
+            "opening_hours": { "open_now": true },
+            "photos": [
+                {
+                    "height": 1222,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/113894313477860870914\">LULU &amp; FLYN</a>"
+                    ],
+                    "photo_reference": "Aaw_FcJHpo2izKDmPkg6Qdm49IrDAaGJZxSpYW72XSna4SLjCeT8lPyeLheZxkyknNzAAgp_L3oCbMHuxKpT5RF6y3jDYzVzu_VdXV29TF85yYNTbIshiGF_HkHZ78sN53MqqL7Ge6HPPDdKc1sv5mHgWovCF1vjBHy8dkl5h1ZW2bu1jt-T",
+                    "width": 2573
+                }
+            ],
+            "place_id": "ChIJ9WLtIP6ipBIRAKt6mQR5kDU",
+            "plus_code": {
+                "compound_code": "95MM+JM Barcelona, Spain",
+                "global_code": "8FH495MM+JM"
+            },
+            "price_level": 2,
+            "rating": 4.3,
+            "reference": "ChIJ9WLtIP6ipBIRAKt6mQR5kDU",
+            "scope": "GOOGLE",
+            "types": [
+                "cafe",
+                "bar",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 854,
+            "vicinity": "Avinguda del Marquès de l'Argentera, 7, Barcelona"
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": { "lat": 41.3841501, "lng": 2.1842658 },
+                "viewport": {
+                    "northeast": {
+                        "lat": 41.3853991802915,
+                        "lng": 2.185710330291502
+                    },
+                    "southwest": {
+                        "lat": 41.3827012197085,
+                        "lng": 2.183012369708498
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+            "icon_background_color": "#FF9E67",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+            "name": "corner",
+            "opening_hours": { "open_now": true },
+            "photos": [
+                {
+                    "height": 1536,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/104632331751384050673\">corner</a>"
+                    ],
+                    "photo_reference": "Aaw_FcKw5Jp47PtL3tFGVCZbo-GFdTS31nRED1mWwg-i0SU78-oRLHMdVKNp0h2d5OBZiRs1NqH4V9r2cjqIpP9nSPK4-amz66YDxqC8QX63Aj2yVSP5f_kd2PnmRmEknrEzFx7KrGnN9JhIBW2BzIPjrKRNWNcmlSJUj6TA2nwhBCxiPO2H",
+                    "width": 2048
+                }
+            ],
+            "place_id": "ChIJoWa42AGjpBIR7ykPsyFhytE",
+            "plus_code": {
+                "compound_code": "95MM+MP Barcelona, Spain",
+                "global_code": "8FH495MM+MP"
+            },
+            "rating": 3.9,
+            "reference": "ChIJoWa42AGjpBIR7ykPsyFhytE",
+            "scope": "GOOGLE",
+            "types": [
+                "cafe",
+                "bar",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 293,
+            "vicinity": "Avinguda del Marquès de l'Argentera, 7, Barcelona"
+        }
+    ],
+    "status": "OK"
+}
