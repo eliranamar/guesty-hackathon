@@ -3,6 +3,7 @@ import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import { useRouter } from 'next/router'
+import Chip from '@mui/material/Chip'
 import Link from '../../src/Link'
 import ExperienceCard from '../../src/components/experienceCard'
 
@@ -62,8 +63,45 @@ export default function Experience() {
                     </Link>
                 </Box>
 
-                <Container maxWidth="md">
+                <Container maxWidth="sm">
                     <div>
+                        <Chip
+                            label="Host recommendations"
+                            sx={{
+                                borderRadius: '4px',
+                                backgroundColor: '#87FF9A',
+                            }}
+                        />
+                        {experiences.map((experience) => (
+                            <ExperienceCard
+                                key={experience.id}
+                                experience={experience}
+                            />
+                        ))}
+                    </div>
+                    <div>
+                        <Chip
+                            label="Guests recommendations"
+                            sx={{
+                                borderRadius: '4px',
+                                backgroundColor: '#FFC187',
+                            }}
+                        />
+                        {experiences.map((experience) => (
+                            <ExperienceCard
+                                key={experience.id}
+                                experience={experience}
+                            />
+                        ))}
+                    </div>
+                    <div>
+                        <Chip
+                            label="A.I. recommendations"
+                            sx={{
+                                borderRadius: '4px',
+                                backgroundColor: '#87FF9A',
+                            }}
+                        />
                         {experiences.map((experience) => (
                             <ExperienceCard
                                 key={experience.id}

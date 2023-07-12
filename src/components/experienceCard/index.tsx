@@ -5,6 +5,7 @@ import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import { styled } from '@mui/material/styles';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import Button from "@mui/material/Button";
 
 const ImgDiv = styled('div')(({ src }) => ({
     width: '100%',
@@ -23,13 +24,12 @@ export default function ExperienceCard({ experience }) {
 
     return (
         <div>
-            <Chip label="Host recommendation" />
             <Grid container justifyContent="space-between" alignItems="center" style={{ margin: '24px 0' }}>
                 <Typography variant="h5">
                     <strong>{title}</strong>
                 </Typography>
                 <Typography variant="caption" color="text.secondary">
-                    <LocationOnIcon/> {distance}
+                    <LocationOnIcon sx={{ mr: 1, verticalAlign: 'middle' }}/> {distance}
                 </Typography>
             </Grid>
 
@@ -37,12 +37,14 @@ export default function ExperienceCard({ experience }) {
                 <Chip label="Host recommendation" variant="filled" />
             </ImgDiv>
 
-            <Typography variant="body1" style={{ margin: '24px 0' }} color="text.secondary">
-                {description}
+            <Typography variant="body1" style={{ margin: '16px 0' }} color="text.secondary">
+                <strong>{description}</strong>
             </Typography>
 
             <Link href="https://google.com" target="_blank">
-                Learn more >
+                <Button>
+                    Learn more >
+                </Button>
             </Link>
         </div>
     )
