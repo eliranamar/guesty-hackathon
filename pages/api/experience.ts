@@ -53,6 +53,7 @@ const saveExperienceData = (data: any) => {
     fs.writeFileSync(tmpPath, stringifyData);
 }
 const getExperiencesData = () => {
+    // if updated - take tmp file
     const jsonData = fs.existsSync(tmpPath) ? fs.readFileSync(tmpPath) : fs.readFileSync(filePath);
     return JSON.parse(jsonData.toString());   
 }
