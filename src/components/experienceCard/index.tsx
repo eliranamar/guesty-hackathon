@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 import { styled } from '@mui/material/styles';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Stack from '@mui/material/Stack';
-import {MEMORY_TYPE} from "../../../constants/memory";
+import {EXPERIENCE_TYPE} from "../../../constants/memory";
 
 const ImgDiv = styled('div')(({ src }) => ({
     width: '100%',
@@ -23,13 +23,13 @@ const ImgDiv = styled('div')(({ src }) => ({
 
 const getChipColor = (type) => {
     switch (type) {
-        case MEMORY_TYPE.RESTAURANT:
+        case EXPERIENCE_TYPE.RESTAURANT:
             return '#FFF964';
-        case MEMORY_TYPE.CONCERT:
+        case EXPERIENCE_TYPE.CONCERT:
             return '#FF87B2';
-        case MEMORY_TYPE.VOLUNTEERING:
+        case EXPERIENCE_TYPE.VOLUNTEERING:
             return '#FFD787';
-        case MEMORY_TYPE.TRIP:
+        case EXPERIENCE_TYPE.TRIP:
             return '#87C9FF';
         default:
             return '#87FF9A';
