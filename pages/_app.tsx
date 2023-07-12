@@ -1,6 +1,8 @@
 import '../styles/globals.css'
 
 import Head from 'next/head'
+import Container from '@mui/material/Container'
+import Box from '@mui/material/Box'
 import { AppProps } from 'next/app'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -36,7 +38,9 @@ export default function MyApp(props: MyAppProps) {
                 {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                 <Header />
                 <CssBaseline />
-                <Component {...pageProps} />
+                <Container maxWidth="lg">
+                    <Component {...pageProps} />
+                </Container>
             </ThemeProvider>
         </CacheProvider>
     )

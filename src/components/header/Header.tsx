@@ -3,6 +3,8 @@ import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 
+import { useRouter } from 'next/router'
+
 import IconButton from '@mui/material/IconButton'
 
 import AccountCircle from '@mui/icons-material/AccountCircle'
@@ -19,9 +21,16 @@ function a11yProps(index: number) {
     }
 }
 
+const ROUTES = {
+    analytics: '/',
+    recommendations: '/recommendations',
+}
+
 export default function Header() {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
     const [value, setValue] = React.useState(0)
+
+    const router = useRouter()
 
     const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget)
@@ -33,6 +42,10 @@ export default function Header() {
 
     const handleClose = () => {
         setAnchorEl(null)
+    }
+
+    const handleTabClick = (route: string) => {
+        router.push(ROUTES[route])
     }
 
     return (
@@ -59,8 +72,16 @@ export default function Header() {
                         }}
                         textColor="inherit"
                     >
-                        <Tab label="Analytics" {...a11yProps(1)} />
-                        <Tab label="Recommendations" {...a11yProps(2)} />
+                        <Tab
+                            onClick={() => handleTabClick('analytics')}
+                            label="Analytics"
+                            {...a11yProps(1)}
+                        />
+                        <Tab
+                            onClick={() => handleTabClick('recommendations')}
+                            label="Recommendations"
+                            {...a11yProps(2)}
+                        />
                     </Tabs>
                     <div>
                         <IconButton
