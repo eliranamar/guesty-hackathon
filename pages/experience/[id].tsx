@@ -8,6 +8,9 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Stack from '@mui/material/Stack'
+import OutlinedInput from '@mui/material/OutlinedInput'
+import ListItemText from '@mui/material/ListItemText'
+import Checkbox from '@mui/material/Checkbox'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 import ExperienceCard from '../../src/components/experienceCard/ExperienceCard'
 import styled from '@emotion/styled'
@@ -27,7 +30,7 @@ const experiences: Experience[] = [
         reservation_id: '649d218795c82f002be7a1c8',
         name: "Negroni's Trio at the Jamboree Jazz Club",
         description:
-            'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
         distance: '450m',
         recommender: Recommender.HOST,
         type: ExperienceType.CONCERT,
@@ -51,12 +54,11 @@ const experiences: Experience[] = [
         reservation_id: '649d218795c82f002be7a1c8',
         name: 'Volunteering at the local animal shelter',
         description:
-            'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
         distance: '450m',
         recommender: Recommender.HOST,
         type: ExperienceType.VOLUNTEERING,
         source: ExperienceSoruce.AI,
-        discount_amount: '5',
         discount_type: '',
         location_longitude: '',
         location_latitude: '',
@@ -75,7 +77,7 @@ const experiences: Experience[] = [
         reservation_id: '649d218795c82f002be7a1c8',
         name: 'Soccer match at Camp Nou',
         description:
-            'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
         distance: '450m',
         recommender: Recommender.HOST,
         type: ExperienceType.SPORT,
@@ -111,6 +113,17 @@ const AbstractBackground = styled('img')(() => ({
     right: 0,
     zIndex: -1,
 }))
+
+const ITEM_HEIGHT = 48
+const ITEM_PADDING_TOP = 8
+const MenuProps = {
+    PaperProps: {
+        style: {
+            maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+            width: 250,
+        },
+    },
+}
 
 export default function Experience() {
     const [typeFilter, setTypeFilter] = React.useState<string>('ALL')
@@ -156,6 +169,9 @@ export default function Experience() {
         <Background>
             <AbstractBackground src="/Abstract.svg" />
             <Container style={{ maxWidth: 620, marginTop: 50 }}>
+                <div style={{ textAlign: 'center', marginBottom: 50 }}>
+                    <img src="/host_logo.png" alt="" />
+                </div>
                 <Typography
                     variant="h3"
                     fontWeight={600}
@@ -163,7 +179,7 @@ export default function Experience() {
                 >
                     Experiences we tailored for you
                 </Typography>
-                <Paper variant="outlined" sx={{ padding: 2 }}>
+                <Paper variant="outlined" sx={{ padding: 2, marginBottom: 4 }}>
                     <Grid
                         container
                         spacing={1}
@@ -174,6 +190,46 @@ export default function Experience() {
                         <Grid item>
                             <Grid container>
                                 <Stack direction="row" spacing={1}>
+                                    {/* TODO: multi select filter */}
+                                    {/*<FormControl sx={{ m: 1, width: 300 }}>
+                                        <InputLabel id="demo-multiple-checkbox-label">
+                                            Type
+                                        </InputLabel>
+                                        <Select
+                                            labelId="demo-multiple-checkbox-label"
+                                            id="demo-multiple-checkbox"
+                                            multiple
+                                            value={personName}
+                                            onChange={handleChange}
+                                            input={
+                                                <OutlinedInput label="Tag" />
+                                            }
+                                            renderValue={(selected) =>
+                                                selected.join(', ')
+                                            }
+                                            MenuProps={MenuProps}
+                                        >
+                                            {Object.values(ExperienceType).map(
+                                                (name) => (
+                                                    <MenuItem
+                                                        key={name}
+                                                        value={name}
+                                                    >
+                                                        <Checkbox
+                                                            checked={
+                                                                personName.indexOf(
+                                                                    name,
+                                                                ) > -1
+                                                            }
+                                                        />
+                                                        <ListItemText
+                                                            primary={name}
+                                                        />
+                                                    </MenuItem>
+                                                ),
+                                            )}
+                                        </Select>
+                                    </FormControl>*/}
                                     <FormControl fullWidth size="small">
                                         <InputLabel id="demo-simple-select-label">
                                             Type
@@ -227,7 +283,7 @@ export default function Experience() {
                         </Grid>
                     </Grid>
                 </Paper>
-                <div>
+                <div style={{ marginBottom: 80 }}>
                     {filteredExperiences.map((experience) => (
                         <ExperienceCard
                             key={`Host${experience.id}`}
