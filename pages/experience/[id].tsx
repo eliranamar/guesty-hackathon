@@ -17,7 +17,7 @@ import styled from '@emotion/styled'
 import { toTitleCase } from '../../src/utils'
 import { Experience } from '../../src/components/experienceCard/types'
 import {
-    ExperienceSoruce,
+    ExperienceSource,
     ExperienceType,
     Recommender,
 } from '../../constants/types'
@@ -37,7 +37,7 @@ const experiences: Experience[] = [
         distance: '450m',
         recommender: Recommender.HOST,
         type: ExperienceType.CONCERT,
-        source: ExperienceSoruce.AI,
+        source: ExperienceSource.AI,
         discount_amount: '5',
         discount_type: '',
         location_longitude: '',
@@ -61,7 +61,7 @@ const experiences: Experience[] = [
         distance: '450m',
         recommender: Recommender.HOST,
         type: ExperienceType.VOLUNTEERING,
-        source: ExperienceSoruce.AI,
+        source: ExperienceSource.AI,
         discount_type: '',
         location_longitude: '',
         location_latitude: '',
@@ -84,7 +84,7 @@ const experiences: Experience[] = [
         distance: '450m',
         recommender: Recommender.HOST,
         type: ExperienceType.SPORT,
-        source: ExperienceSoruce.HOST,
+        source: ExperienceSource.HOST,
         discount_amount: '5',
         discount_type: '',
         location_longitude: '',
@@ -130,25 +130,24 @@ const MenuProps = {
 
 export default function Experience() {
     const [typeFilter, setTypeFilter] = React.useState<string>('ALL')
-    const [recommenderFilter, setRecommenderFilter] =
-        React.useState<string>('ALL')
+    const [sourceFilter, setSourceFilter] = React.useState<string>('ALL')
 
     const filteredExperiences = useMemo(() => {
-        let tempExperiences = [...exper]
+        let tempExperiences: Experience[] = [...exper] as Experience[]
         if (typeFilter && typeFilter !== 'ALL') {
             tempExperiences = tempExperiences.filter(
                 (experience) => experience.type === typeFilter,
             )
         }
 
-        if (recommenderFilter && recommenderFilter !== 'ALL') {
+        if (sourceFilter && sourceFilter !== 'ALL') {
             tempExperiences = tempExperiences.filter(
-                (experience) => experience.recommender === recommenderFilter,
+                (experience) => experience.source === sourceFilter,
             )
         }
 
         return tempExperiences
-    }, [exper, typeFilter, recommenderFilter])
+    }, [exper, typeFilter, sourceFilter])
 
     // const hostRecommendations = useMemo(() => {
     //     return experiences.filter(
@@ -166,7 +165,7 @@ export default function Experience() {
         setTypeFilter(event.target.value as string)
     }
     const handleRecommenderChange = (event: SelectChangeEvent) => {
-        setRecommenderFilter(event.target.value as string)
+        setSourceFilter(event.target.value as string)
     }
     return (
         <Background>
@@ -264,7 +263,7 @@ export default function Experience() {
                                         <Select
                                             labelId="demo-simple-select-label"
                                             id="demo-simple-select"
-                                            value={recommenderFilter}
+                                            value={sourceFilter}
                                             label="Recommender"
                                             onChange={handleRecommenderChange}
                                         >
