@@ -3,10 +3,9 @@ import { NextApiRequest, NextApiResponse } from 'next';
 const fs = require('fs');
 const path = require("path");
 
-// const storagePath = 'data/experiences.json';
-const storagePath = '/tmp/experiences.json';
-const filePath = storagePath;
-// const filePath = path.resolve(process.cwd(), storagePath);
+const storagePath = 'data/experiences.json';
+const tmpPath = '/tmp/experiences.json';
+const filePath = path.resolve(process.cwd(), storagePath);
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
     console.log('req.method', req.method)
@@ -51,9 +50,9 @@ function updateExperience(req: NextApiRequest) {
 // util functions
 const saveExperienceData = (data: any) => {
     const stringifyData = JSON.stringify(data,null,2);
-    fs.writeFileSync(filePath, stringifyData);
+    fs.writeFileSync(tmpPath, stringifyData);
 }
 const getExperiencesData = () => {
-    const jsonData = fs.readFileSync(filePath);
+    const jsonData = fs.existsSync(tmpPath) ? fs.readFileSync(tmpPath) : fs.readFileSync(filePath);
     return JSON.parse(jsonData.toString());   
 }
