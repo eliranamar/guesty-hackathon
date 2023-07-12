@@ -13,6 +13,8 @@ import Select, { SelectChangeEvent } from '@mui/material/Select'
 import Link from '../../src/Link'
 import ExperienceCard from '../../src/components/experienceCard'
 import { EXPERIENCE_SOURCE, EXPERIENCE_TYPE } from '../../constants/memory'
+import styled from '@emotion/styled'
+import zIndex from '@mui/material/styles/zIndex'
 import { toTitleCase } from '../../src/utils'
 
 const experiences = [
@@ -87,8 +89,25 @@ const experiences = [
     },
 ]
 
+const Background = styled('div')<{}>(({}) => ({
+    position: 'relative',
+    width: '100%',
+    display: 'flex',
+    height: 'calc(100vh - 64px)',
+}))
+
+const AbstractBackground = styled('img')(() => ({
+    position: 'absolute',
+    width: '100%',
+    objectFit: 'cover',
+    opacity: 0.4,
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: -1,
+}))
+
 export default function Experience() {
-    const router = useRouter()
     const [typeFilter, setTypeFilter] = React.useState<string>('ALL')
 
     const filteredExperiences = useMemo(() => {
@@ -116,77 +135,101 @@ export default function Experience() {
     const handleTypeChange = (event: SelectChangeEvent) => {
         setTypeFilter(event.target.value as string)
     }
-
     return (
-        <div>
-            <Container maxWidth="lg">
-                <Box
-                    sx={{
-                        my: 4,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}
+        <Background>
+            <AbstractBackground src="/Abstract.svg" />
+            <Container style={{ maxWidth: 620, marginTop: 50 }}>
+                <Typography
+                    variant="h3"
+                    fontWeight={600}
+                    style={{ marginBottom: 25 }}
                 >
-                    <Typography variant="h3" gutterBottom fontWeight={600}>
-                        Experiences we tailored for you
-                    </Typography>
-                    <Typography variant="h4" gutterBottom>
-                        This is the guest experience page with id:{' '}
-                        {router.query.id}
-                    </Typography>
-                    <Link href="/" color="secondary">
-                        Go to the home page
-                    </Link>
-                </Box>
-
-                <Container maxWidth="sm">
-                    <Paper variant="outlined" sx={{ padding: 2 }}>
-                        <Grid
-                            container
-                            spacing={1}
-                            justifyContent="space-between"
-                        >
-                            <Grid item>Filter by</Grid>
-                            <Grid item>
-                                <FormControl fullWidth>
-                                    <InputLabel id="demo-simple-select-label">
-                                        Type
-                                    </InputLabel>
-                                    <Select
-                                        labelId="demo-simple-select-label"
-                                        id="demo-simple-select"
-                                        value={typeFilter}
-                                        label="Type"
-                                        onChange={handleTypeChange}
-                                    >
-                                        <MenuItem value="ALL">All</MenuItem>
-                                        {Object.values(EXPERIENCE_TYPE).map(
-                                            (type) => (
-                                                <MenuItem
-                                                    key={type}
-                                                    value={type}
-                                                >
-                                                    {toTitleCase(type)}
-                                                </MenuItem>
-                                            ),
-                                        )}
-                                    </Select>
-                                </FormControl>
-                            </Grid>
+                    Experiences we tailored for you
+                </Typography>
+                <Paper variant="outlined" sx={{ padding: 2 }}>
+                    <Grid
+                        container
+                        spacing={1}
+                        justifyContent="space-between"
+                    >
+                        <Grid item>Filter by</Grid>
+                        <Grid item>
+                            <FormControl fullWidth>
+                                <InputLabel id="demo-simple-select-label">
+                                    Type
+                                </InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={typeFilter}
+                                    label="Type"
+                                    onChange={handleTypeChange}
+                                >
+                                    <MenuItem value="ALL">All</MenuItem>
+                                    {Object.values(EXPERIENCE_TYPE).map(
+                                        (type) => (
+                                            <MenuItem
+                                                key={type}
+                                                value={type}
+                                            >
+                                                {toTitleCase(type)}
+                                            </MenuItem>
+                                        ),
+                                    )}
+                                </Select>
+                            </FormControl>
                         </Grid>
-                    </Paper>
-                    <div>
-                        {filteredExperiences.map((experience) => (
-                            <ExperienceCard
-                                key={`Host${experience.id}`}
-                                experience={experience}
-                            />
-                        ))}
-                    </div>
-                </Container>
+                    </Grid>
+                </Paper>
+                <div>
+                    <Chip
+                        size="small"
+                        label="Host recommendations"
+                        sx={{
+                            borderRadius: '4px',
+                            backgroundColor: '#87FF9A',
+                        }}
+                    />
+                    {experiences.map((experience) => (
+                        <ExperienceCard
+                            key={experience.id}
+                            experience={experience}
+                        />
+                    ))}
+                </div>
+                <div>
+                    <Chip
+                        size="small"
+                        label="Guests recommendations"
+                        sx={{
+                            borderRadius: '4px',
+                            backgroundColor: '#FFC187',
+                        }}
+                    />
+                    {experiences.map((experience) => (
+                        <ExperienceCard
+                            key={experience.id}
+                            experience={experience}
+                        />
+                    ))}
+                </div>
+                <div>
+                    <Chip
+                        size="small"
+                        label="A.I. recommendations"
+                        sx={{
+                            borderRadius: '4px',
+                            backgroundColor: '#87FF9A',
+                        }}
+                    />
+                    {experiences.map((experience) => (
+                        <ExperienceCard
+                            key={experience.id + experience.reservation_id}
+                            experience={experience}
+                        />
+                    ))}
+                </div>
             </Container>
-        </div>
+        </Background>
     )
 }
