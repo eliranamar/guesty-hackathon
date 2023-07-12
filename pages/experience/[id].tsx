@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import Chip from '@mui/material/Chip'
 import Link from '../../src/Link'
 import ExperienceCard from '../../src/components/experienceCard'
+import { MEMORY_SOURCE, MEMORY_TYPE } from '../../constants/memory'
 
 const experiences = [
     {
@@ -14,11 +15,12 @@ const experiences = [
         listing_id: ['61a1fef12a4e1c0033292de0'],
         reservation_id: '649d218795c82f002be7a1c8',
         name: "Negroni's Trio at the Jamboree Jazz Club",
-        description: '',
+        description:
+            'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
         distance: '450 m',
-        type: 'concert',
-        source: 'web',
-        discount_amount: '',
+        type: MEMORY_TYPE.CONCERT,
+        source: MEMORY_SOURCE.AI,
+        discount_amount: '5',
         discount_type: '',
         location_longitude: '',
         location_latitude: '',
@@ -28,25 +30,6 @@ const experiences = [
         date_to: '2023-08-05',
         time: '20:00',
         link: 'https://www.songkick.com/concerts/41121072-negronis-trio-at-jamboree-jazz-club',
-    },
-    {
-        id: '2',
-        title: 'Experience 2',
-        distance: '2.5 km',
-        type: 'TRIP',
-        img: 'https://www.shutterstock.com/image-illustration/fake-news-on-internet-modern-600w-1121670800.jpg',
-        description:
-            'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-    },
-    {
-        id: '3',
-        title: 'Experience 3',
-        distance: '3.5 km',
-        type: 'HOTEL',
-        discount: 50,
-        img: 'https://www.shutterstock.com/image-illustration/fake-news-on-internet-modern-600w-1121670800.jpg',
-        description:
-            'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
     },
 ]
 
@@ -120,7 +103,7 @@ export default function Experience() {
                         />
                         {experiences.map((experience) => (
                             <ExperienceCard
-                                key={experience.id}
+                                key={experience.id + experience.reservation_id}
                                 experience={experience}
                             />
                         ))}

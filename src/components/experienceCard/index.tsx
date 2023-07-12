@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid";
 import { styled } from '@mui/material/styles';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Stack from '@mui/material/Stack';
+import {MEMORY_TYPE} from "../../../constants/memory";
 
 const ImgDiv = styled('div')(({ src }) => ({
     width: '100%',
@@ -22,13 +23,13 @@ const ImgDiv = styled('div')(({ src }) => ({
 
 const getChipColor = (type) => {
     switch (type) {
-        case 'RESTAURANT':
+        case MEMORY_TYPE.RESTAURANT:
             return '#FFF964';
-        case 'TOUR':
+        case MEMORY_TYPE.CONCERT:
             return '#FF87B2';
-        case 'VOLUNTEERING':
+        case MEMORY_TYPE.VOLUNTEERING:
             return '#FFD787';
-        case 'HOTEL':
+        case MEMORY_TYPE.TRIP:
             return '#87C9FF';
         default:
             return '#87FF9A';
@@ -36,26 +37,26 @@ const getChipColor = (type) => {
 }
 
 export default function ExperienceCard({ experience }) {
-    const { title, distance, type, discount, description, img, showDescription = true } = experience;
-
+    const { distance, type, discount_amount, description, image, showDescription = true, name, link } = experience;
+    console.log({experience});
     return (
         <div style={{marginBottom: 48}}>
             <Grid container justifyContent="space-between" alignItems="center" sx={{ margin: '16px 0' }}>
                 <Typography variant="h5" fontWeight={600}>
-                    {title}
+                    {name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                     <LocationOnIcon sx={{ verticalAlign: 'middle' }}/> {distance}
                 </Typography>
             </Grid>
 
-            <ImgDiv src={img}>
+            <ImgDiv src={image}>
                 <Grid container justifyContent="flex-end">
                     <Stack direction="row" spacing={1}>
-                        {discount && (
+                        {discount_amount && (
                             <Chip
                                 size="small"
-                                label={`${discount}% off`}
+                                label={`${discount_amount}% off`}
                                 sx={{
                                     borderRadius: '4px',
                                     backgroundColor: '#46FF59',
@@ -80,7 +81,7 @@ export default function ExperienceCard({ experience }) {
                 </Typography>
             )}
 
-            <Link href="https://google.com" target="_blank" sx={{ margin: '16px 0', textDecoration: 'none' }}>
+            <Link href={link} target="_blank" sx={{ margin: '16px 0', textDecoration: 'none' }}>
                 <Typography variant="button" color="text.primary">
                     Learn more >
                 </Typography>
