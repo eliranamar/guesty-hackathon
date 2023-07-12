@@ -1,6 +1,7 @@
 export const EXPERIENCE_SOURCE = {
     AI: 'AI',
     HOST: 'HOST',
+    GUEST: 'GUEST',
 }
 
 export const EXPERIENCE_TYPE = {
