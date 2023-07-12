@@ -12,3 +12,8 @@ export const EXPERIENCE_TYPE = {
     VOLUNTEERING: 'VOLUNTEERING',
     OTHER: 'OTHER',
 }
+
+export const RECOMMENDER = {
+    HOST: 'HOST',
+    GUEST: 'GUEST',
+}

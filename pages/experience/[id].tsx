@@ -6,7 +6,11 @@ import { useRouter } from 'next/router'
 import Chip from '@mui/material/Chip'
 import Link from '../../src/Link'
 import ExperienceCard from '../../src/components/experienceCard'
-import { EXPERIENCE_SOURCE, EXPERIENCE_TYPE } from '../../constants/memory'
+import {
+    EXPERIENCE_SOURCE,
+    EXPERIENCE_TYPE,
+    RECOMMENDER,
+} from '../../constants/memory'
 import styled from '@emotion/styled'
 import zIndex from '@mui/material/styles/zIndex'
 
@@ -19,7 +23,8 @@ const experiences = [
         name: "Negroni's Trio at the Jamboree Jazz Club",
         description:
             'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-        distance: '450 m',
+        distance: '450m',
+        recommender: RECOMMENDER.HOST,
         type: EXPERIENCE_TYPE.CONCERT,
         source: EXPERIENCE_SOURCE.AI,
         discount_amount: '5',
@@ -42,7 +47,8 @@ const experiences = [
         name: 'Volunteering at the local animal shelter',
         description:
             'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-        distance: '450 m',
+        distance: '450m',
+        recommender: RECOMMENDER.HOST,
         type: EXPERIENCE_TYPE.VOLUNTEERING,
         source: EXPERIENCE_SOURCE.AI,
         discount_amount: '5',
@@ -65,7 +71,8 @@ const experiences = [
         name: 'Soccer match at Camp Nou',
         description:
             'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-        distance: '450 m',
+        distance: '450m',
+        recommender: RECOMMENDER.HOST,
         type: EXPERIENCE_TYPE.SPORT,
         source: EXPERIENCE_SOURCE.HOST,
         discount_amount: '5',
@@ -113,14 +120,6 @@ export default function Experience() {
                     Experiences we tailored for you
                 </Typography>
                 <div>
-                    <Chip
-                        size="small"
-                        label="Host recommendations"
-                        sx={{
-                            borderRadius: '4px',
-                            backgroundColor: '#87FF9A',
-                        }}
-                    />
                     {experiences.map((experience) => (
                         <ExperienceCard
                             key={experience.id}
