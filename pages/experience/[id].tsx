@@ -147,11 +147,7 @@ export default function Experience() {
                     Experiences we tailored for you
                 </Typography>
                 <Paper variant="outlined" sx={{ padding: 2 }}>
-                    <Grid
-                        container
-                        spacing={1}
-                        justifyContent="space-between"
-                    >
+                    <Grid container spacing={1} justifyContent="space-between">
                         <Grid item>Filter by</Grid>
                         <Grid item>
                             <FormControl fullWidth>
@@ -168,10 +164,7 @@ export default function Experience() {
                                     <MenuItem value="ALL">All</MenuItem>
                                     {Object.values(EXPERIENCE_TYPE).map(
                                         (type) => (
-                                            <MenuItem
-                                                key={type}
-                                                value={type}
-                                            >
+                                            <MenuItem key={type} value={type}>
                                                 {toTitleCase(type)}
                                             </MenuItem>
                                         ),
@@ -182,49 +175,9 @@ export default function Experience() {
                     </Grid>
                 </Paper>
                 <div>
-                    <Chip
-                        size="small"
-                        label="Host recommendations"
-                        sx={{
-                            borderRadius: '4px',
-                            backgroundColor: '#87FF9A',
-                        }}
-                    />
-                    {experiences.map((experience) => (
+                    {filteredExperiences.map((experience) => (
                         <ExperienceCard
-                            key={experience.id}
-                            experience={experience}
-                        />
-                    ))}
-                </div>
-                <div>
-                    <Chip
-                        size="small"
-                        label="Guests recommendations"
-                        sx={{
-                            borderRadius: '4px',
-                            backgroundColor: '#FFC187',
-                        }}
-                    />
-                    {experiences.map((experience) => (
-                        <ExperienceCard
-                            key={experience.id}
-                            experience={experience}
-                        />
-                    ))}
-                </div>
-                <div>
-                    <Chip
-                        size="small"
-                        label="A.I. recommendations"
-                        sx={{
-                            borderRadius: '4px',
-                            backgroundColor: '#87FF9A',
-                        }}
-                    />
-                    {experiences.map((experience) => (
-                        <ExperienceCard
-                            key={experience.id + experience.reservation_id}
+                            key={`Host${experience.id}`}
                             experience={experience}
                         />
                     ))}
