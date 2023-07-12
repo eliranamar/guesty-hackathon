@@ -1,6 +1,7 @@
 export enum ExperienceSoruce {
     AI = 'AI',
     HOST = 'HOST',
+    GUEST = 'GUEST',
 }
 
 export enum ExperienceType {

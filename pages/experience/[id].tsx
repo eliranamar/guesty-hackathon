@@ -21,7 +21,10 @@ import {
     ExperienceType,
     Recommender,
 } from '../../constants/types'
+import exper from '../../data/experiences.json'
+import Fade from '@mui/material/Fade'
 
+console.log({ exper })
 const experiences: Experience[] = [
     {
         id: '1',
@@ -131,7 +134,7 @@ export default function Experience() {
         React.useState<string>('ALL')
 
     const filteredExperiences = useMemo(() => {
-        let tempExperiences = [...experiences]
+        let tempExperiences = [...exper]
         if (typeFilter && typeFilter !== 'ALL') {
             tempExperiences = tempExperiences.filter(
                 (experience) => experience.type === typeFilter,
@@ -145,7 +148,7 @@ export default function Experience() {
         }
 
         return tempExperiences
-    }, [experiences, typeFilter, recommenderFilter])
+    }, [exper, typeFilter, recommenderFilter])
 
     // const hostRecommendations = useMemo(() => {
     //     return experiences.filter(
@@ -284,11 +287,16 @@ export default function Experience() {
                     </Grid>
                 </Paper>
                 <div style={{ marginBottom: 80 }}>
-                    {filteredExperiences.map((experience) => (
-                        <ExperienceCard
+                    {filteredExperiences.map((experience, index) => (
+                        <Fade
                             key={`Host${experience.id}`}
-                            experience={experience}
-                        />
+                            in
+                            timeout={index * 300}
+                        >
+                            <div>
+                                <ExperienceCard experience={experience} />
+                            </div>
+                        </Fade>
                     ))}
                 </div>
                 {filteredExperiences.length === 0 && (
