@@ -10,7 +10,7 @@ import { Rating } from '@mui/material'
 import { EXPERIENCE_TYPE, RECOMMENDER } from '../../../constants/memory'
 import { ExperienceCardProps } from './types'
 import { toTitleCase } from '../../utils'
-import { ExperienceSoruce } from '../../../constants/types'
+import { ExperienceSource } from '../../../constants/types'
 
 const ImgDiv = styled('div')<{ src: string }>(({ src }) => ({
     width: '100%',
@@ -42,11 +42,11 @@ const getChipColor = (type: string) => {
 
 const getLabelByType = (recommender: string) => {
     switch (recommender) {
-        case ExperienceSoruce.AI:
+        case ExperienceSource.AI:
             return 'AI recommendation'
-        case ExperienceSoruce.HOST:
+        case ExperienceSource.HOST:
             return 'Host recommendation'
-        case ExperienceSoruce.GUEST:
+        case ExperienceSource.GUEST:
             return 'Previous Guest recommendation'
     }
 }

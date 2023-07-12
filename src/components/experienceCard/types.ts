@@ -1,8 +1,4 @@
-import {
-    ExperienceSoruce,
-    ExperienceType,
-    Recommender,
-} from '../../../constants/types'
+import { ExperienceSource, ExperienceType } from '../../../constants/types'
 
 export type Experience = {
     id: string
@@ -12,9 +8,8 @@ export type Experience = {
     name: string
     description: string
     distance: string
-    recommender: Recommender
     type: ExperienceType
-    source: ExperienceSoruce
+    source: ExperienceSource
     discount_amount?: string
     discount_type: string
     location_longitude: string
