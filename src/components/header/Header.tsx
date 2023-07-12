@@ -40,7 +40,11 @@ export default function Header() {
             <AppBar
                 position="static"
                 color="transparent"
-                sx={{ boxShadow: 'none', border: '1px solid #E7E7E7' }}
+                sx={{
+                    boxShadow: 'none',
+                    borderBottom: '1px solid #E7E7E7',
+                    background: 'white',
+                }}
             >
                 <Toolbar sx={{ justifyContent: 'space-between' }}>
                     <Tabs
