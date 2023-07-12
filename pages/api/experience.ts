@@ -4,8 +4,9 @@ const fs = require('fs');
 const path = require("path");
 
 // const storagePath = 'data/experiences.json';
-const storagePath = 'tmp/experiences.json';
-const filePath = path.resolve(process.cwd(), storagePath);
+const storagePath = '/tmp/experiences.json';
+const filePath = storagePath;
+// const filePath = path.resolve(process.cwd(), storagePath);
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
     console.log('req.method', req.method)
