@@ -3,8 +3,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 const fs = require('fs');
 const path = require("path");
 
-
-const storagePath = 'data/experiences.json';
+// const storagePath = 'data/experiences.json';
+const storagePath = 'tmp/experiences.json';
 const filePath = path.resolve(process.cwd(), storagePath);
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -15,7 +15,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             const experience = getExperience(req, res);
             res.status(200).json(experience)
         } else if (req.method === 'PUT') {
-            updateexperience(req);
+            updateExperience(req);
             res.status(200).json('ok');
         }
     } catch (e: any) {
@@ -36,7 +36,7 @@ function getExperience(req: NextApiRequest, res: NextApiResponse) {
     }
 }
 
-function updateexperience(req: NextApiRequest) {
+function updateExperience(req: NextApiRequest) {
     const { id } = req.body;
     const experiences = getExperiencesData();
     const i = experiences.findIndex((exp: any) => exp.id === id);
