@@ -7,8 +7,9 @@ import { styled } from '@mui/material/styles'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import Stack from '@mui/material/Stack'
 import { EXPERIENCE_TYPE, RECOMMENDER } from '../../../constants/memory'
+import { ExperienceCardProps } from './types'
 
-const ImgDiv = styled('div')(({ src }) => ({
+const ImgDiv = styled('div')<{ src: string }>(({ src }) => ({
     width: '100%',
     height: 140,
     background: `url(${src})`,
@@ -45,7 +46,10 @@ const getLabelByType = (recommender: string) => {
     }
 }
 
-export default function ExperienceCard({ experience }) {
+export default function ExperienceCard({
+    experience,
+    showDescription = true,
+}: ExperienceCardProps) {
     const {
         distance,
         type,
@@ -53,7 +57,6 @@ export default function ExperienceCard({ experience }) {
         discount_amount,
         description,
         image,
-        showDescription = true,
         name,
         link,
     } = experience

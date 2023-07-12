@@ -8,16 +8,17 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
-import ExperienceCard from '../../src/components/experienceCard'
-import {
-    EXPERIENCE_SOURCE,
-    EXPERIENCE_TYPE,
-    RECOMMENDER,
-} from '../../constants/memory'
+import ExperienceCard from '../../src/components/experienceCard/ExperienceCard'
 import styled from '@emotion/styled'
 import { toTitleCase } from '../../src/utils'
+import { Experience } from '../../src/components/experienceCard/types'
+import {
+    ExperienceSoruce,
+    ExperienceType,
+    Recommender,
+} from '../../constants/types'
 
-const experiences = [
+const experiences: Experience[] = [
     {
         id: '1',
         account_id: '5f1050359f311f002ce2eaf2',
@@ -27,9 +28,9 @@ const experiences = [
         description:
             'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
         distance: '450m',
-        recommender: RECOMMENDER.HOST,
-        type: EXPERIENCE_TYPE.CONCERT,
-        source: EXPERIENCE_SOURCE.AI,
+        recommender: Recommender.HOST,
+        type: ExperienceType.CONCERT,
+        source: ExperienceSoruce.AI,
         discount_amount: '5',
         discount_type: '',
         location_longitude: '',
@@ -51,9 +52,9 @@ const experiences = [
         description:
             'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
         distance: '450m',
-        recommender: RECOMMENDER.HOST,
-        type: EXPERIENCE_TYPE.VOLUNTEERING,
-        source: EXPERIENCE_SOURCE.AI,
+        recommender: Recommender.HOST,
+        type: ExperienceType.VOLUNTEERING,
+        source: ExperienceSoruce.AI,
         discount_amount: '5',
         discount_type: '',
         location_longitude: '',
@@ -75,9 +76,9 @@ const experiences = [
         description:
             'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
         distance: '450m',
-        recommender: RECOMMENDER.HOST,
-        type: EXPERIENCE_TYPE.SPORT,
-        source: EXPERIENCE_SOURCE.HOST,
+        recommender: Recommender.HOST,
+        type: ExperienceType.SPORT,
+        source: ExperienceSoruce.HOST,
         discount_amount: '5',
         discount_type: '',
         location_longitude: '',
@@ -165,7 +166,7 @@ export default function Experience() {
                                     onChange={handleTypeChange}
                                 >
                                     <MenuItem value="ALL">All</MenuItem>
-                                    {Object.values(EXPERIENCE_TYPE).map(
+                                    {Object.values(ExperienceType).map(
                                         (type) => (
                                             <MenuItem key={type} value={type}>
                                                 {toTitleCase(type)}
