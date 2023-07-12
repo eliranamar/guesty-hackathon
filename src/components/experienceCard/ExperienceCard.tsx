@@ -69,7 +69,11 @@ export default function ExperienceCard({
         <div style={{ marginBottom: 48 }}>
             <Chip
                 size="small"
-                label={<Typography variant="caption">{getLabelByType(recommender)}</Typography>}
+                label={
+                    <Typography variant="caption">
+                        {getLabelByType(recommender)}
+                    </Typography>
+                }
                 sx={{
                     borderRadius: '4px',
                     backgroundColor: getChipColor(type),
@@ -136,12 +140,11 @@ export default function ExperienceCard({
                         }}
                     >
                         <Typography variant="subtitle1" color="text.primary">
-                            Learn more >
+                            {'Learn more >'}
                         </Typography>
                     </Link>
                 </div>
             </Grid>
-
         </div>
     )
 }
