@@ -1,0 +1,602 @@
+{
+    "_id": "649d218795c82f002be7a1c8",
+    "integration": {
+        "limitations": {
+            "availableStatuses": [
+                "checked_in",
+                "checked_out",
+                "canceled"
+            ]
+        },
+        "bookingCom": {
+            "invalidCreditCards": [],
+            "reports": []
+        },
+        "_id": "597478e4a4f8fc0f009b7773",
+        "platform": "manual"
+    },
+    "review": {
+        "shouldReview": true
+    },
+    "manuallyCreated": true,
+    "status": "confirmed",
+    "checkIn": "2023-07-14T12:00:00.000Z",
+    "checkOut": "2023-07-16T07:00:00.000Z",
+    "nightsCount": 2,
+    "guestsCount": 2,
+    "money": {
+        "settingsSnapshot": {
+            "currency": {
+                "rate": 1,
+                "rateDate": "2023-06-29T06:15:35.428Z",
+                "from": "USD",
+                "to": "USD"
+            },
+            "monthlyPriceFactor": 1,
+            "weeklyPriceFactor": 1,
+            "additionalFees": [
+                {
+                    "automationSources": [
+                        "Direct",
+                        "Manual"
+                    ],
+                    "_id": "64268c63f6af9b0036ec2367",
+                    "isPercentage": false,
+                    "isAutomated": true,
+                    "type": "CLEANING",
+                    "name": "CleaningTest",
+                    "value": 15,
+                    "multiplier": "PER_STAY",
+                    "accountId": "596f6fe706112710005d96ff"
+                }
+            ],
+            "taxes": [
+                {
+                    "appliedOnFees": [
+                        "FOOD",
+                        "PET"
+                    ],
+                    "appliedByDefaultOnChannels": [
+                        "airbnb2"
+                    ],
+                    "_id": "64773bf9a83be76a3bf7a5af",
+                    "type": "CITY_TAX",
+                    "amount": 10,
+                    "units": "PERCENTAGE",
+                    "quantifier": "PER_NIGHT",
+                    "appliedToAllFees": false,
+                    "isAppliedByDefault": true
+                },
+                {
+                    "appliedOnFees": [],
+                    "appliedByDefaultOnChannels": [],
+                    "_id": "64773bf9a83be76a3bf7a5b3",
+                    "type": "MINIMUM_ALTERNATE_TAX",
+                    "amount": 10,
+                    "units": "FIXED",
+                    "quantifier": "PER_GUEST",
+                    "appliedToAllFees": false,
+                    "isAppliedByDefault": false
+                },
+                {
+                    "appliedOnFees": [],
+                    "appliedByDefaultOnChannels": [],
+                    "_id": "64773bf9a83be76a3bf7a5b6",
+                    "type": "TOURISM_TAX",
+                    "amount": 5,
+                    "units": "FIXED",
+                    "quantifier": "PER_GUEST_PER_NIGHT",
+                    "appliedToAllFees": false,
+                    "isAppliedByDefault": false
+                },
+                {
+                    "appliedOnFees": [
+                        "AF",
+                        "CF",
+                        "ADDITIONAL_BED",
+                        "AIR_CONDITIONING",
+                        "EARLY_CHECK_IN",
+                        "LATE_CHECK_IN",
+                        "BABY_BED",
+                        "CLEANING",
+                        "CLUB_CARD",
+                        "CONCIERGE",
+                        "EARLY_CHECKOUT",
+                        "LATE_CHECKOUT",
+                        "DEPOSIT",
+                        "ELECTRICITY",
+                        "FOOD",
+                        "HEATING",
+                        "INTERNET",
+                        "LAUNDRY",
+                        "LINENS",
+                        "TOWELS",
+                        "MANAGEMENT",
+                        "OIL",
+                        "PARKING",
+                        "PET",
+                        "POOL",
+                        "POOL_HEATING",
+                        "RESORT",
+                        "SERVICE",
+                        "TOILETRIES",
+                        "TOUR",
+                        "TRANSPORTATION",
+                        "CAR_RENTAL",
+                        "WATER",
+                        "WOOD",
+                        "TRANSFER",
+                        "HOUSEKEEPING",
+                        "INSURANCE",
+                        "COMMUNITY",
+                        "CREDIT_CARD_PROCESSING_FEE",
+                        "DAMAGE_WAIVER"
+                    ],
+                    "appliedByDefaultOnChannels": [],
+                    "_id": "64773bf9a83be76a3bf7a5b0",
+                    "type": "VAT",
+                    "amount": 25,
+                    "units": "PERCENTAGE",
+                    "quantifier": "PER_STAY",
+                    "appliedToAllFees": true,
+                    "isAppliedByDefault": false
+                },
+                {
+                    "appliedOnFees": [
+                        "AF",
+                        "CF",
+                        "ADDITIONAL_BED",
+                        "AIR_CONDITIONING",
+                        "EARLY_CHECK_IN",
+                        "LATE_CHECK_IN",
+                        "BABY_BED",
+                        "CLEANING",
+                        "CLUB_CARD",
+                        "CONCIERGE",
+                        "EARLY_CHECKOUT",
+                        "LATE_CHECKOUT",
+                        "DEPOSIT",
+                        "ELECTRICITY",
+                        "FOOD",
+                        "HEATING",
+                        "INTERNET",
+                        "LAUNDRY",
+                        "LINENS",
+                        "TOWELS",
+                        "MANAGEMENT",
+                        "OIL",
+                        "PARKING",
+                        "PET",
+                        "POOL",
+                        "POOL_HEATING",
+                        "RESORT",
+                        "SERVICE",
+                        "TOILETRIES",
+                        "TOUR",
+                        "TRANSPORTATION",
+                        "CAR_RENTAL",
+                        "WATER",
+                        "WOOD",
+                        "TRANSFER",
+                        "HOUSEKEEPING",
+                        "INSURANCE",
+                        "COMMUNITY",
+                        "CREDIT_CARD_PROCESSING_FEE",
+                        "DAMAGE_WAIVER"
+                    ],
+                    "appliedByDefaultOnChannels": [],
+                    "_id": "64773bf9a83be76a3bf7a5b1",
+                    "type": "GOODS_AND_SERVICES_TAX",
+                    "amount": 10,
+                    "units": "PERCENTAGE",
+                    "quantifier": "PER_STAY",
+                    "appliedToAllFees": true,
+                    "isAppliedByDefault": false
+                },
+                {
+                    "appliedOnFees": [
+                        "SERVICE",
+                        "FOOD"
+                    ],
+                    "appliedByDefaultOnChannels": [],
+                    "_id": "64773bf9a83be76a3bf7a5b2",
+                    "type": "OTHER",
+                    "amount": 10,
+                    "name": "test_manual_%_service_food",
+                    "units": "PERCENTAGE",
+                    "quantifier": "PER_STAY",
+                    "appliedToAllFees": false,
+                    "isAppliedByDefault": false
+                },
+                {
+                    "appliedOnFees": [
+                        "AF"
+                    ],
+                    "appliedByDefaultOnChannels": [],
+                    "_id": "64773bf9a83be76a3bf7a5b4",
+                    "type": "TRANSIENT_OCCUPANCY_TAX",
+                    "amount": 5,
+                    "units": "PERCENTAGE",
+                    "quantifier": "PER_STAY",
+                    "appliedToAllFees": false,
+                    "isAppliedByDefault": false
+                },
+                {
+                    "appliedOnFees": [
+                        "SERVICE"
+                    ],
+                    "appliedByDefaultOnChannels": [],
+                    "_id": "64773bf9a83be76a3bf7a5b7",
+                    "type": "COUNTY_TAX",
+                    "amount": 13,
+                    "units": "PERCENTAGE",
+                    "quantifier": "PER_STAY",
+                    "appliedToAllFees": false,
+                    "isAppliedByDefault": false
+                },
+                {
+                    "appliedOnFees": [
+                        "AF"
+                    ],
+                    "appliedByDefaultOnChannels": [],
+                    "_id": "64773bf9a83be76a3bf7a5b5",
+                    "type": "LOCAL_TAX",
+                    "amount": 55,
+                    "units": "PERCENTAGE",
+                    "quantifier": "PER_GUEST",
+                    "appliedToAllFees": false,
+                    "isAppliedByDefault": false
+                }
+            ],
+            "markup": {
+                "status": "MANUALLY_ALTERED",
+                "units": "PERCENTAGE",
+                "amount": 50
+            },
+            "channelCommission": {
+                "manual": []
+            },
+            "useAccountRevenueShare": true,
+            "useAccountAdditionalFees": true,
+            "snapshotCreated": true
+        },
+        "channelCommissionRules": null,
+        "paymentProviderIds": [
+            "62f4e75da5e87f0037db3ef2"
+        ],
+        "altered": false,
+        "_id": "649d21871f0ea1002b19dd6c",
+        "currency": "ILS",
+        "version": 1,
+        "fareAccommodation": 30,
+        "fareAccommodationAdjusted": 30,
+        "fareCleaning": 0,
+        "invoiceItems": [
+            {
+                "_id": "649d21871f0ea1002b19dd77",
+                "title": "Accommodation fare",
+                "amount": 30,
+                "currency": "ILS",
+                "type": "ACCOMMODATION_FARE",
+                "isLocked": true,
+                "normalType": "AF",
+                "refId": "66dcae72-1ff3-46bb-ac51-efa125efec03"
+            },
+            {
+                "_id": "649d21871f0ea1002b19dd78",
+                "title": "CleaningTest",
+                "currency": "ILS",
+                "isLocked": true,
+                "isAutoAdditionalFee": true,
+                "type": "ADDITIONAL",
+                "normalType": "AFE",
+                "secondIdentifier": "CLEANING",
+                "amount": 15,
+                "baseAmount": 15,
+                "refId": "f5ad72c1-8900-4380-be3a-40fabf92e4e2"
+            },
+            {
+                "_id": "649d21871f0ea1002b19dd79",
+                "title": "MINIMUM_ALTERNATE_TAX",
+                "amount": 20,
+                "currency": "ILS",
+                "isLocked": true,
+                "isTax": true,
+                "type": "TAX",
+                "metadata": {
+                    "calculated": true
+                },
+                "normalType": "MAT",
+                "refId": "6e75f2ee-a679-46dc-8ae9-2c8772de5533",
+                "baseAmount": 20
+            },
+            {
+                "_id": "649d21871f0ea1002b19dd7a",
+                "title": "TOURISM_TAX",
+                "amount": 20,
+                "currency": "ILS",
+                "isLocked": true,
+                "isTax": true,
+                "type": "TAX",
+                "metadata": {
+                    "calculated": true
+                },
+                "normalType": "TT",
+                "refId": "12e1463e-b7e9-4ad8-8d6e-71db27e44c56",
+                "baseAmount": 20
+            },
+            {
+                "_id": "649d21871f0ea1002b19dd7b",
+                "title": "VAT",
+                "amount": 11.25,
+                "currency": "ILS",
+                "isLocked": true,
+                "isTax": true,
+                "type": "TAX",
+                "metadata": {
+                    "calculated": true
+                },
+                "normalType": "VAT",
+                "refId": "b42e65a8-b871-4bef-819b-fcff2a8e68dd",
+                "baseAmount": 11.25
+            },
+            {
+                "_id": "649d21871f0ea1002b19dd7c",
+                "title": "GOODS_AND_SERVICES_TAX",
+                "amount": 4.5,
+                "currency": "ILS",
+                "isLocked": true,
+                "isTax": true,
+                "type": "TAX",
+                "metadata": {
+                    "calculated": true
+                },
+                "normalType": "GST",
+                "refId": "777620f7-85f0-49ea-b80f-95837cdaf72b",
+                "baseAmount": 4.5
+            },
+            {
+                "_id": "649d21871f0ea1002b19dd7d",
+                "title": "TRANSIENT_OCCUPANCY_TAX",
+                "amount": 1.5,
+                "currency": "ILS",
+                "isLocked": true,
+                "isTax": true,
+                "type": "TAX",
+                "metadata": {
+                    "calculated": true
+                },
+                "normalType": "TOT",
+                "refId": "c41bf64b-5af8-426c-ab62-3ad8852284c5",
+                "baseAmount": 1.5
+            },
+            {
+                "_id": "649d21871f0ea1002b19dd7e",
+                "title": "LOCAL_TAX",
+                "amount": 33,
+                "currency": "ILS",
+                "isLocked": true,
+                "isTax": true,
+                "type": "TAX",
+                "metadata": {
+                    "calculated": true
+                },
+                "normalType": "LT",
+                "refId": "04520b44-8051-42e9-952d-cae1ada8877a",
+                "baseAmount": 33
+            }
+        ],
+        "fareAccommodationAdjustment": 0,
+        "fareAccommodationDiscount": 0,
+        "hostServiceFee": 0,
+        "hostServiceFeeTax": 0,
+        "hostServiceFeeIncTax": 0,
+        "totalFees": 15,
+        "subTotalPrice": 45,
+        "hostPayout": 135.25,
+        "hostPayoutUsd": 36.91,
+        "totalTaxes": 90.25,
+        "currencyConversionRateToAccount": 0.249142,
+        "nightlyRateInvoiceItems": [
+            {
+                "isCalculatedByGuesty": true,
+                "_id": "649d21871f0ea1002b19dd7f",
+                "normalType": "AF",
+                "nightsBreakdown": [
+                    {
+                        "_id": "649d21871f0ea1002b19dd80",
+                        "date": "2023-07-14",
+                        "basePrice": 15
+                    },
+                    {
+                        "_id": "649d21871f0ea1002b19dd81",
+                        "date": "2023-07-15",
+                        "basePrice": 15
+                    }
+                ],
+                "adjustments": [],
+                "totalPrice": 30,
+                "totalNightsPrice": 30,
+                "title": "Accommodation fare",
+                "refId": "66dcae72-1ff3-46bb-ac51-efa125efec03"
+            },
+            {
+                "isCalculatedByGuesty": true,
+                "_id": "649d21871f0ea1002b19dd82",
+                "normalType": "AFE",
+                "nightsBreakdown": [
+                    {
+                        "_id": "649d21871f0ea1002b19dd83",
+                        "basePrice": 15,
+                        "date": "2023-07-14"
+                    }
+                ],
+                "adjustments": [],
+                "totalPrice": 15,
+                "totalNightsPrice": 15,
+                "title": "CleaningTest",
+                "secondIdentifier": "CLEANING",
+                "refId": "f5ad72c1-8900-4380-be3a-40fabf92e4e2"
+            },
+            {
+                "isCalculatedByGuesty": true,
+                "_id": "649d21871f0ea1002b19dd84",
+                "normalType": "MAT",
+                "nightsBreakdown": [
+                    {
+                        "_id": "649d21871f0ea1002b19dd85",
+                        "basePrice": 40,
+                        "date": "2023-07-14"
+                    }
+                ],
+                "adjustments": [],
+                "totalPrice": 40,
+                "totalNightsPrice": 40,
+                "title": "MINIMUM_ALTERNATE_TAX",
+                "refId": "6e75f2ee-a679-46dc-8ae9-2c8772de5533"
+            },
+            {
+                "isCalculatedByGuesty": true,
+                "_id": "649d21871f0ea1002b19dd86",
+                "normalType": "TT",
+                "nightsBreakdown": [
+                    {
+                        "_id": "649d21871f0ea1002b19dd87",
+                        "basePrice": 40,
+                        "date": "2023-07-14"
+                    }
+                ],
+                "adjustments": [],
+                "totalPrice": 40,
+                "totalNightsPrice": 40,
+                "title": "TOURISM_TAX",
+                "refId": "12e1463e-b7e9-4ad8-8d6e-71db27e44c56"
+            },
+            {
+                "isCalculatedByGuesty": true,
+                "_id": "649d21871f0ea1002b19dd88",
+                "normalType": "VAT",
+                "nightsBreakdown": [
+                    {
+                        "_id": "649d21871f0ea1002b19dd89",
+                        "basePrice": 11.25,
+                        "date": "2023-07-14"
+                    }
+                ],
+                "adjustments": [],
+                "totalPrice": 11.25,
+                "totalNightsPrice": 11.25,
+                "title": "VAT",
+                "refId": "b42e65a8-b871-4bef-819b-fcff2a8e68dd"
+            },
+            {
+                "isCalculatedByGuesty": true,
+                "_id": "649d21871f0ea1002b19dd8a",
+                "normalType": "GST",
+                "nightsBreakdown": [
+                    {
+                        "_id": "649d21871f0ea1002b19dd8b",
+                        "basePrice": 4.5,
+                        "date": "2023-07-14"
+                    }
+                ],
+                "adjustments": [],
+                "totalPrice": 4.5,
+                "totalNightsPrice": 4.5,
+                "title": "GOODS_AND_SERVICES_TAX",
+                "refId": "777620f7-85f0-49ea-b80f-95837cdaf72b"
+            },
+            {
+                "isCalculatedByGuesty": true,
+                "_id": "649d21871f0ea1002b19dd8c",
+                "normalType": "TOT",
+                "nightsBreakdown": [
+                    {
+                        "_id": "649d21871f0ea1002b19dd8d",
+                        "basePrice": 1.5,
+                        "date": "2023-07-14"
+                    }
+                ],
+                "adjustments": [],
+                "totalPrice": 1.5,
+                "totalNightsPrice": 1.5,
+                "title": "TRANSIENT_OCCUPANCY_TAX",
+                "refId": "c41bf64b-5af8-426c-ab62-3ad8852284c5"
+            },
+            {
+                "isCalculatedByGuesty": true,
+                "_id": "649d21871f0ea1002b19dd8e",
+                "normalType": "LT",
+                "nightsBreakdown": [
+                    {
+                        "_id": "649d21871f0ea1002b19dd8f",
+                        "basePrice": 33,
+                        "date": "2023-07-14"
+                    }
+                ],
+                "adjustments": [],
+                "totalPrice": 33,
+                "totalNightsPrice": 33,
+                "title": "LOCAL_TAX",
+                "refId": "04520b44-8051-42e9-952d-cae1ada8877a"
+            }
+        ],
+        "platform": "manual",
+        "reservationId": "649d218795c82f002be7a1c8",
+        "createdAt": "2023-06-29T06:15:35.889Z",
+        "updatedAt": "2023-06-29T06:15:35.889Z",
+        "payments": [],
+        "balanceDue": 135.25,
+        "isFullyPaid": false,
+        "paymentsDue": 0,
+        "totalRefunded": 0,
+        "totalPaid": 0,
+        "autoPaymentsPolicy": []
+    },
+    "checkInDateLocalized": "2023-07-14",
+    "checkOutDateLocalized": "2023-07-16",
+    "listingId": "649d218518be6b0029ede5c6",
+    "guest": {
+        "_id": "649d218695c82f002be7a1c7",
+        "firstName": "Cypress",
+        "lastName": "Test",
+        "fullName": "Cypress Test"
+    },
+    "accountId": "596f6fe706112710005d96ff",
+    "guestId": "649d218695c82f002be7a1c7",
+    "source": "Manual",
+    "confirmationCode": "WPmrrQYzE",
+    "isReturningGuest": false,
+    "confirmedAt": "2023-06-29T06:15:35.001Z",
+    "createdAt": "2023-06-29T06:15:36.011Z",
+    "pendingTasks": [],
+    "customFields": [],
+    "daysInAdvance": 15,
+    "listing": {
+        "_id": "649d218518be6b0029ede5c6",
+        "picture": {
+            "thumbnail": "https://cdn.filestackcontent.com/resize=height:200/Fs10mPF1REC162mnMRMu"
+        },
+        "prices": {
+            "currency": "USD"
+        },
+        "type": "SINGLE",
+        "address": {
+            "full": "Eli Cohen St 9-11, Tel Aviv-Yafo, Israel"
+        },
+        "timezone": "Asia/Jerusalem",
+        "nickname": "auto_nickE2E - 29 Jun, 23 - 06:06:98",
+        "title": "auto_titleE2E - 29 Jun, 23 - 06:06:98"
+    },
+    "log": [
+        {
+            "_id": "649d218895c82f002be7a205",
+            "reservationId": "649d218795c82f002be7a1c8",
+            "event": "Booking was confirmed successfully",
+            "by": "qa@guesty.com",
+            "at": "2023-06-29T06:15:36.334Z",
+            "changes": [],
+            "__v": 0
+        }
+    ]
+}
