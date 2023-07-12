@@ -6,7 +6,7 @@ import Link from '../../src/Link'
 
 export default function Manage() {
     return (
-        <Container maxWidth="lg">
+        <Container>
             <Box
                 sx={{
                     my: 4,

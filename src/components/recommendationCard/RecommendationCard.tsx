@@ -41,7 +41,11 @@ export default function RecommendationCard({
                 >
                     <Box width={64} height={64} display="flex">
                         <img
-                            style={{ height: 'auto', maxWidth: '100%' }}
+                            style={{
+                                objectFit: 'cover',
+                                width: '100%',
+                                height: '100%',
+                            }}
                             src={image}
                             alt={name}
                         />
