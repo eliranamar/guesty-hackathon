@@ -1,10 +1,13 @@
 import * as React from 'react'
+import { useMemo } from 'react'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
-import Box from '@mui/material/Box'
-import { useRouter } from 'next/router'
-import Chip from '@mui/material/Chip'
-import Link from '../../src/Link'
+import Paper from '@mui/material/Paper'
+import Grid from '@mui/material/Grid'
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import Select, { SelectChangeEvent } from '@mui/material/Select'
 import ExperienceCard from '../../src/components/experienceCard'
 import {
     EXPERIENCE_SOURCE,
@@ -12,7 +15,7 @@ import {
     RECOMMENDER,
 } from '../../constants/memory'
 import styled from '@emotion/styled'
-import zIndex from '@mui/material/styles/zIndex'
+import { toTitleCase } from '../../src/utils'
 
 const experiences = [
     {
@@ -108,6 +111,33 @@ const AbstractBackground = styled('img')(() => ({
 }))
 
 export default function Experience() {
+    const [typeFilter, setTypeFilter] = React.useState<string>('ALL')
+
+    const filteredExperiences = useMemo(() => {
+        let tempExperiences = [...experiences]
+        if (typeFilter && typeFilter !== 'ALL') {
+            tempExperiences = tempExperiences.filter(
+                (experience) => experience.type === typeFilter,
+            )
+        }
+        return tempExperiences
+    }, [experiences, typeFilter])
+
+    // const hostRecommendations = useMemo(() => {
+    //     return experiences.filter(
+    //         (experience) => experience.source === EXPERIENCE_SOURCE.HOST,
+    //     )
+    // }, [experiences])
+
+    // const autoRecommendations = useMemo(() => {
+    //     return experiences.filter(
+    //         (experience) => experience.source === EXPERIENCE_SOURCE.AI,
+    //     )
+    // }, [experiences])
+
+    const handleTypeChange = (event: SelectChangeEvent) => {
+        setTypeFilter(event.target.value as string)
+    }
     return (
         <Background>
             <AbstractBackground src="/Abstract.svg" />
@@ -119,42 +149,38 @@ export default function Experience() {
                 >
                     Experiences we tailored for you
                 </Typography>
+                <Paper variant="outlined" sx={{ padding: 2 }}>
+                    <Grid container spacing={1} justifyContent="space-between">
+                        <Grid item>Filter by</Grid>
+                        <Grid item>
+                            <FormControl fullWidth>
+                                <InputLabel id="demo-simple-select-label">
+                                    Type
+                                </InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={typeFilter}
+                                    label="Type"
+                                    onChange={handleTypeChange}
+                                >
+                                    <MenuItem value="ALL">All</MenuItem>
+                                    {Object.values(EXPERIENCE_TYPE).map(
+                                        (type) => (
+                                            <MenuItem key={type} value={type}>
+                                                {toTitleCase(type)}
+                                            </MenuItem>
+                                        ),
+                                    )}
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                    </Grid>
+                </Paper>
                 <div>
-                    {experiences.map((experience) => (
+                    {filteredExperiences.map((experience) => (
                         <ExperienceCard
-                            key={experience.id}
-                            experience={experience}
-                        />
-                    ))}
-                </div>
-                <div>
-                    <Chip
-                        size="small"
-                        label="Guests recommendations"
-                        sx={{
-                            borderRadius: '4px',
-                            backgroundColor: '#FFC187',
-                        }}
-                    />
-                    {experiences.map((experience) => (
-                        <ExperienceCard
-                            key={experience.id}
-                            experience={experience}
-                        />
-                    ))}
-                </div>
-                <div>
-                    <Chip
-                        size="small"
-                        label="A.I. recommendations"
-                        sx={{
-                            borderRadius: '4px',
-                            backgroundColor: '#87FF9A',
-                        }}
-                    />
-                    {experiences.map((experience) => (
-                        <ExperienceCard
-                            key={experience.id + experience.reservation_id}
+                            key={`Host${experience.id}`}
                             experience={experience}
                         />
                     ))}
