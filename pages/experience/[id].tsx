@@ -30,7 +30,7 @@ const experiences: Experience[] = [
         reservation_id: '649d218795c82f002be7a1c8',
         name: "Negroni's Trio at the Jamboree Jazz Club",
         description:
-            'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
         distance: '450m',
         recommender: Recommender.HOST,
         type: ExperienceType.CONCERT,
@@ -54,12 +54,11 @@ const experiences: Experience[] = [
         reservation_id: '649d218795c82f002be7a1c8',
         name: 'Volunteering at the local animal shelter',
         description:
-            'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
         distance: '450m',
         recommender: Recommender.HOST,
         type: ExperienceType.VOLUNTEERING,
         source: ExperienceSoruce.AI,
-        discount_amount: '5',
         discount_type: '',
         location_longitude: '',
         location_latitude: '',
@@ -78,7 +77,7 @@ const experiences: Experience[] = [
         reservation_id: '649d218795c82f002be7a1c8',
         name: 'Soccer match at Camp Nou',
         description:
-            'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
         distance: '450m',
         recommender: Recommender.HOST,
         type: ExperienceType.SPORT,
@@ -170,6 +169,9 @@ export default function Experience() {
         <Background>
             <AbstractBackground src="/Abstract.svg" />
             <Container style={{ maxWidth: 620, marginTop: 50 }}>
+                <div style={{ textAlign: 'center', marginBottom: 50 }}>
+                    <img src="/host_logo.png" alt="" />
+                </div>
                 <Typography
                     variant="h3"
                     fontWeight={600}
@@ -177,7 +179,7 @@ export default function Experience() {
                 >
                     Experiences we tailored for you
                 </Typography>
-                <Paper variant="outlined" sx={{ padding: 2 }}>
+                <Paper variant="outlined" sx={{ padding: 2, marginBottom: 4 }}>
                     <Grid
                         container
                         spacing={1}
@@ -281,7 +283,7 @@ export default function Experience() {
                         </Grid>
                     </Grid>
                 </Paper>
-                <div>
+                <div style={{ marginBottom: 80 }}>
                     {filteredExperiences.map((experience) => (
                         <ExperienceCard
                             key={`Host${experience.id}`}

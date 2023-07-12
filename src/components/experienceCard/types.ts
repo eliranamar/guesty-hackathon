@@ -15,7 +15,7 @@ export type Experience = {
     recommender: Recommender
     type: ExperienceType
     source: ExperienceSoruce
-    discount_amount: string
+    discount_amount?: string
     discount_type: string
     location_longitude: string
     location_latitude: string

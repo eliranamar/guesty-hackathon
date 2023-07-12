@@ -6,8 +6,10 @@ import Grid from '@mui/material/Grid'
 import { styled } from '@mui/material/styles'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import Stack from '@mui/material/Stack'
+import { Rating } from '@mui/material'
 import { EXPERIENCE_TYPE, RECOMMENDER } from '../../../constants/memory'
 import { ExperienceCardProps } from './types'
+import { toTitleCase } from '../../utils'
 
 const ImgDiv = styled('div')<{ src: string }>(({ src }) => ({
     width: '100%',
@@ -59,13 +61,15 @@ export default function ExperienceCard({
         image,
         name,
         link,
+        rating,
+        source,
     } = experience
     console.log({ experience })
     return (
         <div style={{ marginBottom: 48 }}>
             <Chip
                 size="small"
-                label={getLabelByType(recommender)}
+                label={<Typography variant="caption">{getLabelByType(recommender)}</Typography>}
                 sx={{
                     borderRadius: '4px',
                     backgroundColor: getChipColor(type),
@@ -100,7 +104,7 @@ export default function ExperienceCard({
                         )}
                         <Chip
                             size="small"
-                            label={type}
+                            label={toTitleCase(type)}
                             sx={{
                                 borderRadius: '4px',
                                 backgroundColor: getChipColor(type),
@@ -120,18 +124,24 @@ export default function ExperienceCard({
                 </Typography>
             )}
 
-            <Link
-                href={link}
-                target="_blank"
-                sx={{
-                    margin: '16px 0',
-                    textDecoration: 'none',
-                }}
-            >
-                <Typography variant="button" color="text.primary">
-                    Learn more
-                </Typography>
-            </Link>
+            <Grid container justifyContent="space-between" alignItems="center">
+                <Rating readOnly defaultValue={rating} precision={0.5} />
+                <div>
+                    <Link
+                        href={link}
+                        target="_blank"
+                        sx={{
+                            margin: '16px 0',
+                            textDecoration: 'none',
+                        }}
+                    >
+                        <Typography variant="subtitle1" color="text.primary">
+                            Learn more >
+                        </Typography>
+                    </Link>
+                </div>
+            </Grid>
+
         </div>
     )
 }
