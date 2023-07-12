@@ -1,8 +1,9 @@
 import * as React from 'react'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
-
 import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import Link from 'next/link'
 import { Button } from '@mui/material'
 
 import RecommendationCard from '../recommendationCard/RecommendationCard'
@@ -95,6 +96,16 @@ export default function Recommendations({
                     />
                 </Tabs>
             </Box>
+            <div style={{ textAlign: 'end', marginTop: 24, marginRight: 24 }}>
+                <Link
+                    href="/experience/preview"
+                    style={{ textDecoration: 'none' }}
+                >
+                    <Typography variant="button" color="text.secondary">
+                        Preview experiences
+                    </Typography>
+                </Link>
+            </div>
             <CustomTabPanel value={value} index={0}>
                 {recommendationList?.length > 0 &&
                     recommendationList?.map((recommendation) => (

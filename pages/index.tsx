@@ -7,7 +7,7 @@ import Copyright from '../src/Copyright'
 
 export default function Home() {
     return (
-        <Container maxWidth="lg">
+        <Container>
             <Box
                 sx={{
                     my: 4,
@@ -17,14 +17,11 @@ export default function Home() {
                     alignItems: 'center',
                 }}
             >
-                <Typography variant="h4" component="h1" gutterBottom>
-                    Welcome to your dashboard
-                </Typography>
-                <Link href="/about" color="secondary">
-                    Go to the about page
+                <Link href="/dashboard" color="secondary">
+                    Login to host dashboard
                 </Link>
-                <Link href="/host/manage" color="secondary">
-                    Go to manage experiences page
+                <Link href="/experience/574027539872235" color="secondary">
+                    Login to guest
                 </Link>
                 <ProTip />
                 <Copyright />

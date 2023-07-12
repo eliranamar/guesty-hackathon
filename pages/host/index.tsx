@@ -7,7 +7,7 @@ import Button from '@mui/material/Button'
 
 export default function Manage() {
     return (
-        <Container maxWidth="lg">
+        <Container>
             <Box
                 sx={{
                     my: 4,

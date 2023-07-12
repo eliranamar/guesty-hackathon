@@ -1,6 +1,7 @@
-export enum ExperienceSoruce {
+export enum ExperienceSource {
     AI = 'AI',
     HOST = 'HOST',
+    GUEST = 'GUEST',
 }
 
 export enum ExperienceType {
@@ -11,9 +12,4 @@ export enum ExperienceType {
     SPORT = 'SPORT',
     VOLUNTEERING = 'VOLUNTEERING',
     OTHER = 'OTHER',
-}
-
-export enum Recommender {
-    HOST = 'HOST',
-    GUEST = 'GUEST',
 }

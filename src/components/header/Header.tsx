@@ -22,8 +22,8 @@ function a11yProps(index: number) {
 }
 
 const ROUTES: { [key: string]: string } = {
-    analytics: '/',
-    recommendations: '/recommendations',
+    analytics: '/dashboard',
+    recommandations: '/dashboard/recommendations',
 }
 
 export default function Header() {
@@ -44,7 +44,7 @@ export default function Header() {
     }
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ width: '100%' }}>
             <AppBar
                 position="static"
                 color="transparent"
@@ -72,13 +72,13 @@ export default function Header() {
                         <Tab
                             onClick={() => handleTabClick('analytics')}
                             label="Analytics"
-                            value="/"
+                            value="/dashboard"
                             {...a11yProps(1)}
                         />
                         <Tab
-                            onClick={() => handleTabClick('recommendations')}
+                            onClick={() => handleTabClick('recommandations')}
                             label="Recommendations"
-                            value="/recommendations"
+                            value="/dashboard/recommendations"
                             {...a11yProps(2)}
                         />
                     </Tabs>

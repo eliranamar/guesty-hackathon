@@ -8,91 +8,19 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Stack from '@mui/material/Stack'
+import OutlinedInput from '@mui/material/OutlinedInput'
+import ListItemText from '@mui/material/ListItemText'
+import Checkbox from '@mui/material/Checkbox'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 import ExperienceCard from '../../src/components/experienceCard/ExperienceCard'
 import styled from '@emotion/styled'
 import { toTitleCase } from '../../src/utils'
 import { Experience } from '../../src/components/experienceCard/types'
-import {
-    ExperienceSoruce,
-    ExperienceType,
-    Recommender,
-} from '../../constants/types'
-
-const experiences: Experience[] = [
-    {
-        id: '1',
-        account_id: '5f1050359f311f002ce2eaf2',
-        listing_id: ['61a1fef12a4e1c0033292de0'],
-        reservation_id: '649d218795c82f002be7a1c8',
-        name: "Negroni's Trio at the Jamboree Jazz Club",
-        description:
-            'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-        distance: '450m',
-        recommender: Recommender.HOST,
-        type: ExperienceType.CONCERT,
-        source: ExperienceSoruce.AI,
-        discount_amount: '5',
-        discount_type: '',
-        location_longitude: '',
-        location_latitude: '',
-        location_address: 'Plaça Reial, 17 08002 Barcelona, Spain',
-        image: 'https://images.sk-static.com/images/media/profile_images/artists/503547/huge_avatar',
-        date_from: '2023-08-05',
-        date_to: '2023-08-05',
-        time: '20:00',
-        link: 'https://www.songkick.com/concerts/41121072-negronis-trio-at-jamboree-jazz-club',
-        rating: 4.5,
-    },
-    {
-        id: '2',
-        account_id: '5f1050359f311f002ce2eaf2',
-        listing_id: ['61a1fef12a4e1c0033292de0'],
-        reservation_id: '649d218795c82f002be7a1c8',
-        name: 'Volunteering at the local animal shelter',
-        description:
-            'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-        distance: '450m',
-        recommender: Recommender.HOST,
-        type: ExperienceType.VOLUNTEERING,
-        source: ExperienceSoruce.AI,
-        discount_amount: '5',
-        discount_type: '',
-        location_longitude: '',
-        location_latitude: '',
-        location_address: 'Plaça Reial, 17 08002 Barcelona, Spain',
-        image: 'https://images.sk-static.com/images/media/profile_images/artists/503547/huge_avatar',
-        date_from: '2023-08-05',
-        date_to: '2023-08-05',
-        time: '20:00',
-        link: 'https://www.songkick.com/concerts/41121072-negronis-trio-at-jamboree-jazz-club',
-        rating: 5,
-    },
-    {
-        id: '3',
-        account_id: '5f1050359f311f002ce2eaf2',
-        listing_id: ['61a1fef12a4e1c0033292de0'],
-        reservation_id: '649d218795c82f002be7a1c8',
-        name: 'Soccer match at Camp Nou',
-        description:
-            'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-        distance: '450m',
-        recommender: Recommender.HOST,
-        type: ExperienceType.SPORT,
-        source: ExperienceSoruce.HOST,
-        discount_amount: '5',
-        discount_type: '',
-        location_longitude: '',
-        location_latitude: '',
-        location_address: 'Plaça Reial, 17 08002 Barcelona, Spain',
-        image: 'https://images.sk-static.com/images/media/profile_images/artists/503547/huge_avatar',
-        date_from: '2023-08-05',
-        date_to: '2023-08-05',
-        time: '20:00',
-        link: 'https://www.songkick.com/concerts/41121072-negronis-trio-at-jamboree-jazz-club',
-        rating: 5,
-    },
-]
+import { ExperienceType, ExperienceSource } from '../../constants/types'
+import experiences from '../../data/experiences.json'
+import Fade from '@mui/material/Fade'
+import { useRouter } from 'next/router'
+import Button from '@mui/material/Button'
 
 const Background = styled('div')<{}>(({}) => ({
     position: 'relative',
@@ -112,27 +40,41 @@ const AbstractBackground = styled('img')(() => ({
     zIndex: -1,
 }))
 
+const ITEM_HEIGHT = 48
+const ITEM_PADDING_TOP = 8
+const MenuProps = {
+    PaperProps: {
+        style: {
+            maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+            width: 250,
+        },
+    },
+}
+
 export default function Experience() {
     const [typeFilter, setTypeFilter] = React.useState<string>('ALL')
-    const [recommenderFilter, setRecommenderFilter] =
-        React.useState<string>('ALL')
+    const [sourceFilter, setSourceFilter] = React.useState<string>('ALL')
+    const router = useRouter()
+    const isPreview = router.query.id === 'preview'
+
+    console.log(isPreview)
 
     const filteredExperiences = useMemo(() => {
-        let tempExperiences = [...experiences]
+        let tempExperiences: Experience[] = [...experiences] as Experience[]
         if (typeFilter && typeFilter !== 'ALL') {
             tempExperiences = tempExperiences.filter(
                 (experience) => experience.type === typeFilter,
             )
         }
 
-        if (recommenderFilter && recommenderFilter !== 'ALL') {
+        if (sourceFilter && sourceFilter !== 'ALL') {
             tempExperiences = tempExperiences.filter(
-                (experience) => experience.recommender === recommenderFilter,
+                (experience) => experience.source === sourceFilter,
             )
         }
 
         return tempExperiences
-    }, [experiences, typeFilter, recommenderFilter])
+    }, [experiences, typeFilter, sourceFilter])
 
     // const hostRecommendations = useMemo(() => {
     //     return experiences.filter(
@@ -150,20 +92,33 @@ export default function Experience() {
         setTypeFilter(event.target.value as string)
     }
     const handleRecommenderChange = (event: SelectChangeEvent) => {
-        setRecommenderFilter(event.target.value as string)
+        setSourceFilter(event.target.value as string)
     }
     return (
         <Background>
             <AbstractBackground src="/Abstract.svg" />
             <Container style={{ maxWidth: 620, marginTop: 50 }}>
+                <div style={{ textAlign: 'center', marginBottom: 50 }}>
+                    <img src="/host_logo.png" alt="" />
+                </div>
                 <Typography
                     variant="h3"
                     fontWeight={600}
                     style={{ marginBottom: 25 }}
                 >
-                    Experiences we tailored for you
+                    {isPreview
+                        ? 'Experiences preview for your guests'
+                        : 'Experiences we tailored for you'}
                 </Typography>
-                <Paper variant="outlined" sx={{ padding: 2 }}>
+                {/* go back button if this is a preview */}
+                {isPreview && (
+                    <div style={{ marginBottom: 25 }}>
+                        <Button onClick={router.back}>
+                            Back to your dashboard
+                        </Button>
+                    </div>
+                )}
+                <Paper variant="outlined" sx={{ padding: 2, marginBottom: 4 }}>
                     <Grid
                         container
                         spacing={1}
@@ -174,6 +129,46 @@ export default function Experience() {
                         <Grid item>
                             <Grid container>
                                 <Stack direction="row" spacing={1}>
+                                    {/* TODO: multi select filter */}
+                                    {/*<FormControl sx={{ m: 1, width: 300 }}>
+                                        <InputLabel id="demo-multiple-checkbox-label">
+                                            Type
+                                        </InputLabel>
+                                        <Select
+                                            labelId="demo-multiple-checkbox-label"
+                                            id="demo-multiple-checkbox"
+                                            multiple
+                                            value={personName}
+                                            onChange={handleChange}
+                                            input={
+                                                <OutlinedInput label="Tag" />
+                                            }
+                                            renderValue={(selected) =>
+                                                selected.join(', ')
+                                            }
+                                            MenuProps={MenuProps}
+                                        >
+                                            {Object.values(ExperienceType).map(
+                                                (name) => (
+                                                    <MenuItem
+                                                        key={name}
+                                                        value={name}
+                                                    >
+                                                        <Checkbox
+                                                            checked={
+                                                                personName.indexOf(
+                                                                    name,
+                                                                ) > -1
+                                                            }
+                                                        />
+                                                        <ListItemText
+                                                            primary={name}
+                                                        />
+                                                    </MenuItem>
+                                                ),
+                                            )}
+                                        </Select>
+                                    </FormControl>*/}
                                     <FormControl fullWidth size="small">
                                         <InputLabel id="demo-simple-select-label">
                                             Type
@@ -205,21 +200,21 @@ export default function Experience() {
                                         <Select
                                             labelId="demo-simple-select-label"
                                             id="demo-simple-select"
-                                            value={recommenderFilter}
+                                            value={sourceFilter}
                                             label="Recommender"
                                             onChange={handleRecommenderChange}
                                         >
                                             <MenuItem value="ALL">All</MenuItem>
-                                            {Object.values(Recommender).map(
-                                                (type) => (
-                                                    <MenuItem
-                                                        key={type}
-                                                        value={type}
-                                                    >
-                                                        {toTitleCase(type)}
-                                                    </MenuItem>
-                                                ),
-                                            )}
+                                            {Object.values(
+                                                ExperienceSource,
+                                            ).map((type) => (
+                                                <MenuItem
+                                                    key={type}
+                                                    value={type}
+                                                >
+                                                    {toTitleCase(type)}
+                                                </MenuItem>
+                                            ))}
                                         </Select>
                                     </FormControl>
                                 </Stack>
@@ -227,12 +222,17 @@ export default function Experience() {
                         </Grid>
                     </Grid>
                 </Paper>
-                <div>
-                    {filteredExperiences.map((experience) => (
-                        <ExperienceCard
+                <div style={{ marginBottom: 80 }}>
+                    {filteredExperiences.map((experience, index) => (
+                        <Fade
                             key={`Host${experience.id}`}
-                            experience={experience}
-                        />
+                            in
+                            timeout={index * 300}
+                        >
+                            <div>
+                                <ExperienceCard experience={experience} />
+                            </div>
+                        </Fade>
                     ))}
                 </div>
                 {filteredExperiences.length === 0 && (
