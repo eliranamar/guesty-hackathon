@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import Chip from '@mui/material/Chip'
 import Link from '../../src/Link'
 import ExperienceCard from '../../src/components/experienceCard'
-import { MEMORY_SOURCE, MEMORY_TYPE } from '../../constants/memory'
+import { EXPERIENCE_SOURCE, EXPERIENCE_TYPE } from '../../constants/memory'
 
 const experiences = [
     {
@@ -18,8 +18,8 @@ const experiences = [
         description:
             'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
         distance: '450 m',
-        type: MEMORY_TYPE.CONCERT,
-        source: MEMORY_SOURCE.AI,
+        type: EXPERIENCE_TYPE.CONCERT,
+        source: EXPERIENCE_SOURCE.AI,
         discount_amount: '5',
         discount_type: '',
         location_longitude: '',
@@ -30,6 +30,7 @@ const experiences = [
         date_to: '2023-08-05',
         time: '20:00',
         link: 'https://www.songkick.com/concerts/41121072-negronis-trio-at-jamboree-jazz-club',
+        rating: 4.5,
     },
 ]
 
