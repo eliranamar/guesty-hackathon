@@ -2,11 +2,9 @@ import * as React from 'react'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
-import Link from '../src/Link'
-import ProTip from '../src/ProTip'
-import Copyright from '../src/Copyright'
+import Link from '../../src/Link'
 
-export default function Home() {
+export default function Manage() {
     return (
         <Container maxWidth="lg">
             <Box
@@ -19,16 +17,11 @@ export default function Home() {
                 }}
             >
                 <Typography variant="h4" component="h1" gutterBottom>
-                    Welcome to your dashboard
+                    This is the host manage experience page
                 </Typography>
-                <Link href="/about" color="secondary">
-                    Go to the about page
+                <Link href="/" color="secondary">
+                    Go to the home page
                 </Link>
-                <Link href="/host/manage" color="secondary">
-                    Go to manage experiences page
-                </Link>
-                <ProTip />
-                <Copyright />
             </Box>
         </Container>
     )
