@@ -51,7 +51,7 @@ export default function Experience() {
                         alignItems: 'center',
                     }}
                 >
-                    <Typography variant="h3" gutterBottom>
+                    <Typography variant="h3" gutterBottom fontWeight={600}>
                         Experiences we tailored for you
                     </Typography>
                     <Typography variant="h4" gutterBottom>
@@ -66,6 +66,7 @@ export default function Experience() {
                 <Container maxWidth="sm">
                     <div>
                         <Chip
+                            size="small"
                             label="Host recommendations"
                             sx={{
                                 borderRadius: '4px',
@@ -81,6 +82,7 @@ export default function Experience() {
                     </div>
                     <div>
                         <Chip
+                            size="small"
                             label="Guests recommendations"
                             sx={{
                                 borderRadius: '4px',
@@ -96,6 +98,7 @@ export default function Experience() {
                     </div>
                     <div>
                         <Chip
+                            size="small"
                             label="A.I. recommendations"
                             sx={{
                                 borderRadius: '4px',
