@@ -4,7 +4,11 @@ import Tab from '@mui/material/Tab'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Link from 'next/link'
+import { Button } from '@mui/material'
+
 import RecommendationCard from '../recommendationCard/RecommendationCard'
+import Modal from '../modals/modal/Modal'
+import { useFormFields } from '../../hooks/useFormFields'
 
 interface TabPanelProps {
     children?: React.ReactNode
@@ -41,10 +45,35 @@ export default function Recommendations({
     recommendationList: Array<{ [key: string]: any }>
 }): React.ReactNode {
     const [value, setValue] = React.useState(0)
+    const [isOpenModal, setIsOpenModal] = React.useState(false)
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue)
     }
+
+    const handleCloseModal = () => {
+        setIsOpenModal(false)
+    }
+
+    const handleSaveModal = () => {
+        setIsOpenModal(false)
+    }
+
+    const renderButtonStyles = (color: string) => ({
+        backgroundColor: color,
+        color: 'text.primary',
+        textTransform: 'none',
+        borderRadius: '10px',
+        '&:hover': {
+            backgroundColor: color,
+            opacity: '0.7',
+        },
+    })
+
+    const [fields, handleFieldChange] = useFormFields({
+        name: '',
+        address: '',
+    })
 
     return (
         <Box sx={{ width: '100%' }}>
@@ -86,6 +115,7 @@ export default function Recommendations({
                             address={recommendation.location_address}
                             name={recommendation.name}
                             type={recommendation.type}
+                            listing_id={recommendation.listing_id}
                         />
                     ))}
             </CustomTabPanel>
@@ -98,9 +128,27 @@ export default function Recommendations({
                             address={recommendation.location_address}
                             name={recommendation.name}
                             type={recommendation.type}
+                            listing_id={recommendation.listing_id}
                         />
                     ))}
             </CustomTabPanel>
+            <Modal
+                open={isOpenModal}
+                title="Create"
+                onClose={handleCloseModal}
+                values={fields}
+                handleFormChange={handleFieldChange}
+                renderFooter={() => (
+                    <>
+                        <Button
+                            onClick={handleSaveModal}
+                            sx={() => renderButtonStyles('#62DB29')}
+                        >
+                            Save
+                        </Button>
+                    </>
+                )}
+            />
         </Box>
     )
 }
