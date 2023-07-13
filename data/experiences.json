@@ -155,7 +155,8 @@
       "date_from": "",
       "date_to": "",
       "time": "",
-      "link": "https://tacoalto.es/"
+      "link": "https://tacoalto.es/",
+      "previous_guests_counter": 17
     },
     {
       "id": "8",
@@ -180,4 +181,3 @@
       "link": "https://www.grangalaflamenco.com/en/"
     }
   ]
-  

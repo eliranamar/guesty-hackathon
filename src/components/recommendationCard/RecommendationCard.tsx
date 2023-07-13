@@ -1,11 +1,70 @@
 import * as React from 'react'
 
-import Box from '@mui/material/Box'
-import Grid from '@mui/material/Grid'
 import { Button, Typography } from '@mui/material'
+import styled from '@emotion/styled'
 
-import EditModal from '../modals/editModal/EditModal'
 import { useFormFields } from '../../hooks/useFormFields'
+import EditModal from '../modals/editModal/EditModal'
+
+
+const PreviewImage = styled.img`
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 5px;
+`
+
+const Container = styled.div`
+    display: flex;
+    align-items: center;
+    border: 1px solid #d1d1d1;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    padding: 10px;
+`
+
+const Content = styled.div`
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    & > * {
+        margin-right: 15px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+`
+
+const ContentDetails = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+        margin-bottom: 3px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+`
+
+const Details = styled.div`
+    display: flex;
+    & > * {
+        margin-right: 5px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+`
+
+const Controls = styled.div`
+    display: flex;
+    align-items: center;
+`
 
 // TODO: Listings
 export default function RecommendationCard({
@@ -43,100 +102,51 @@ export default function RecommendationCard({
     }
 
     return (
-        <Box
-            sx={{
-                flexGrow: 1,
-                border: '1px solid #D1D1D1',
-                borderRadius: '8px',
-                minHeight: '90px',
-                alignItems: 'center',
-                display: 'flex',
-                padding: '15px',
-                marginBottom: '30px',
-            }}
-        >
-            <Grid container spacing={2}>
-                <Grid
-                    item
-                    xs={2}
-                    sm={12}
-                    md={2}
-                    alignItems="center"
-                    display="flex"
-                >
-                    <Box width={64} height={64} display="flex">
-                        <img
-                            style={{
-                                objectFit: 'cover',
-                                width: '100%',
-                                height: '100%',
-                            }}
-                            src={image}
-                            alt={name}
-                        />
-                    </Box>
-                </Grid>
-                <Grid item xs={12} sm={8} md={8}>
-                    <Box>
-                        <Box display="flex" alignItems="center" flexWrap="wrap">
-                            <Typography
-                                variant="h4"
-                                fontWeight={600}
-                                marginRight={1}
-                            >
-                                {name}
-                            </Typography>
-                            <Box display="flex" flexDirection="row">
-                                <Typography
-                                    fontSize={14}
-                                    color="#B79727"
-                                    fontWeight={600}
-                                    marginRight={1}
-                                >
-                                    {type}
-                                </Typography>
-                                <Typography fontSize={14} fontWeight={500}>
-                                    • Assigned to{' '}
-                                    {listing_id.length > 0
-                                        ? listing_id.length
-                                        : 0}{' '}
-                                    listings
-                                </Typography>
-                            </Box>
-                        </Box>
-                        <Box>
-                            <Typography color="#8c8c8c" fontSize={14}>
-                                {address}
-                            </Typography>
-                        </Box>
-                    </Box>
-                </Grid>
-                <Grid
-                    item
-                    xs={12}
-                    sm={4}
-                    md={2}
-                    alignItems="center"
-                    display="flex"
-                    justifyContent="end"
-                >
-                    <Button
-                        sx={{ color: 'text.primary' }}
-                        onClick={handleOpenModal}
-                    >
-                        <Typography textTransform="none" color="#8c8c8c">
-                            Edit
+        <Container>
+            <Content>
+                <PreviewImage src={image} alt={name} />
+                <ContentDetails>
+                    <Typography variant="h4" fontWeight={600} marginRight={1}>
+                        {name}
+                    </Typography>
+                    <Details>
+                        <Typography
+                            fontSize={14}
+                            color="#B79727"
+                            fontWeight={600}
+                            marginRight={1}
+                            style={{ textTransform: 'capitalize' }}
+                        >
+                            {type}
                         </Typography>
-                    </Button>
-                    <EditModal
-                        isOpen={isOpenModal}
-                        handleCloseModal={handleCloseModal}
-                        handleSaveModal={handleSaveModal}
-                        handleFormChange={handleFormChange}
-                        values={fields}
-                    />
-                </Grid>
-            </Grid>
-        </Box>
+                        <Typography fontSize={14} fontWeight={500}>
+                            • Assigned to{' '}
+                            {listing_id.length > 0 ? listing_id.length : 0}{' '}
+                            listings
+                        </Typography>
+                    </Details>
+                    <Typography color="#8c8c8c" fontSize={14}>
+                        {address}
+                    </Typography>
+                </ContentDetails>
+            </Content>
+            <Controls>
+                <Button
+                    sx={{ color: 'text.primary' }}
+                    onClick={handleOpenModal}
+                >
+                    <Typography textTransform="none" color="#8c8c8c">
+                        Edit
+                    </Typography>
+                </Button>
+            </Controls>
+            <EditModal
+              isOpen={isOpenModal}
+              handleCloseModal={handleCloseModal}
+              handleSaveModal={handleSaveModal}
+              handleFormChange={handleFormChange}
+              values={fields}
+            />
+        </Container>
     )
 }
