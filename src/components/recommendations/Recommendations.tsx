@@ -4,7 +4,8 @@ import Tab from '@mui/material/Tab'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Link from 'next/link'
-import { Button } from '@mui/material'
+import { Button, IconButton } from '@mui/material'
+import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined'
 
 import RecommendationCard from '../recommendationCard/RecommendationCard'
 import Modal from '../modals/modal/Modal'
@@ -55,6 +56,10 @@ export default function Recommendations({
         setIsOpenModal(false)
     }
 
+    const handleOpenModal = () => {
+        setIsOpenModal(true)
+    }
+
     const handleSaveModal = () => {
         setIsOpenModal(false)
     }
@@ -77,7 +82,12 @@ export default function Recommendations({
 
     return (
         <Box sx={{ width: '100%' }}>
-            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+            <Box
+                sx={{ borderBottom: 1, borderColor: 'divider' }}
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+            >
                 <Tabs
                     value={value}
                     onChange={handleChange}
@@ -95,6 +105,9 @@ export default function Recommendations({
                         {...a11yProps(1)}
                     />
                 </Tabs>
+                <IconButton onClick={handleOpenModal}>
+                    <AddCircleOutlinedIcon />
+                </IconButton>
             </Box>
             <div style={{ textAlign: 'end', marginTop: 24, marginRight: 24 }}>
                 <Link

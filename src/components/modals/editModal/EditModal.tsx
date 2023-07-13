@@ -14,10 +14,16 @@ export default function EditModal({
     handleCloseModal: () => void
     handleSaveModal: () => void
 }) {
-    const [fields, handleFieldChange] = useFormFields({
+    const [fields, handleFieldChange, resetForm] = useFormFields({
         name: values.name,
         address: values.address,
+        type: values.type,
     })
+
+    const onCloseModal = () => {
+        handleCloseModal()
+        resetForm()
+    }
 
     const renderButtonStyles = (color: string) => ({
         backgroundColor: color,
@@ -34,19 +40,19 @@ export default function EditModal({
         <Modal
             open={isOpen}
             title="Edit"
-            onClose={handleCloseModal}
+            onClose={onCloseModal}
             values={fields}
             handleFormChange={handleFieldChange}
             renderFooter={() => (
                 <>
                     <Button
-                        onClick={handleCloseModal}
+                        onClick={handleSaveModal}
                         sx={() => renderButtonStyles('#62DB29')}
                     >
                         Save
                     </Button>
                     <Button
-                        onClick={handleCloseModal}
+                        onClick={onCloseModal}
                         sx={() => renderButtonStyles('#FF5833')}
                     >
                         Cancel

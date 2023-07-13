@@ -127,6 +127,7 @@ export default function RecommendationCard({
                         values={{
                             name,
                             address,
+                            type,
                         }}
                     />
                 </Grid>

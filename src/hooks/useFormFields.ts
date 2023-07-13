@@ -5,11 +5,16 @@ export function useFormFields(initialState: { [key: string]: any }) {
 
     return [
         fields,
-        function (event: { [key: string]: any }) {
+        function (event: { [key: string]: any }, id = '') {
+            const fieldId = event.target.id || id
+
             setValues({
                 ...fields,
-                [event.target.id]: event.target.value,
+                [fieldId]: event.target.value,
             })
+        },
+        function () {
+            setValues(initialState)
         },
     ]
 }
