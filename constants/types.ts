@@ -12,4 +12,5 @@ export enum ExperienceType {
     SPORT = 'SPORT',
     VOLUNTEERING = 'VOLUNTEERING',
     OTHER = 'OTHER',
+    EVENT = 'EVENT',
 }
