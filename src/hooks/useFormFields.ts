@@ -9,6 +9,10 @@ export function useFormFields(
 ): {
     fields: Values
     handleFormChange: (event: { [key: string]: any }, type?: string) => void
+    handleChangeMultiSelect: (
+        event: { [key: string]: any },
+        type?: string,
+    ) => void
     resetForm: () => void
 } {
     const [fields, setValues] = useState(initialState)
@@ -21,6 +25,16 @@ export function useFormFields(
             setValues({
                 ...fields,
                 [fieldId]: event.target.value,
+            })
+        },
+        handleChangeMultiSelect: function (event, id = '') {
+            const {
+                target: { value },
+            } = event
+
+            setValues({
+                ...fields,
+                [id]: typeof value === 'string' ? value.split(',') : value,
             })
         },
         resetForm: function () {

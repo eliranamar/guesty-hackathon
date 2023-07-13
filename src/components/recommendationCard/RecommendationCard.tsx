@@ -6,7 +6,6 @@ import styled from '@emotion/styled'
 import { useFormFields } from '../../hooks/useFormFields'
 import EditModal from '../modals/editModal/EditModal'
 
-
 const PreviewImage = styled.img`
     width: 96px;
     height: 96px;
@@ -73,19 +72,27 @@ export default function RecommendationCard({
     name,
     type,
     listing_id,
+    listings,
 }: {
     image: string
     address: string
     name: string
     type: string
     listing_id: string[]
+    listings: { [key: string]: string }[]
 }): React.ReactNode {
     const [isOpenModal, setIsOpenModal] = React.useState(false)
 
-    const { fields, handleFormChange, resetForm } = useFormFields({
+    const {
+        fields,
+        handleFormChange,
+        resetForm,
+        handleChangeMultiSelect,
+    } = useFormFields({
         name,
         address,
         type,
+        listings: [],
     })
 
     const handleOpenModal = () => {
@@ -141,11 +148,13 @@ export default function RecommendationCard({
                 </Button>
             </Controls>
             <EditModal
-              isOpen={isOpenModal}
-              handleCloseModal={handleCloseModal}
-              handleSaveModal={handleSaveModal}
-              handleFormChange={handleFormChange}
-              values={fields}
+                isOpen={isOpenModal}
+                handleCloseModal={handleCloseModal}
+                handleSaveModal={handleSaveModal}
+                handleFormChange={handleFormChange}
+                handleChangeMultiSelect={handleChangeMultiSelect}
+                values={fields}
+                listings={listings}
             />
         </Container>
     )

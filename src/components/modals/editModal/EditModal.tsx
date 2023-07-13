@@ -8,10 +8,14 @@ export default function EditModal({
     handleCloseModal,
     handleSaveModal,
     handleFormChange,
+    handleChangeMultiSelect,
+    listings,
 }: {
     isOpen: boolean
     values: { [key: string]: any }
+    listings: { [key: string]: any }[]
     handleFormChange: (event: { [key: string]: any }) => void
+    handleChangeMultiSelect: (event: { [key: string]: any }) => void
     handleCloseModal: () => void
     handleSaveModal: () => void
 }) {
@@ -36,7 +40,9 @@ export default function EditModal({
             title="Edit"
             onClose={onCloseModal}
             values={values}
+            listings={listings}
             handleFormChange={handleFormChange}
+            handleChangeMultiSelect={handleChangeMultiSelect}
             renderFooter={() => (
                 <>
                     <Button
