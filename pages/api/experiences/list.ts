@@ -22,15 +22,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     }
 }
 
-function listExperiences(filters: any) {
-    console.log({filters});
+export function listExperiences(filters: any) {
     const { source } = filters;
     const experiences = getExperiencesData();
     if (source) {
         return experiences.filter((exp: any) => exp.source === source);
     }
     return experiences;
-    
 }
 
 // util functions

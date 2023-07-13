@@ -26,6 +26,8 @@ import {
     GetServerSidePropsContext,
     InferGetServerSidePropsType,
 } from 'next'
+import {listExperiences} from '../api/experiences/list'
+const experiences = listExperiences();
 
 const Background = styled('div')<{}>(({}) => ({
     position: 'relative',
