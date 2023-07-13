@@ -160,7 +160,7 @@ export default function ExperienceCard({
                                 icon={<AccessTimeIcon />}
                                 sx={{
                                     borderRadius: '4px',
-                                    backgroundColor: '#d2d2d2',
+                                    backgroundColor: '#D9D9D9',
                                 }}
                             />
                         )}
