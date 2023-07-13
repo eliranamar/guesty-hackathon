@@ -56,7 +56,7 @@ const MenuProps = {
     },
 }
 
-const Logo = styled.img<{ eliranIsGay: boolean }>`
+const Logo = styled.img`
     max-width: 250px;
     width: calc(100% - 15px - 15px);
     height: auto;
