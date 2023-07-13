@@ -8,16 +8,16 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Stack from '@mui/material/Stack'
-import OutlinedInput from '@mui/material/OutlinedInput'
-import ListItemText from '@mui/material/ListItemText'
-import Checkbox from '@mui/material/Checkbox'
+// import OutlinedInput from '@mui/material/OutlinedInput'
+// import ListItemText from '@mui/material/ListItemText'
+// import Checkbox from '@mui/material/Checkbox'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 import ExperienceCard from '../../src/components/experienceCard/ExperienceCard'
 import styled from '@emotion/styled'
 import { toTitleCase } from '../../src/utils'
 import { Experience } from '../../src/components/experienceCard/types'
 import { ExperienceType, ExperienceSource } from '../../constants/types'
-import experiences from '../../data/experiences.json'
+// import experiences from '../../data/experiences.json'
 import Fade from '@mui/material/Fade'
 import { useRouter } from 'next/router'
 import Button from '@mui/material/Button'
@@ -58,12 +58,21 @@ const MenuProps = {
 
 export const getServerSideProps: GetServerSideProps<{
     isPreview: boolean
+    experiences: Array<Experience>
 }> = async (context: GetServerSidePropsContext) => {
-    return { props: { isPreview: context.query.id === 'preview' } }
+    const dataPromise = await fetch(
+        `${process.env.BASE_URL}/api/experiences/list`,
+    )
+    const data = await dataPromise.json()
+
+    return {
+        props: { isPreview: context.query.id === 'preview', experiences: data },
+    }
 }
 
 export default function Experience({
     isPreview,
+    experiences,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
     const [typeFilter, setTypeFilter] = React.useState<string>('ALL')
     const [sourceFilter, setSourceFilter] = React.useState<string>('ALL')
