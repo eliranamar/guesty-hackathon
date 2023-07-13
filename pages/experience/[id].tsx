@@ -17,7 +17,7 @@ import styled from '@emotion/styled'
 import { toTitleCase } from '../../src/utils'
 import { Experience } from '../../src/components/experienceCard/types'
 import { ExperienceType, ExperienceSource } from '../../constants/types'
-import experiences from '../../data/experiences.json'
+// import experiences from '../../data/experiences.json'
 import Fade from '@mui/material/Fade'
 import { useRouter } from 'next/router'
 import Button from '@mui/material/Button'
@@ -26,6 +26,8 @@ import {
     GetServerSidePropsContext,
     InferGetServerSidePropsType,
 } from 'next'
+import {listExperiences} from '../api/experiences/list'
+const experiences = listExperiences();
 
 const Background = styled('div')<{}>(({}) => ({
     position: 'relative',
