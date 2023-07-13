@@ -27,22 +27,22 @@ const ImgDiv = styled('div')<{ src: string }>(({ src }) => ({
 }))
 
 const getChipColor = (type: string) => {
-    switch (type) {
-        case ExperienceType.CONCERT:
+    switch (type.toLowerCase()) {
+        case ExperienceType.CONCERT.toLowerCase():
             return '#FFF964'
-        case ExperienceType.SPORT:
+        case ExperienceType.SPORT.toLowerCase():
             return '#FF87B2'
-        case ExperienceType.VOLUNTEERING:
+        case ExperienceType.VOLUNTEERING.toLowerCase():
             return '#FFD787'
-        case ExperienceType.TRIP:
+        case ExperienceType.TRIP.toLowerCase():
             return '#87C9FF'
-        case ExperienceType.EVENT:
+        case ExperienceType.EVENT.toLowerCase():
             return '#FFC787'
-        case ExperienceSource.AI:
+        case ExperienceSource.AI.toLowerCase():
             return '#69e57d'
-        case ExperienceSource.HOST:
+        case ExperienceSource.HOST.toLowerCase():
             return '#87b5ff'
-        case ExperienceSource.GUEST:
+        case ExperienceSource.GUEST.toLowerCase():
             return '#eaab60'
         default:
             return '#87FF9A'
