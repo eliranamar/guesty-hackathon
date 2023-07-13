@@ -109,7 +109,6 @@ export default function Modal({
                     </FormControl>
                     <FormControl fullWidth>
                         <TextField
-                            autoFocus
                             margin="dense"
                             id="address"
                             label="Address"
