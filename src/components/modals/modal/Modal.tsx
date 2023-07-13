@@ -50,13 +50,20 @@ export default function Modal({
     onClose,
     renderFooter,
     handleFormChange,
+    handleChangeMultiSelect,
+    listings,
     title,
     values,
 }: {
     open: boolean
     onClose: () => void
+    listings?: { [key: string]: string }[]
     renderFooter: () => React.ReactNode
     handleFormChange: (event: { [key: string]: any }, type?: string) => void
+    handleChangeMultiSelect?: (
+        event: { [key: string]: any },
+        type?: string,
+    ) => void
     title: string
     values: { [key: string]: any }
 }) {
@@ -96,6 +103,30 @@ export default function Modal({
                             {Object.values(ExperienceType).map((type) => (
                                 <MenuItem key={type} value={type}>
                                     {toTitleCase(type)}
+                                </MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
+                    <FormControl fullWidth sx={{ marginBottom: '25px' }}>
+                        <InputLabel id="demo-simple-select-label">
+                            Listings
+                        </InputLabel>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            multiple
+                            id="listing"
+                            value={values.listings}
+                            label="Listings"
+                            onChange={(event) =>
+                                handleChangeMultiSelect(event, 'listings')
+                            }
+                        >
+                            {listings?.map((listing) => (
+                                <MenuItem
+                                    key={listing.listing_id}
+                                    value={listing.title}
+                                >
+                                    {listing.title}
                                 </MenuItem>
                             ))}
                         </Select>
