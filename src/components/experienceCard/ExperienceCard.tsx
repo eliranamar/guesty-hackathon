@@ -131,7 +131,9 @@ export default function ExperienceCard({
             )}
 
             <Grid container justifyContent="space-between" alignItems="center">
-                <Rating readOnly defaultValue={rating} precision={0.5} />
+                {rating && (
+                    <Rating readOnly defaultValue={rating} precision={0.5} />
+                )}
                 <div>
                     <Link
                         href={link}
