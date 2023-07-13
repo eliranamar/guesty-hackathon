@@ -10,7 +10,7 @@ import { Rating } from '@mui/material'
 import { EXPERIENCE_TYPE, RECOMMENDER } from '../../../constants/memory'
 import { ExperienceCardProps } from './types'
 import { toTitleCase } from '../../utils'
-import { ExperienceSource } from '../../../constants/types'
+import { ExperienceSource, ExperienceType } from '../../../constants/types'
 
 const ImgDiv = styled('div')<{ src: string }>(({ src }) => ({
     width: '100%',
@@ -27,14 +27,22 @@ const ImgDiv = styled('div')<{ src: string }>(({ src }) => ({
 
 const getChipColor = (type: string) => {
     switch (type) {
-        case EXPERIENCE_TYPE.RESTAURANT:
+        case ExperienceType.CONCERT:
             return '#FFF964'
-        case EXPERIENCE_TYPE.CONCERT:
+        case ExperienceType.SPORT:
             return '#FF87B2'
-        case EXPERIENCE_TYPE.VOLUNTEERING:
+        case ExperienceType.VOLUNTEERING:
             return '#FFD787'
-        case EXPERIENCE_TYPE.TRIP:
+        case ExperienceType.TRIP:
             return '#87C9FF'
+        case ExperienceType.EVENT:
+            return '#FFC787'
+        case ExperienceSource.AI:
+            return '#69e57d'
+        case ExperienceSource.HOST:
+            return '#87b5ff'
+        case ExperienceSource.GUEST:
+            return '#eaab60'
         default:
             return '#87FF9A'
     }
@@ -66,6 +74,7 @@ export default function ExperienceCard({
         rating,
         source,
     } = experience
+    console.log({ experience })
 
     return (
         <div style={{ marginBottom: 48 }}>
@@ -78,7 +87,7 @@ export default function ExperienceCard({
                 }
                 sx={{
                     borderRadius: '4px',
-                    backgroundColor: getChipColor(type),
+                    backgroundColor: getChipColor(source),
                 }}
             />
             <Grid
@@ -131,7 +140,9 @@ export default function ExperienceCard({
             )}
 
             <Grid container justifyContent="space-between" alignItems="center">
-                <Rating readOnly defaultValue={rating} precision={0.5} />
+                {rating && (
+                    <Rating readOnly defaultValue={rating} precision={0.5} />
+                )}
                 <div>
                     <Link
                         href={link}

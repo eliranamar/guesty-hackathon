@@ -207,7 +207,11 @@ export default function Experience({
                                             )}
                                         </Select>
                                     </FormControl>
-                                    <FormControl fullWidth size="small">
+                                    <FormControl
+                                        fullWidth
+                                        size="small"
+                                        sx={{ minWidth: 106 }}
+                                    >
                                         <InputLabel id="demo-simple-select-label">
                                             Recommender
                                         </InputLabel>
@@ -221,12 +225,15 @@ export default function Experience({
                                             <MenuItem value="ALL">All</MenuItem>
                                             {Object.values(
                                                 ExperienceSource,
-                                            ).map((type) => (
+                                            ).map((source) => (
                                                 <MenuItem
-                                                    key={type}
-                                                    value={type}
+                                                    key={source}
+                                                    value={source}
                                                 >
-                                                    {toTitleCase(type)}
+                                                    {source ===
+                                                    ExperienceSource.AI
+                                                        ? 'AI'
+                                                        : toTitleCase(source)}
                                                 </MenuItem>
                                             ))}
                                         </Select>
