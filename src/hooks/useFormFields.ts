@@ -6,16 +6,16 @@ type Values = {
 
 export function useFormFields(
     initialState: Values,
-): [
-    Values,
-    (event: { [key: string]: any }, type?: string) => void,
-    () => void,
-] {
+): {
+    fields: Values
+    handleFormChange: (event: { [key: string]: any }, type?: string) => void
+    resetForm: () => void
+} {
     const [fields, setValues] = useState(initialState)
 
-    return [
+    return {
         fields,
-        function (event, id = '') {
+        handleFormChange: function (event, id = '') {
             const fieldId = event.target.id || id
 
             setValues({
@@ -23,8 +23,8 @@ export function useFormFields(
                 [fieldId]: event.target.value,
             })
         },
-        function () {
+        resetForm: function () {
             setValues(initialState)
         },
-    ]
+    }
 }

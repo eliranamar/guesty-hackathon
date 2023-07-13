@@ -9,9 +9,41 @@ import MenuItem from '@mui/material/MenuItem'
 import DialogTitle from '@mui/material/DialogTitle'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
+import IconButton from '@mui/material/IconButton'
+import CloseIcon from '@mui/icons-material/Close'
 
 import { ExperienceType } from '../../../../constants/types'
 import { toTitleCase } from '../../../utils'
+
+export interface DialogTitleProps {
+    id: string
+    children?: React.ReactNode
+    onClose: () => void
+}
+
+function BootstrapDialogTitle(props: DialogTitleProps) {
+    const { children, onClose, ...other } = props
+
+    return (
+        <DialogTitle sx={{ paddingTop: '25px' }} {...other}>
+            {children}
+            {onClose ? (
+                <IconButton
+                    aria-label="close"
+                    onClick={onClose}
+                    sx={{
+                        position: 'absolute',
+                        right: 16,
+                        top: 20,
+                        color: (theme) => theme.palette.grey[500],
+                    }}
+                >
+                    <CloseIcon />
+                </IconButton>
+            ) : null}
+        </DialogTitle>
+    )
+}
 
 export default function Modal({
     open,
@@ -31,7 +63,9 @@ export default function Modal({
     return (
         <div>
             <Dialog open={open} onClose={onClose} maxWidth="xs">
-                <DialogTitle sx={{ paddingTop: '25px' }}>{title}</DialogTitle>
+                <BootstrapDialogTitle id="modal-title" onClose={onClose}>
+                    {title}
+                </BootstrapDialogTitle>
                 <DialogContent>
                     <FormControl fullWidth sx={{ marginBottom: '25px' }}>
                         <TextField

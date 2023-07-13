@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid'
 import { Button, Typography } from '@mui/material'
 
 import EditModal from '../modals/editModal/EditModal'
+import { useFormFields } from '../../hooks/useFormFields'
 
 // TODO: Listings
 export default function RecommendationCard({
@@ -22,8 +23,15 @@ export default function RecommendationCard({
 }): React.ReactNode {
     const [isOpenModal, setIsOpenModal] = React.useState(false)
 
+    const { fields, handleFormChange, resetForm } = useFormFields({
+        name,
+        address,
+        type,
+    })
+
     const handleOpenModal = () => {
         setIsOpenModal(true)
+        resetForm()
     }
 
     const handleCloseModal = () => {
@@ -124,11 +132,8 @@ export default function RecommendationCard({
                         isOpen={isOpenModal}
                         handleCloseModal={handleCloseModal}
                         handleSaveModal={handleSaveModal}
-                        values={{
-                            name,
-                            address,
-                            type,
-                        }}
+                        handleFormChange={handleFormChange}
+                        values={fields}
                     />
                 </Grid>
             </Grid>
