@@ -118,6 +118,7 @@ export default function Modal({
                             value={values.listings}
                             label="Listings"
                             onChange={(event) =>
+                                handleChangeMultiSelect &&
                                 handleChangeMultiSelect(event, 'listings')
                             }
                         >
