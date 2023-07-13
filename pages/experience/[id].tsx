@@ -68,7 +68,7 @@ export const getServerSideProps: GetServerSideProps<{
     experiences: Array<Experience>
 }> = async (context: GetServerSidePropsContext) => {
     const dataPromise = await fetch(
-        `${process.env.BASE_URL}/api/experiences/list`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/experiences/list`,
     )
     const data = await dataPromise.json()
 

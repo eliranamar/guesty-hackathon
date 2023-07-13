@@ -17,7 +17,7 @@ export default function RecommendationsPage() {
     const getRecommendationList = async (type: 'HOST' | 'GUEST') => {
         try {
             const recommendations = await fetch(
-                `http://localhost:3000/api/experiences/list?source=${type}`,
+                `${process.env.NEXT_PUBLIC_BASE_URL}/api/experiences/list?source=${type}`,
             )
 
             const recommendationsData = await recommendations.json()
