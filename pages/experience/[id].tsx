@@ -21,6 +21,11 @@ import experiences from '../../data/experiences.json'
 import Fade from '@mui/material/Fade'
 import { useRouter } from 'next/router'
 import Button from '@mui/material/Button'
+import {
+    GetServerSideProps,
+    GetServerSidePropsContext,
+    InferGetServerSidePropsType,
+} from 'next'
 
 const Background = styled('div')<{}>(({}) => ({
     position: 'relative',
@@ -51,13 +56,18 @@ const MenuProps = {
     },
 }
 
-export default function Experience() {
+export const getServerSideProps: GetServerSideProps<{
+    isPreview: boolean
+}> = async (context: GetServerSidePropsContext) => {
+    return { props: { isPreview: context.query.id === 'preview' } }
+}
+
+export default function Experience({
+    isPreview,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
     const [typeFilter, setTypeFilter] = React.useState<string>('ALL')
     const [sourceFilter, setSourceFilter] = React.useState<string>('ALL')
     const router = useRouter()
-    const isPreview = router.query.id === 'preview'
-
-    console.log(isPreview)
 
     const filteredExperiences = useMemo(() => {
         let tempExperiences: Experience[] = [...experiences] as Experience[]
@@ -99,7 +109,11 @@ export default function Experience() {
             <AbstractBackground src="/Abstract.svg" />
             <Container style={{ maxWidth: 620, marginTop: 50 }}>
                 <div style={{ textAlign: 'center', marginBottom: 50 }}>
-                    <img src="/host_logo.png" alt="" />
+                    <img
+                        src="/host_logo.png"
+                        alt=""
+                        style={{ height: 112, width: 'auto' }}
+                    />
                 </div>
                 <Typography
                     variant="h3"
