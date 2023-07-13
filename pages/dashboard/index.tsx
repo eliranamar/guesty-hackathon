@@ -175,7 +175,7 @@ export default function Dashboard() {
                     width: '100%',
                 }}
                 src="/img.png"
-                alt="test"
+                alt="test123"
             />
         </Background>
     )
