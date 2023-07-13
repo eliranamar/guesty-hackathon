@@ -3,8 +3,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 const fs = require('fs');
 const path = require("path");
 
-
 const storagePath = 'data/experiences.json';
+const tmpPath = '/tmp/experiences.json';
 const filePath = path.resolve(process.cwd(), storagePath);
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -15,7 +15,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             const experience = getExperience(req, res);
             res.status(200).json(experience)
         } else if (req.method === 'PUT') {
-            updateexperience(req);
+            updateExperience(req);
             res.status(200).json('ok');
         }
     } catch (e: any) {
@@ -36,7 +36,7 @@ function getExperience(req: NextApiRequest, res: NextApiResponse) {
     }
 }
 
-function updateexperience(req: NextApiRequest) {
+function updateExperience(req: NextApiRequest) {
     const { id } = req.body;
     const experiences = getExperiencesData();
     const i = experiences.findIndex((exp: any) => exp.id === id);
@@ -50,9 +50,10 @@ function updateexperience(req: NextApiRequest) {
 // util functions
 const saveExperienceData = (data: any) => {
     const stringifyData = JSON.stringify(data,null,2);
-    fs.writeFileSync(filePath, stringifyData);
+    fs.writeFileSync(tmpPath, stringifyData);
 }
 const getExperiencesData = () => {
-    const jsonData = fs.readFileSync(filePath);
+    // if updated - take tmp file
+    const jsonData = fs.existsSync(tmpPath) ? fs.readFileSync(tmpPath) : fs.readFileSync(filePath);
     return JSON.parse(jsonData.toString());   
 }

@@ -4,7 +4,12 @@ import Tab from '@mui/material/Tab'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Link from 'next/link'
+import { Button, IconButton } from '@mui/material'
+import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined'
+
 import RecommendationCard from '../recommendationCard/RecommendationCard'
+import Modal from '../modals/modal/Modal'
+import { useFormFields } from '../../hooks/useFormFields'
 
 interface TabPanelProps {
     children?: React.ReactNode
@@ -41,14 +46,48 @@ export default function Recommendations({
     recommendationList: Array<{ [key: string]: any }>
 }): React.ReactNode {
     const [value, setValue] = React.useState(0)
+    const [isOpenModal, setIsOpenModal] = React.useState(false)
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue)
     }
 
+    const handleCloseModal = () => {
+        setIsOpenModal(false)
+    }
+
+    const handleOpenModal = () => {
+        setIsOpenModal(true)
+    }
+
+    const handleSaveModal = () => {
+        setIsOpenModal(false)
+    }
+
+    const renderButtonStyles = (color: string) => ({
+        backgroundColor: color,
+        color: 'text.primary',
+        textTransform: 'none',
+        borderRadius: '10px',
+        '&:hover': {
+            backgroundColor: color,
+            opacity: '0.7',
+        },
+    })
+
+    const [fields, handleFieldChange] = useFormFields({
+        name: '',
+        address: '',
+    })
+
     return (
         <Box sx={{ width: '100%' }}>
-            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+            <Box
+                sx={{ borderBottom: 1, borderColor: 'divider' }}
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+            >
                 <Tabs
                     value={value}
                     onChange={handleChange}
@@ -66,6 +105,9 @@ export default function Recommendations({
                         {...a11yProps(1)}
                     />
                 </Tabs>
+                <IconButton onClick={handleOpenModal}>
+                    <AddCircleOutlinedIcon />
+                </IconButton>
             </Box>
             <div style={{ textAlign: 'end', marginTop: 24, marginRight: 24 }}>
                 <Link
@@ -86,6 +128,7 @@ export default function Recommendations({
                             address={recommendation.location_address}
                             name={recommendation.name}
                             type={recommendation.type}
+                            listing_id={recommendation.listing_id}
                         />
                     ))}
             </CustomTabPanel>
@@ -98,9 +141,27 @@ export default function Recommendations({
                             address={recommendation.location_address}
                             name={recommendation.name}
                             type={recommendation.type}
+                            listing_id={recommendation.listing_id}
                         />
                     ))}
             </CustomTabPanel>
+            <Modal
+                open={isOpenModal}
+                title="Create"
+                onClose={handleCloseModal}
+                values={fields}
+                handleFormChange={handleFieldChange}
+                renderFooter={() => (
+                    <>
+                        <Button
+                            onClick={handleSaveModal}
+                            sx={() => renderButtonStyles('#62DB29')}
+                        >
+                            Save
+                        </Button>
+                    </>
+                )}
+            />
         </Box>
     )
 }

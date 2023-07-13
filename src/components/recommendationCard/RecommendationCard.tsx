@@ -1,9 +1,10 @@
 import * as React from 'react'
-import { styled } from '@mui/material/styles'
+
 import Box from '@mui/material/Box'
-import Paper from '@mui/material/Paper'
 import Grid from '@mui/material/Grid'
 import { Button, Typography } from '@mui/material'
+
+import EditModal from '../modals/editModal/EditModal'
 
 // TODO: Listings
 export default function RecommendationCard({
@@ -11,12 +12,28 @@ export default function RecommendationCard({
     address,
     name,
     type,
+    listing_id,
 }: {
     image: string
     address: string
     name: string
     type: string
+    listing_id: string[]
 }): React.ReactNode {
+    const [isOpenModal, setIsOpenModal] = React.useState(false)
+
+    const handleOpenModal = () => {
+        setIsOpenModal(true)
+    }
+
+    const handleCloseModal = () => {
+        setIsOpenModal(false)
+    }
+
+    const handleSaveModal = () => {
+        setIsOpenModal(false)
+    }
+
     return (
         <Box
             sx={{
@@ -71,7 +88,11 @@ export default function RecommendationCard({
                                     {type}
                                 </Typography>
                                 <Typography fontSize={14} fontWeight={500}>
-                                    • Assigned to 4 listings
+                                    • Assigned to{' '}
+                                    {listing_id.length > 0
+                                        ? listing_id.length
+                                        : 0}{' '}
+                                    listings
                                 </Typography>
                             </Box>
                         </Box>
@@ -91,11 +112,24 @@ export default function RecommendationCard({
                     display="flex"
                     justifyContent="end"
                 >
-                    <Button>
+                    <Button
+                        sx={{ color: 'text.primary' }}
+                        onClick={handleOpenModal}
+                    >
                         <Typography textTransform="none" color="#8c8c8c">
                             Edit
                         </Typography>
                     </Button>
+                    <EditModal
+                        isOpen={isOpenModal}
+                        handleCloseModal={handleCloseModal}
+                        handleSaveModal={handleSaveModal}
+                        values={{
+                            name,
+                            address,
+                            type,
+                        }}
+                    />
                 </Grid>
             </Grid>
         </Box>
