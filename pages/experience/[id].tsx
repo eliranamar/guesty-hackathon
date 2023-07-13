@@ -82,13 +82,16 @@ export default function Experience({
         let tempExperiences: Experience[] = [...experiences] as Experience[]
         if (typeFilter && typeFilter !== 'ALL') {
             tempExperiences = tempExperiences.filter(
-                (experience) => experience.type === typeFilter,
+                (experience) =>
+                    experience.type.toLowerCase() === typeFilter.toLowerCase(),
             )
         }
 
         if (sourceFilter && sourceFilter !== 'ALL') {
             tempExperiences = tempExperiences.filter(
-                (experience) => experience.source === sourceFilter,
+                (experience) =>
+                    experience.source.toLowerCase() ===
+                    sourceFilter.toLowerCase(),
             )
         }
 
