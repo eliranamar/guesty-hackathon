@@ -16,6 +16,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             if (id && typeof id === 'string') {
                 const experience = getExperience(id);
                 res.status(200).json(experience)
+            } else {
+                res.status(200).json(`Error - please use url query to get specific id: 'api/experience?id=5'`);
             }
         } else if (req.method === 'PUT') {
             updateExperience(req);
