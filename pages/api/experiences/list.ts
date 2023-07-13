@@ -12,14 +12,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
     try {
         if (req.method === 'GET') {
-            const { id } = req.query;
-            if (id && typeof id === 'string') {
-                const experience = getExperience(id);
-                res.status(200).json(experience)
-            }
-        } else if (req.method === 'PUT') {
-            updateExperience(req);
-            res.status(200).json('ok');
+            res.status(200).json(listExperiences(req.query))
         }
     } catch (e: any) {
         res.status(500).json({
@@ -29,23 +22,15 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     }
 }
 
-function getExperience(id: string) {
+function listExperiences(filters: any) {
+    console.log({filters});
+    const { source } = filters;
     const experiences = getExperiencesData();
-    const i = experiences.findIndex((exp: any) => exp.id === id);
-    if (i > -1) {
-        return experiences[i];
+    if (source) {
+        return experiences.filter((exp: any) => exp.source === source);
     }
-}
-
-function updateExperience(req: NextApiRequest) {
-    const { id } = req.body;
-    const experiences = getExperiencesData();
-    const i = experiences.findIndex((exp: any) => exp.id === id);
-    if (i > -1) {
-        experiences[i] = req.body;
-        saveExperienceData(experiences);
-        console.log(`experienceId: ${id} was updated succefully`);
-    }
+    return experiences;
+    
 }
 
 // util functions
