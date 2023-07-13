@@ -8,10 +8,10 @@ import LocationOnIcon from '@mui/icons-material/LocationOn'
 import Stack from '@mui/material/Stack'
 import { Rating } from '@mui/material'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
+import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
 import { ExperienceCardProps } from './types'
 import { toTitleCase } from '../../utils'
 import { ExperienceSource, ExperienceType } from '../../../constants/types'
-import dayjs from '../../utils/dayjs'
 
 const ImgDiv = styled('div')<{ src: string }>(({ src }) => ({
     width: '100%',
@@ -126,6 +126,11 @@ export default function ExperienceCard({
                     borderRadius: '4px',
                     backgroundColor: getChipColor(source),
                 }}
+                icon={
+                    source === ExperienceSource.AI ? (
+                        <AutoFixHighIcon />
+                    ) : undefined
+                }
             />
             <Grid
                 container
