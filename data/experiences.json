@@ -178,5 +178,27 @@
     "date_to": "2023-08-06",
     "time": "21:00",
     "link": "https://www.grangalaflamenco.com/en/"
+  },
+  {
+    "id": "9",
+    "account_id": "5f1050359f311f002ce2eaf2",
+    "listing_id": [
+      "61a1fef12a4e1c0033292de0"
+    ],
+    "name": "Volunteer with animals",
+    "description": "Animal shelter one day volunteering",
+    "type": "VOLUNTEERING",
+    "source": "HOST",
+    "discount_amount": "",
+    "discount_type": "",
+    "location_longitude": "",
+    "location_latitude": "",
+    "distance": "1.1 km",
+    "location_address": "Palau de la MusicaPalau de la Musica Catalana",
+    "image": "https://image.volunteerworld.com/419a03420d6a3b19f4a91d958e5194dd725b7d06/santuario.jpg?auto=format&fit=crop&max-h=560&max-w=560",
+    "date_from": "2023-08-06",
+    "date_to": "2023-08-06",
+    "time": "21:00",
+    "link": "https://www.volunteerworld.com/en/volunteer-program/animal-sanctuary-assistance-in-spain-barcelona"
   }
 ]
