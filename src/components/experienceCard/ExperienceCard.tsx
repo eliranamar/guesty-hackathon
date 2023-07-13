@@ -29,34 +29,45 @@ const ImgDiv = styled('div')<{ src: string }>(({ src }) => ({
 const getChipColor = (type: string) => {
     switch (type.toLowerCase()) {
         case ExperienceType.CONCERT.toLowerCase():
-            return '#FFF964'
+            return '#fec802'
         case ExperienceType.SPORT.toLowerCase():
-            return '#FF87B2'
+            return '#ab47bc'
         case ExperienceType.VOLUNTEERING.toLowerCase():
-            return '#FFD787'
+            return '#5dc483'
         case ExperienceType.TRIP.toLowerCase():
-            return '#87C9FF'
+            return '#b8edef'
         case ExperienceType.EVENT.toLowerCase():
-            return '#FFC787'
+            return '#14c4c4'
         case ExperienceSource.AI.toLowerCase():
-            return '#69e57d'
+            return '#bdbecd'
         case ExperienceSource.HOST.toLowerCase():
-            return '#87b5ff'
+            return '#ff8a00'
         case ExperienceSource.GUEST.toLowerCase():
-            return '#eaab60'
+            return '#d40033'
         default:
             return '#87FF9A'
     }
 }
 
-const getLabelByType = (recommender: string, numOfGuests: number) => {
-    switch (recommender) {
+const getChipColorBySource = (source: string) => {
+    switch (source) {
+        case ExperienceSource.AI:
+            return '#b8edef'
+        case ExperienceSource.HOST:
+            return '#8fd4a7'
+        case ExperienceSource.GUEST:
+            return '#fef9e5'
+    }
+}
+
+const getLabelBySource = (source: string, numOfGuests: number) => {
+    switch (source) {
         case ExperienceSource.AI:
             return 'AI recommendation'
         case ExperienceSource.HOST:
             return 'Host recommendation'
         case ExperienceSource.GUEST:
-            return `highly praised by ${numOfGuests || 21} previous guests`
+            return `Highly praised by ${numOfGuests || 21} previous guests`
     }
 }
 
@@ -119,12 +130,12 @@ export default function ExperienceCard({
                 size="small"
                 label={
                     <Typography variant="caption">
-                        {getLabelByType(source, previous_guests_counter || 0)}
+                        {getLabelBySource(source, previous_guests_counter || 0)}
                     </Typography>
                 }
                 sx={{
                     borderRadius: '4px',
-                    backgroundColor: getChipColor(source),
+                    backgroundColor: getChipColorBySource(source),
                 }}
                 icon={
                     source === ExperienceSource.AI ? (
