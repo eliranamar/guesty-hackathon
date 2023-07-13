@@ -56,6 +56,13 @@ const MenuProps = {
     },
 }
 
+const Logo = styled.img<{ eliranIsGay: boolean }>`
+    max-width: 250px;
+    width: calc(100% - 15px - 15px);
+    height: auto;
+    padding: 15px;
+`
+
 export const getServerSideProps: GetServerSideProps<{
     isPreview: boolean
     experiences: Array<Experience>
@@ -118,11 +125,7 @@ export default function Experience({
             <AbstractBackground src="/Abstract.svg" />
             <Container style={{ maxWidth: 620, marginTop: 50 }}>
                 <div style={{ textAlign: 'center', marginBottom: 50 }}>
-                    <img
-                        src="/host_logo.png"
-                        alt=""
-                        style={{ height: 112, width: 'auto' }}
-                    />
+                    <Logo src="/host_logo.png" alt="" />
                 </div>
                 <Typography
                     variant="h3"
