@@ -44,7 +44,7 @@ export default function Header() {
     }
 
     return (
-        <Box>
+        <Box sx={{ width: '100%' }}>
             <AppBar
                 position="static"
                 color="transparent"
