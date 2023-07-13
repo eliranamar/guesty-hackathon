@@ -17,6 +17,49 @@ interface TabPanelProps {
     value: number
 }
 
+const LISTINGS = [
+    {
+        listing_id: '61a75fe6aec481003422ec49',
+        title: 'Rooftop 1-bedroom apartment in Las Ramblas',
+    },
+    {
+        listing_id: '61a1ff059470ba0035fd2429',
+        title: '4bedroom apart with balcony in Las Ramblas  1 1',
+    },
+    {
+        listing_id: '61a1fed6aea537003474df85',
+        title: 'Centric 3bedroom in Las Ramblas  2 1B',
+    },
+    {
+        listing_id: '61a1fef3bc23400035344db9',
+        title: '4bedroom apart with a balcony in Las Ramblas 1 2',
+    },
+    {
+        listing_id: '61a1ff2b9470ba0035fd288c',
+        title: 'Huge 4bedroom with terrace in Las Ramblas P2',
+    },
+    {
+        listing_id: '61a1ff349470ba0035fd2b81',
+        title: 'Centric 4bedroom with terrace in Las Ramblas. P1',
+    },
+    {
+        listing_id: '61a1fec3bc23400035344601',
+        title: 'Bright 4 bedroom apartment w/ balcony, Las Ramblas',
+    },
+    {
+        listing_id: '61a1fef12a4e1c0033292de0',
+        title: 'Centric 2bedroom in Las Ramblas  2 1A',
+    },
+    {
+        listing_id: '61a1fe8a2a4e1c0033291b36',
+        title: '4bedroom apart with balcony in Las Ramblas 3-2',
+    },
+    {
+        listing_id: '61a1fe9a2a4e1c0033292205',
+        title: 'Centric 3bedroom in Las Ramblas  3 1B',
+    },
+]
+
 function CustomTabPanel(props: TabPanelProps) {
     const { children, value, index, ...other } = props
 
@@ -54,9 +97,15 @@ export default function Recommendations({
         setValue(newValue)
     }
 
-    const { fields, handleFormChange, resetForm } = useFormFields({
+    const {
+        fields,
+        handleFormChange,
+        resetForm,
+        handleChangeMultiSelect,
+    } = useFormFields({
         name: '',
         address: '',
+        listings: [],
     })
 
     const handleCloseModal = () => {
@@ -137,6 +186,7 @@ export default function Recommendations({
                             name={recommendation.name}
                             type={recommendation.type}
                             listing_id={recommendation.listing_id}
+                            listings={recommendation.listings || LISTINGS}
                         />
                     ))}
             </CustomTabPanel>
@@ -150,6 +200,7 @@ export default function Recommendations({
                             name={recommendation.name}
                             type={recommendation.type}
                             listing_id={recommendation.listing_id}
+                            listings={recommendation.listings || LISTINGS}
                         />
                     ))}
             </CustomTabPanel>
@@ -158,7 +209,9 @@ export default function Recommendations({
                 title="Create"
                 onClose={handleCloseModal}
                 values={fields}
+                listings={LISTINGS}
                 handleFormChange={handleFormChange}
+                handleChangeMultiSelect={handleChangeMultiSelect}
                 renderFooter={() => (
                     <>
                         <Button
