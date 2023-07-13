@@ -11,6 +11,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import { ExperienceCardProps } from './types'
 import { toTitleCase } from '../../utils'
 import { ExperienceSource, ExperienceType } from '../../../constants/types'
+import dayjs from '../../utils/dayjs'
 
 const ImgDiv = styled('div')<{ src: string }>(({ src }) => ({
     width: '100%',
@@ -59,6 +60,20 @@ const getLabelByType = (recommender: string, numOfGuests: number) => {
     }
 }
 
+const nth = function (d: number) {
+    if (d > 3 && d < 21) return 'th'
+    switch (d % 10) {
+        case 1:
+            return 'st'
+        case 2:
+            return 'nd'
+        case 3:
+            return 'rd'
+        default:
+            return 'th'
+    }
+}
+
 const getTimeLabel = (date_from: string, time: string) => {
     let label = ''
     // const date = new Date(date_from)
@@ -66,23 +81,10 @@ const getTimeLabel = (date_from: string, time: string) => {
     // label = new Intl.DateTimeFormat('en-US').format(date)
 
     // format the date to MMM DD format
-    // const date = new Date(date_from)
-    // const month = date.toLocaleString('default', { month: 'short' })
-    // const day = date.getDate()
-    // label = `${month} ${day}`
-
-    // format the date to MMM DD format using Intl api
     const date = new Date(date_from)
-    // const options = { month: 'short', day: 'short', year: 'none' }
-    // label = new Intl.DateTimeFormat('en-US', options).format(date)
-
-    const formatter = new Intl.DateTimeFormat('en-US', {
-        month: 'short',
-        day: 'numeric',
-        daySuffix: 'ordinal',
-    })
-
-    label = formatter.format(date)
+    const month = date.toLocaleString('default', { month: 'short' })
+    const day = date.getDate()
+    label = `${month} ${day + nth(day)}`
 
     if (time) {
         label = `${label} - ${time}`
@@ -150,7 +152,7 @@ export default function ExperienceCard({
                             <Chip
                                 size="small"
                                 label={getTimeLabel(date_from, time)}
-                                icon={<AccessTimeIcon color="text.primary" />}
+                                icon={<AccessTimeIcon />}
                                 sx={{
                                     borderRadius: '4px',
                                     backgroundColor: '#d2d2d2',
