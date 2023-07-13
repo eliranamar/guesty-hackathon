@@ -1,11 +1,11 @@
 import * as React from 'react'
 
-import Box from '@mui/material/Box'
-import Grid from '@mui/material/Grid'
 import { Button, Typography } from '@mui/material'
-
-import EditModal from '../modals/editModal/EditModal'
 import styled from '@emotion/styled'
+
+import { useFormFields } from '../../hooks/useFormFields'
+import EditModal from '../modals/editModal/EditModal'
+
 
 const PreviewImage = styled.img`
     width: 96px;
@@ -82,8 +82,15 @@ export default function RecommendationCard({
 }): React.ReactNode {
     const [isOpenModal, setIsOpenModal] = React.useState(false)
 
+    const { fields, handleFormChange, resetForm } = useFormFields({
+        name,
+        address,
+        type,
+    })
+
     const handleOpenModal = () => {
         setIsOpenModal(true)
+        resetForm()
     }
 
     const handleCloseModal = () => {
@@ -134,14 +141,11 @@ export default function RecommendationCard({
                 </Button>
             </Controls>
             <EditModal
-                isOpen={isOpenModal}
-                handleCloseModal={handleCloseModal}
-                handleSaveModal={handleSaveModal}
-                values={{
-                    name,
-                    address,
-                    type,
-                }}
+              isOpen={isOpenModal}
+              handleCloseModal={handleCloseModal}
+              handleSaveModal={handleSaveModal}
+              handleFormChange={handleFormChange}
+              values={fields}
             />
         </Container>
     )

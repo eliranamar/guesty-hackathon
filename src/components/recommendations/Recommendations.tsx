@@ -42,8 +42,10 @@ function a11yProps(index: number) {
 
 export default function Recommendations({
     recommendationList,
+    handleGetRecommendations,
 }: {
     recommendationList: Array<{ [key: string]: any }>
+    handleGetRecommendations: (type: 'HOST' | 'GUEST') => void
 }): React.ReactNode {
     const [value, setValue] = React.useState(0)
     const [isOpenModal, setIsOpenModal] = React.useState(false)
@@ -52,11 +54,17 @@ export default function Recommendations({
         setValue(newValue)
     }
 
+    const { fields, handleFormChange, resetForm } = useFormFields({
+        name: '',
+        address: '',
+    })
+
     const handleCloseModal = () => {
         setIsOpenModal(false)
     }
 
     const handleOpenModal = () => {
+        resetForm()
         setIsOpenModal(true)
     }
 
@@ -75,13 +83,8 @@ export default function Recommendations({
         },
     })
 
-    const [fields, handleFieldChange] = useFormFields({
-        name: '',
-        address: '',
-    })
-
     return (
-        <Box sx={{ width: '100%' }}>
+        <Box sx={{ width: '100%', marginTop: '40px' }}>
             <Box
                 sx={{ borderBottom: 1, borderColor: 'divider' }}
                 display="flex"
@@ -99,8 +102,13 @@ export default function Recommendations({
                     }}
                     textColor="inherit"
                 >
-                    <Tab label="Your recommendations" {...a11yProps(0)} />
                     <Tab
+                        onClick={() => handleGetRecommendations('HOST')}
+                        label="Your recommendations"
+                        {...a11yProps(0)}
+                    />
+                    <Tab
+                        onClick={() => handleGetRecommendations('GUEST')}
                         label="Previous guest recommendation "
                         {...a11yProps(1)}
                     />
@@ -150,7 +158,7 @@ export default function Recommendations({
                 title="Create"
                 onClose={handleCloseModal}
                 values={fields}
-                handleFormChange={handleFieldChange}
+                handleFormChange={handleFormChange}
                 renderFooter={() => (
                     <>
                         <Button

@@ -1,28 +1,22 @@
 import { Button } from '@mui/material'
 
 import Modal from '../modal/Modal'
-import { useFormFields } from '../../../hooks/useFormFields'
 
 export default function EditModal({
     isOpen,
     values,
     handleCloseModal,
     handleSaveModal,
+    handleFormChange,
 }: {
     isOpen: boolean
     values: { [key: string]: any }
+    handleFormChange: (event: { [key: string]: any }) => void
     handleCloseModal: () => void
     handleSaveModal: () => void
 }) {
-    const [fields, handleFieldChange, resetForm] = useFormFields({
-        name: values.name,
-        address: values.address,
-        type: values.type,
-    })
-
     const onCloseModal = () => {
         handleCloseModal()
-        resetForm()
     }
 
     const renderButtonStyles = (color: string) => ({
@@ -41,8 +35,8 @@ export default function EditModal({
             open={isOpen}
             title="Edit"
             onClose={onCloseModal}
-            values={fields}
-            handleFormChange={handleFieldChange}
+            values={values}
+            handleFormChange={handleFormChange}
             renderFooter={() => (
                 <>
                     <Button
