@@ -170,7 +170,13 @@ export default function Dashboard() {
     return (
         <Background>
             <Header />
-            <Container>Hell world</Container>
+            <img
+                style={{
+                    width: '100%',
+                }}
+                src="/img.png"
+                alt=""
+            />
         </Background>
     )
 }
