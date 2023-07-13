@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Button from '@mui/material/Button'
+
 import TextField from '@mui/material/TextField'
 import Dialog from '@mui/material/Dialog'
 import DialogActions from '@mui/material/DialogActions'
@@ -8,7 +8,10 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import DialogTitle from '@mui/material/DialogTitle'
 import FormControl from '@mui/material/FormControl'
-import Select, { SelectChangeEvent } from '@mui/material/Select'
+import Select from '@mui/material/Select'
+
+import { ExperienceType } from '../../../../constants/types'
+import { toTitleCase } from '../../../utils'
 
 export default function Modal({
     open,
@@ -21,16 +24,10 @@ export default function Modal({
     open: boolean
     onClose: () => void
     renderFooter: () => React.ReactNode
-    handleFormChange: (event: { [key: string]: any }) => void
+    handleFormChange: (event: { [key: string]: any }, type?: string) => void
     title: string
     values: { [key: string]: any }
 }) {
-    const [type, setType] = React.useState('')
-
-    const handleChange = (event: SelectChangeEvent) => {
-        setType(event.target.value as string)
-    }
-
     return (
         <div>
             <Dialog open={open} onClose={onClose} maxWidth="xs">
@@ -55,14 +52,18 @@ export default function Modal({
                         </InputLabel>
                         <Select
                             labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            value={type}
+                            id="type"
+                            value={values?.type?.toUpperCase()}
                             label="Type"
-                            onChange={handleChange}
+                            onChange={(event) =>
+                                handleFormChange(event, 'type')
+                            }
                         >
-                            <MenuItem value={10}>Ten</MenuItem>
-                            <MenuItem value={20}>Twenty</MenuItem>
-                            <MenuItem value={30}>Thirty</MenuItem>
+                            {Object.values(ExperienceType).map((type) => (
+                                <MenuItem key={type} value={type}>
+                                    {toTitleCase(type)}
+                                </MenuItem>
+                            ))}
                         </Select>
                     </FormControl>
                     <FormControl fullWidth sx={{ marginBottom: '25px' }}>
