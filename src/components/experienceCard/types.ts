@@ -21,6 +21,7 @@ export type Experience = {
     time: string
     link: string
     rating: number
+    previous_guests_counter: number
 }
 
 export interface ExperienceCardProps {

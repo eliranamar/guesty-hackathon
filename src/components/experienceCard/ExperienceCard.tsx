@@ -7,7 +7,7 @@ import { styled } from '@mui/material/styles'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import Stack from '@mui/material/Stack'
 import { Rating } from '@mui/material'
-import { EXPERIENCE_TYPE, RECOMMENDER } from '../../../constants/memory'
+import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import { ExperienceCardProps } from './types'
 import { toTitleCase } from '../../utils'
 import { ExperienceSource, ExperienceType } from '../../../constants/types'
@@ -48,15 +48,47 @@ const getChipColor = (type: string) => {
     }
 }
 
-const getLabelByType = (recommender: string) => {
+const getLabelByType = (recommender: string, numOfGuests: number) => {
     switch (recommender) {
         case ExperienceSource.AI:
             return 'AI recommendation'
         case ExperienceSource.HOST:
             return 'Host recommendation'
         case ExperienceSource.GUEST:
-            return 'Previous Guest recommendation'
+            return `highly praised by ${numOfGuests || 21} previous guests`
     }
+}
+
+const getTimeLabel = (date_from: string, time: string) => {
+    let label = ''
+    // const date = new Date(date_from)
+    // console.log(new Intl.DateTimeFormat('en-US').format(date))
+    // label = new Intl.DateTimeFormat('en-US').format(date)
+
+    // format the date to MMM DD format
+    // const date = new Date(date_from)
+    // const month = date.toLocaleString('default', { month: 'short' })
+    // const day = date.getDate()
+    // label = `${month} ${day}`
+
+    // format the date to MMM DD format using Intl api
+    const date = new Date(date_from)
+    // const options = { month: 'short', day: 'short', year: 'none' }
+    // label = new Intl.DateTimeFormat('en-US', options).format(date)
+
+    const formatter = new Intl.DateTimeFormat('en-US', {
+        month: 'short',
+        day: 'numeric',
+        daySuffix: 'ordinal',
+    })
+
+    label = formatter.format(date)
+
+    if (time) {
+        label = `${label} - ${time}`
+    }
+
+    return label
 }
 
 export default function ExperienceCard({
@@ -73,6 +105,9 @@ export default function ExperienceCard({
         link,
         rating,
         source,
+        previous_guests_counter,
+        date_from,
+        time,
     } = experience
     console.log({ experience })
 
@@ -82,7 +117,7 @@ export default function ExperienceCard({
                 size="small"
                 label={
                     <Typography variant="caption">
-                        {getLabelByType(source)}
+                        {getLabelByType(source, previous_guests_counter || 0)}
                     </Typography>
                 }
                 sx={{
@@ -105,27 +140,48 @@ export default function ExperienceCard({
                 </Typography>
             </Grid>
             <ImgDiv src={image}>
-                <Grid container justifyContent="flex-end">
-                    <Stack direction="row" spacing={1}>
-                        {discount_amount && (
+                <Grid
+                    container
+                    justifyContent="space-between"
+                    alignItems="stretch"
+                >
+                    <Grid item>
+                        {date_from && (
                             <Chip
                                 size="small"
-                                label={`${discount_amount}% off`}
+                                label={getTimeLabel(date_from, time)}
+                                icon={<AccessTimeIcon color="text.primary" />}
                                 sx={{
                                     borderRadius: '4px',
-                                    backgroundColor: '#46FF59',
+                                    backgroundColor: '#d2d2d2',
                                 }}
                             />
                         )}
-                        <Chip
-                            size="small"
-                            label={toTitleCase(type)}
-                            sx={{
-                                borderRadius: '4px',
-                                backgroundColor: getChipColor(type),
-                            }}
-                        />
-                    </Stack>
+                    </Grid>
+                    <Grid item>
+                        <Grid container justifyContent="flex-end">
+                            <Stack direction="row" spacing={1}>
+                                {discount_amount && (
+                                    <Chip
+                                        size="small"
+                                        label={`${discount_amount}% off`}
+                                        sx={{
+                                            borderRadius: '4px',
+                                            backgroundColor: '#46FF59',
+                                        }}
+                                    />
+                                )}
+                                <Chip
+                                    size="small"
+                                    label={toTitleCase(type)}
+                                    sx={{
+                                        borderRadius: '4px',
+                                        backgroundColor: getChipColor(type),
+                                    }}
+                                />
+                            </Stack>
+                        </Grid>
+                    </Grid>
                 </Grid>
             </ImgDiv>
 
